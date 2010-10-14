@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- <video src="{Fichier Vidéo Web(FLV)}" img="{Fichier Image Web(JPEG, GIF, PNG, BMP) de résolution 121x82}" /> -->
+<newsList delay="8000" target="blank">
+	<news title="ertee" img="imge" lnk="ure"><![CDATA[seeeeeaz]]></news>
+	<news title="T2st" img="" lnk="">aaa</news>
+	<news title="T3st" img="test3.jpg" lnk=""><![CDATA[Test]]></news>
+	<news title="T2st" img="test2.jpg" lnk=""><![CDATA[Test]]></news>
+	<news title="T3st" img="test3.jpg" lnk="">Test</news>
+	<news title="T2st" img="test2.jpg" lnk="">Test</news>
+</newsList>

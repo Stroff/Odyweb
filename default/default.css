@@ -1,0 +1,444 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, html
+{
+
+	background:#312920;
+	overflow-x:hidden;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+	margin-left:auto;
+	margin-right:auto;
+	list-style-image: url(../medias/images/puce.gif);
+}
+h1
+{
+	color:#2ac2e1;
+}
+h2
+{
+	color:#82dbed;
+	text-align:center;
+	
+
+}
+h3
+{
+	color:#c8eff7;
+}
+h4
+{
+	color:#009ccf;
+	background: url(../medias/images/faqs-titre.jpg) no-repeat;
+	font-size:100%;
+	line-height:30px;
+	padding-left:60px;
+	
+}
+img
+{
+	border:0px;
+}
+
+a:link, a:visited
+{
+	color:#FFF;
+}
+a:hover, a:active
+{
+	color:red;
+}
+select  {
+background: #222323;
+border:1px #868687 solid;
+color:white;
+}
+input
+{
+	border: 1px #868687 solid;
+	color:#FFF;
+}
+label
+{
+	font-weight:normal;
+}
+.warning
+{
+	color:red;
+}
+table.display {
+	margin: 0;
+	width: 100%;
+	clear: both;
+}
+  td.display
+{
+	margin:10px;
+}
+/*partie banniere */
+.banniere
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+.hautban
+{
+}
+
+.logo
+{	
+}
+.votes
+{
+
+
+}
+/*partie corps d'ecriture */
+.global
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+.conteneur
+{
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+
+.corps
+{
+float:left;
+}
+.barre-haut
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.formulaires
+{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.form-fill
+{
+	float:left;
+	width:45%;
+	line-height:25Spx;
+}
+.form-fill2
+{
+	float:right;
+	width:45%;
+		line-height:25px;
+
+}
+.moduser
+{
+margin-left:auto;
+margin-right:auto;
+}
+.page
+{
+	float:left;
+}
+.encadrepage
+{
+	float:left;
+}
+.encadrepage-titre
+{
+	text-align:center;	
+}
+.blocpage
+{
+	margin-left:auto;
+	margin-right:auto;
+
+}
+.blocpage-texte
+{
+	font-size:140%;
+	width:97%;
+	margin-left:auto;
+	margin-right:auto;
+	line-height:130%;
+}
+
+.titre-faq
+{
+	list-style-image: url(../medias/images/fleche.gif);
+}
+.titre-faq a
+{
+	color:#FFF;	
+	font-weight:bold;
+	text-decoration:none;
+}
+.texte-faq
+{
+}
+.colonnegauche
+{
+	float:left;
+}
+/*module de news */
+
+.blocnews
+{
+}
+.blocnews-img
+{
+	float:left;	
+}
+.blocnews-titre
+{
+	text-transform: uppercase;
+	float:left;
+	font-weight:bold;
+}
+
+.blocnews-infos
+{
+	text-align:right;
+}
+.news-lien
+{
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+}
+
+/* colonne du milieu */
+
+/* espace vertical entre modules */
+.spacer
+{
+}
+
+.colonnemilieu
+{
+	float:right;
+}
+/* module pour les videos */
+.modvideo
+{
+}
+.modgoule
+{
+	position: absolute;
+}
+.mainmenu
+{
+	float:right;
+}
+.modrecup
+{
+	float: left;
+}
+
+.modrecup a
+{
+	text-decoration:none;
+}
+
+/* module twitter */
+.modtwit
+{
+	
+}
+.modtwit-bas a
+{
+	text-decoration:underline;
+}
+.modtwit-titre
+{
+	font-size:140%;
+	color: #009ccf;
+	text-align:right;
+	line-height:140%;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.modtwit-lien
+{
+	line-height:160%;
+	font-weight:bold;
+	text-decoration:none;
+}
+.modtwit-lien a
+{
+	text-decoration:none;
+}
+
+/* module events */
+.modevents
+{	
+font-width:90%;
+}
+
+.modevents a
+{
+	text-decoration:none;
+}
+.modevents img
+{
+	
+	margin-left:auto;
+	margin-right:auto;
+
+}
+.modevents-texte
+{
+	
+	margin-left:auto;
+	margin-right:auto;
+}
+.topvote
+{
+	color:#FF9;
+	font-size:190%;
+	font-weight:bold;
+	float:right;
+	text-align:center;
+}
+.rightcolumn
+{
+	float:right;
+}
+.leftcolumn
+{
+	float:left;
+}
+/* la colonne de droite */
+
+.colonnedroite
+{
+	float:right;
+}
+/*module d'infos serveur */
+.uptimemod
+{
+	float:left;
+}
+.uptimemod-realm
+{
+	text-align:center;
+	color:#73dbff;
+	font-size:80%;
+}
+.nbjoueurs
+{
+	text-align:center;
+	font-weight:bold;
+}
+.modserv
+{
+		float:left;
+}
+.nballyh2
+{
+	font-weight:bold;
+}
+.uptimemod-bas
+{
+}
+
+/* menu principal */
+.menuprincipal
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+.menuprincipal a
+{
+	text-decoration:none;
+}
+.modtoparene
+{
+	float:left;
+}
+.modtoparene-stats
+{
+	margin-left:auto;
+	margin-right:auto;
+	}
+/* pied de page */
+.pied
+{
+	margin-left:auto;
+	margin-right:auto;
+	float:left;
+}
+.menubas
+{
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+	margin-left:auto;
+	margin-right:auto;
+}
+.coinbas
+{
+	float:left;	
+}
+
+.copyright
+{
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+}
+/* page de news */
+.pagenews
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+.pagenews img
+{
+}
+.pagenews-filtres
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+.pagenews-search
+{
+	float:left;
+	width:80%;
+	
+}
+.pagenews-select 
+{
+	float:left;
+	width:15%;	
+}
+
+.pagenews-titre
+{
+	margin-left:auto;
+	margin-right:auto;
+	font-size:140%;
+	line-height:100%;
+	font-stretch:expanded;
+	text-transform: uppercase;
+}
+.pagenews-texte
+{
+
+	font-size:120%;
+	line-height:140%;
+	text-align:justify;
+}
+.pagenews-texte img
+{
+
+}
+/* galerie events */

@@ -1,0 +1,11 @@
+1/inclure les js apres insertion header:
+<script LANGUAGE="Javascript" SRC="Scripts/mootools.js"> </SCRIPT>
+<script LANGUAGE="Javascript" SRC="Scripts/faqrecup.js"> </SCRIPT>
+        	
+2/pour le titre====faire balise lien avec id incrementée (commence par 1)exemple:
+                    	  <a href=# id="titrefaq1"> <h2 class="hache1">Mumble </h2></A>
+
+3/ pour le texte: div ou paragraphe comme ca avec meme numero:
+
+
+			<div id="textefaq1">

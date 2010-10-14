@@ -1,0 +1,17 @@
+<!-- <video src="{Fichier Vidéo Web(FLV)}" img="{Fichier Image Web(JPEG, GIF, PNG, BMP) de résolution 121x82}" /> -->
+
+<newsList>
+	<news title="L'assemblee de fer" img="medias/flash/img/Assemblee.jpg" lnk="" target=""><![cdata[L'assemblée de fer, un defi]]></news>
+	<news title="L'assemblee de fer" img="medias/flash/img/Assemblee.png" lnk="" target=""></news>
+	<news title="T3st" img="test3.jpg" lnk="" target="">Test</news>
+	<news title="T2st" img="test2.jpg" lnk="" target="">Test</news>
+	<news title="T3st" img="test3.jpg" lnk="" target="">Test</news>
+	<news title="T2st" img="test2.jpg" lnk="" target="">Test</news>
+	<news title="T3st" img="test3.jpg" lnk="" target="">Test</news>
+	<news title="T2st" img="test2.jpg" lnk="" target="">Test</news>
+	<news title="T3st" img="test3.jpg" lnk="" target="">Test</news>
+	<news title="T2st" img="test2.jpg" lnk="" target="">Test</news>
+	<news title="T3st" img="test3.jpg" lnk="" target="">Test</news>
+	<news title="T2st" img="test2.jpg" lnk="" target="">Test</news>
+	<news title="T3st" img="test3.jpg" lnk="" target="">Test</news>
+</newsList>

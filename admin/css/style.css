@@ -1,0 +1,7 @@
+#form label {
+display:inline-block;
+float:left;
+height: 25px;
+width:155px;
+	font: normal 11px/13px Verdana, Geneva, sans-serif;
+}

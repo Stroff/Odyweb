@@ -1,0 +1,14 @@
+<!-- <video src="{Fichier Vidéo Web(FLV)}" img="{Fichier Image Web(JPEG, GIF, PNG, BMP) de résolution 121x82}" /> -->
+
+<newsList>
+	<news title="Épreuve des Champions" img="medias/flash/img/champions.jpg" lnk="" target=""><![cdata[L'épreuve finale du tournoi d'argent opposant toutes les grandes nations d'Azeroth vous attend ! Duels en monture, combat contre héros de la croisade d'argent, et même un agent du roi liche ! Le combat sera sans pitié !]]></news>
+	<news title="Le rivage des anciens" img="medias/flash/img/Rivage.jpg" lnk="" target=""><![cdata[Découvrez le Rivage des Anciens sur Odyssée serveur. Il est temps pour vous de venir en aide à vos alliés afin de mettre la main sur la relique protégée dans la forteresse. Ne cédez pas, combattez.]]></news>
+	<news title="Le joug d'hiver" img="medias/flash/img/Joug.jpg" lnk="" target=""><![cdata[Rejoignez cet impitoyable champ de bataille où vous pourrez combattre au nombre de 240 joueurs en simultané.Venez-vous aussi défier la faction adverse et luttez jusqu à votre dernier souffle pour la victoire.]]></news>
+	<news title="Events Odyssée" img="medias/flash/img/cube.jpg" lnk="" target=""><![cdata[Plus démesurés que l'Agence Tous-Risques et plus bodybuildés que 300 spartiates, nos events n'attendent que vous ! Que vous préferiez massacrer vos adversaires dans The Cube ou ratisser Azeroth à la recherche d'un coffre!]]></news>
+	<news title="Épreuve des Croisés" img="medias/flash/img/crusader.jpg" lnk="" target=""><![cdata[Croisade préparant les héros d'Azeroth à la rencontre finale. Durant ce combat, les héros affronteront de puissantes bêtes venant du glacier du norfendre, des érédars déchus, des walkyrs, et bien d'autres défis!]]></news>
+	<news title="Ulduar" img="medias/flash/img/ulduar.jpg" lnk="" target=""><![cdata[Le défi sera de taille, 11 Boss d Ulduar vous attendent, serez-vous de taille à lutter contre Ignis, Tranchécaille, XT-002, Kologarn, Assemblée de Fer, Auriaya, Freya, Thorim, Hodir, le Général Vezax et Mimiron ?]]></news>
+	<news title="GT4" img="medias/flash/img/gt4.jpg" lnk="" target=""><![cdata[Revivez les débuts de la folie d'Arthas, aidez-le à exterminer la contamination et à vaincre le fléau et les esclaves de Mal'Ganis.]]></news>
+	
+	<news title="Oeil de L'Éternité " img="medias/flash/img/eternite.jpg" lnk="" target=""><![cdata[Affrontez l'aspect de la magie dans un combat sans répit, contre la folie de malygos !]]></news>
+	
+</newsList>

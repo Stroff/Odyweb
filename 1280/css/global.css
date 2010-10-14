@@ -1,0 +1,716 @@
+@charset "utf-8";
+body, html
+{
+	padding:0px;
+	margin:0px;
+	width:1280px;
+	font-size:10px;
+}
+img
+{
+	border:0px;
+}
+
+input
+{
+	background:url(../images/inputbox.jpg) repeat-x;
+
+}
+.hache1
+{
+	height:35px;
+	background:url(../images/h1h2.jpg) center no-repeat;
+	line-height:35px;
+}
+h2
+{
+	font-size:16px;
+}
+label
+{
+	width:143px;
+}
+
+/*partie banniere */
+.banniere
+{
+		background:url(../images/banniere.jpg) center no-repeat;
+	width:1280px;
+	height:176px;
+	padding:0px;
+}
+.global 
+{
+		background:url(../images/boiserie.jpg) repeat-y;
+
+}
+.coinhaut
+{
+	background:url(../images/coinhaut.gif) no-repeat;
+}
+.corps
+{
+	background:url(../images/cuir.gif) repeat-y;
+
+}
+
+.hautban
+{
+	height:206px;
+}
+
+
+/*partie corps d'ecriture */
+.conteneur
+{
+	width:1015px;	
+}
+.coinhaut
+{
+	height:8px;
+}
+
+.barre-haut
+{
+	height:40px;
+	width:986px;
+}
+/* login et menu utilisateur */
+.moduser
+{
+	width:600px;
+
+	height:45px;
+}
+.encadrepage
+{
+	background:url(../images/encadrepage-border.jpg) repeat-y center;
+}
+.encadrepage-haut
+{
+	background: url(../images/encadrepage-haut.jpg) no-repeat center;
+}
+.encadrepage-bas
+{
+	background:url(../images/encadrepage-bas.jpg) no-repeat center;
+}
+.blocpage
+{
+	background:url(../images/blocpage-border.jpg) repeat-y center;
+}.blocpage-haut
+{
+	background:url(../images/blocpage-haut.jpg) center no-repeat;
+}
+.blocpage-bas
+{
+	background:url(../images/blocpage-bas.jpg) center bottom no-repeat;
+}
+.titre-faq
+.modnews
+{
+	background:url(../images/newsmod/modnews-border.jpg) repeat-y;
+}
+.modnews-haut
+{
+	background:url(../images/newsmod/modnews-haut.jpg) no-repeat;
+}
+.modnews-bas
+{
+	background:url(../images/newsmod/modnews-bas.jpg) no-repeat;
+}
+.blocnews
+{
+	background:url(../images/newsmod/blocnews-border.jpg) repeat-y;	
+}
+.blocnews-haut
+{
+	background:url(../images/newsmod/blocnews-haut.jpg) no-repeat;
+}
+.blocnews-bas
+{
+	background:url(../images/newsmod/blocnews-bas.jpg) no-repeat bottom;
+}
+.blocnews-titre
+{
+	background:url(../images/newsmod/blocnews-titre.jpg) no-repeat bottom left;
+}.news-lien
+{
+	background:url(../images/newsmod/news-lien.jpg) no-repeat;
+}.topvote
+{
+	background:url(../images/topvotes/topvotes.jpg) no-repeat;
+	width:266px;
+	height:106px;
+}
+.modrecup-bas
+{
+}
+
+#infopop_0
+{
+	background:url(../images/uptime/infos_0.jpg) center top no-repeat;
+}
+#infopop_10
+{
+	background:url(../images/uptime/infos_10.jpg) center top no-repeat;
+}
+#infopop_20
+{
+	background:url(../images/uptime/infos_20.jpg) center top no-repeat;
+}
+#infopop_30
+{
+	background:url(../images/uptime/infos_30.jpg) center top no-repeat;
+}
+#infopop_40
+{
+	background:url(../images/uptime/infos_40.jpg) center top no-repeat;
+}
+#infopop_50
+{
+	background:url(../images/uptime/infos_50.jpg) center top no-repeat;
+}
+#infopop_60
+{
+	background:url(../images/uptime/infos_60.jpg) center top no-repeat;
+}
+#infopop_70
+{
+	background:url(../images/uptime/infos_70.jpg) center top no-repeat;
+}
+#infopop_80
+{
+	background:url(../images/uptime/infos_80.jpg) center top no-repeat;
+}
+#infopop_90
+{
+	background:url(../images/uptime/infos_90.jpg) center top no-repeat;
+}
+#infopop_100
+{
+	background:url(../images/uptime/infos_100.jpg) center top no-repeat;
+}
+
+.modrecup
+{
+}.modtwit
+{
+	background: url(../images/twitter/modtwit-border.jpg) repeat-y;
+}
+.modtwit-haut
+{
+	background: url(../images/twitter/modtwit-haut.jpg) no-repeat;
+}
+.modtwit-bas
+{
+	background: url(../images/twitter/modtwit-bas.jpg) no-repeat bottom;
+}
+.modtwit-titre
+{
+	background:url(../images/twitter/modtwit-titre.jpg) bottom left no-repeat;
+}.modevents
+{
+	background: url(../images/twitter/modtwit-border.jpg) repeat-y;
+
+}
+.modevents-haut
+{
+	background:url(../images/twitter/modtwit-haut.jpg) no-repeat;
+}
+.modevents-bas
+{
+	background:url(../images/twitter/modtwit-bas.jpg) no-repeat bottom left;
+}.uptimemod
+{
+	background:url(../images/uptime/bordermod.jpg) repeat-y;
+}
+.uptimemod-haut
+{
+	background:url(../images/uptime/hautmod.jpg) no-repeat;
+}
+.uptimemod-infos
+{
+	background:url(../images/uptime/infos.jpg) center top no-repeat;
+}
+.uptimemod-realm
+{
+	background:url(../images/uptime/realmbg.jpg) no-repeat bottom;
+}.mainmenuh
+{
+	background:url(../images/mainmenuh.jpg) no-repeat;
+}
+.mainmenu, .usermenu
+{
+	background:url(../images/mainmenu.jpg) repeat-y;
+}
+.onglet1
+{
+	background:url(../images/onglet1.jpg) no-repeat;
+}
+
+.onglet2
+{
+	background:url(../images/onglet2.jpg) no-repeat;
+}
+.mainmenub
+{
+	background:url(../images/mainmenub.jpg) no-repeat;	
+}
+.modtopareneh2
+{
+	background:url(../images/toparene/toph2.jpg) no-repeat;
+}
+.modtopareneally
+{
+	background:url(../images/toparene/topally.jpg) no-repeat;
+}
+.pied
+{
+	background: url(../images/oni.gif) no-repeat right;
+}.coinbas
+{
+	background:url(../images/coinbas.gif) no-repeat;
+}.pagenews
+{
+	background:url(../images/pagenews/pagenews-border.gif) repeat-y;
+}.pagenews-haut
+{
+	background:url(../images/pagenews/pagenews-haut.gif) no-repeat;
+}
+.pagenews-bas
+{
+background:url(../images/pagenews/pagenews-bas.gif) no-repeat bottom;
+}
+.cat-tech
+{
+	background:url(../images/pagenews/cat-technique.jpg) no-repeat;
+}
+.cat-boutique
+{
+	background:url(../images/pagenews/cat-boutique.jpg) no-repeat;
+}
+.cat-communaute
+{
+	background:url(../images/pagenews/cat-communaute.jpg) no-repeat;
+}
+.cat-events
+{
+	background:url(../images/pagenews/cat-events.jpg) no-repeat;
+}
+
+
+.formulaires
+{
+	line-height:21px;
+}
+.page
+{
+	width:1000px;
+	margin-left:6px;
+	margin-right:13px;
+}
+.encadrepage
+{
+	width:846px;
+}
+.encadrepage-haut
+{
+	height:37px;
+}
+.encadrepage-titre
+{
+	height:30px;
+}
+.encadrepage-bas
+{
+	height:21px;
+}
+.blocpage
+{
+	width: 828px;
+}
+.blocpage-haut
+{
+	height:10px;
+}
+.blocpage-bas
+{
+	min-height:130px;
+}
+.titre-faq
+{
+	height:13px;
+}
+.titre-faq a
+{
+	line-height:13px;
+	margin-left:13px;
+}
+.colonnegauche
+{
+	width:484px;
+}
+.leftcolumn
+{
+	width:567px;
+}
+.rightcolumn
+{
+	width:433px;
+}
+/*flash image rotator */
+.flashbanner
+{
+	height:260px;
+	width:566px;
+
+}
+#wrap div.content,#content1,#content2,#content3{
+	margin-bottom:10px;
+}
+/*module de news */
+
+.modnews
+{
+	margin-left:6px;
+}
+.modnews-haut
+{
+	height:32px;
+}
+.modnews-bas
+{
+	height:12px;
+}
+.blocnews
+{
+	width:533px;
+	margin-left:8px;
+}
+.blocnews-haut
+{
+	height:10px;
+}
+.blocnews-bas
+{
+	min-height:110px;	
+}
+.blocnews-cadre
+{
+margin:10px;
+}
+.blocnews-img
+{
+	width:113px;
+	height:60px;
+	padding-right:10px;
+}
+.blocnews-titre
+{
+	font-size:8px;
+	height:20px;
+	margin-left:3px;
+	width:386px;
+}
+.blocnews-texte
+{
+	margin-top:6px;
+	margin-bottom:13px;
+}
+.blocnews-infos
+{
+	padding:20px;
+}
+.news-lien
+{	
+	height:33px;
+	width:452px;
+}
+.news-lien a
+{
+	font-size:8px;
+	line-height:24px;
+}
+/* colonne du milieu */
+
+/* espace vertical entre modules */
+.spacer
+{
+	height:16px;
+}
+
+.colonnemilieu
+{
+	width:350px;
+	margin-left:8px;
+}
+/* module pour les videos */
+.modvideo
+{
+	width:342px;
+}
+
+.modgoule
+{
+	height:234px;
+	width:133px;
+}
+.modgoule img
+{
+	margin-left:133px;
+	margin-top:133px;
+}
+
+
+/*module rejoignez nous */
+
+.modrecup
+{
+	width:270px;
+}
+.modrecup-haut
+{
+	height:132px;
+}
+.modrecup-bas
+{
+	padding:10px;
+}
+.modrecup a
+{
+	line-height:6px;
+}
+
+/* module twitter */
+.modtwit
+{
+	width:413px;
+}
+.modtwit-haut
+{
+	height:9px;
+}
+.modtwit-bas
+{
+	padding:10px;
+	line-height:9px;
+	font-size:9px;
+}
+.modtwit-titre
+{
+	margin-right:24px;
+	height:16px;
+}
+.modtwit-lien
+{
+	margin-left:20px;
+}
+
+/* module events */
+
+.modevents-haut
+{
+	height:10px;
+}
+.modevents-bas
+{
+	padding:10px;
+}
+.modevents a
+{
+	line-height:6px;
+}
+.modevents-texte 
+{
+	width:386px;
+}
+
+.modevents img
+{
+	margin-left:4px;
+}
+/* la colonne de droite */
+
+.colonnedroite
+{
+	width:146px;
+}
+/*module d'infos serveur */
+.modserv
+{
+	width:270px;
+}
+
+.uptimemod
+{
+	width:143px;
+}
+.uptimemod-haut
+{
+	height:8px;
+}
+.uptimemod-infos
+{
+	margin-left:10px;
+	line-height:13px;
+	margin-bottom:10px;
+	font-size:10px;
+}
+.uptimemod-realm
+{
+	height:36px;
+	line-height:8px;
+}
+.nbjoueurs
+{
+	line-height:24px;
+	height:66px;
+	font-size:9px;
+}
+.nballyh2
+{
+	margin-left:26px;
+	height:40px;
+	line-height:30px;
+	font-size:9px;
+}
+.uptimemod-bas
+{
+	height:32px;
+}
+
+/* menu principal */
+
+.mainmenuh
+{
+	height:16px;
+}
+.mainmenu, .usermenu
+{
+	margin-right:6px;
+	width:153px;
+}
+.menuprincipal
+{
+	width:122px;
+}
+.onglet1
+{
+	height:26px;
+}
+.onglet1 a
+{
+	line-height:28px;	
+}
+.onglet2
+{
+	height:16px;
+}
+.onglet2 a
+{
+	line-height:16px;
+}
+.menuprincipal a
+{
+	font-size:9px;
+}
+.mainmenub
+{
+	height:10px;
+}
+/* realmlist */
+
+/* module top arene horde et allys */
+.modtopareneh2
+{
+	width:145px;
+	height:112px;
+}
+.modtopareneally
+{
+	width:145px;
+	height:112px;
+}
+.modtoparene-stats
+{
+	width:120px;
+	height:80px;
+	line-height:24px;
+	font-size:6px;
+}
+/* pied de page */
+.pied
+{
+	width:1012px;
+	height:56px;
+}
+.menubas
+{
+	font-size:6px;
+	height:13px;
+	padding-top:43px;
+	width:333px;
+}
+.coinbas
+{
+	height:9px;
+	width:1015px;
+}
+
+.copyright
+{
+	font-size:6px;
+	width:400px;
+	padding-top:13px;
+}
+/* page de news */
+.pagenews
+{
+	width:818px;
+}
+.pagenews-haut
+{
+	height:6px;
+}
+.pagenews-bas
+{
+	height:6px;
+}
+.pagenews-filtres
+{
+	padding-top:10px;
+	height:30px;
+	width:800px;
+}
+
+.pagenews-titre
+{
+	width:793px;
+	height:39px;
+}
+.pagenews-texte
+{
+	margin:16px;
+}
+.pagenews-texte img
+{
+	padding:6px;
+}
+.catmodnews_events
+{
+	background:url(../images/newsmod/cat_events.jpg) no-repeat;
+}
+.catmodnews_tech
+{
+	background:url(../images/newsmod/cat_tech.jpg) no-repeat;
+}
+
+.catmodnews_shop
+{
+	background:url(../images/newsmod/cat_shop.jpg) no-repeat;
+}
+
+.catmodnews_comm
+{
+	background:url(../images/newsmod/cat_comm.jpg) no-repeat;
+}

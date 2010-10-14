@@ -1,0 +1,41 @@
+Index: pChart.class
+===================================================================
+@@ -1025,7 +1025,7 @@
+     }
+ 
+    /* Draw the data legends */
+-   function drawPieLegend($XPos,$YPos,$Data,$DataDescription,$R,$G,$B)
++   function drawPieLegend($XPos,$YPos,$Data,$DataDescription,$R,$G,$B,$Rs=-1,$Gs=-1,$Bs=-1,$Rt=0,$Gt=0,$Bt=0,$Border=TRUE)
+     {
+      /* Validate the Data and DataDescription array */
+      $this->validateDataDescription("drawPieLegend",$DataDescription,FALSE);
+@@ -1034,7 +1034,7 @@
+      if ( !isset($DataDescription["Position"]) )
+       return(-1);
+ 
+-     $C_TextColor =$this->AllocateColor($this->Picture,0,0,0);
++     $C_TextColor =$this->AllocateColor($this->Picture,$Rt,$Gt,$Bt);
+ 
+      /* <-10->[8]<-4->Text<-10-> */
+      $MaxWidth = 0; $MaxHeight = 8;
+@@ -1051,9 +1051,15 @@
+      $MaxHeight = $MaxHeight - 3;
+      $MaxWidth  = $MaxWidth + 32;
+ 
+-     $this->drawFilledRoundedRectangle($XPos+1,$YPos+1,$XPos+$MaxWidth+1,$YPos+$MaxHeight+1,5,$R-30,$G-30,$B-30);
+-     $this->drawFilledRoundedRectangle($XPos,$YPos,$XPos+$MaxWidth,$YPos+$MaxHeight,5,$R,$G,$B);
++     if ( $Rs == -1 || $Gs == -1 || $Bs == -1 )
++      { $Rs = $R-30; $Gs = $G-30; $Bs = $B-30; }
+ 
++     if ( $Border )
++      {
++       $this->drawFilledRoundedRectangle($XPos+1,$YPos+1,$XPos+$MaxWidth+1,$YPos+$MaxHeight+1,5,$Rs,$Gs,$Bs);
++       $this->drawFilledRoundedRectangle($XPos,$YPos,$XPos+$MaxWidth,$YPos+$MaxHeight,5,$R,$G,$B);
++      }
++
+      $YOffset = 4 + $this->FontSize; $ID = 0;
+      foreach($Data as $Key => $Value)
+       {
+ 
+
+ 	  	 

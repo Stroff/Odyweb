@@ -1,0 +1,553 @@
+[10/03/2010 10:10 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 03 Oct 2010 20:10:17 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=hT4UyepKgVoalIHWvgifKpHD8J7hSfHgGKYKnM_UrgTA1_ZSDzLfEkjv2drAOKplZdZcQap1meq9Mpqwujf8rckD9qXA99jsvRM7vC3nKwSFIK9HDUzS7BxEQOr6ifpR-cd8KW%7cqFCulirxRUexEnetkDfjWVh5yaVYUozK3vJ6qUGO7vDEMp4v9dcdJe4o1SJ0NH5uYypMKm%7cZc8LtHT83J1OjL_kzpgl0mVM7f6_155TfH5YB4tYAG8co3u6tLVRilsFGPn1oAfX5uAoeG%7c1286136617; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 30-Sep-2020 20:10:17 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 28-Sep-2030 20:10:17 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[10/03/2010 10:10 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 03 Oct 2010 20:10:28 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=hMhkZKFTWrAKo_HMBtw8XLS48Fbe-LhnEq6qTEIKbaGaBsFGQPtbBifhTfL7EQ4AwjObj19t8NCBi0Qz21iEhrPOzWNZV56Oj3u8G6qbGc8Dht0gw78iyhJpknVf-3EIV_bMVm%7cvFRIQxE8DLkJIBGjYUMN9n_2oQlx6ZJiy-iIIhveeij3p0mV3BtQZRogjqry7nJQCIzZaG%7cQ80-NDhKrpfM8-gSUxbWS8jCEQrHZCpta-Ppsr3zYNy8OcPW8bxE0UR3oXgz9KCiSIhDLG%7c1286136628; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 30-Sep-2020 20:10:28 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 28-Sep-2030 20:10:28 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[10/03/2010 10:16 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=7.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=JHUZPBL92MYFE, tax=0.00, address_street=67 rue des champs bleu, payment_date=13:15:54 Oct 03, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=78700, first_name=jerome, mc_fee=0.51, address_country_code=FR, address_name=jerome gardette, notify_version=3.0, custom=23193, payer_status=unverified, business=pmkdu35@gmail.com, address_country=France, address_city=conflans, quantity=5, verify_sign=AGs52InFHk3cJ5j80u2Udq.A26J4Ab4Q6wzk2PSwuY-0G31AwWK-cRcB, payer_email=jernome@live.fr, txn_id=0JL58483KP4711526, payment_type=instant, last_name=gardette, address_state=, receiver_email=pmkdu35@gmail.com, payment_fee=, receiver_id=YLJG5Z646MABL, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=23193, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 03 Oct 2010 20:16:00 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=pRdWEUzozBXJ0v8IVyx3LGououVxfIs7ezA6j6QIrjRwCoPIwnTCqEbQsS1xs6SV3IlCbFqDPhCP-Yb7XfVLP74uszEXkothgm0KenAiYo8wgo8r4cdgHgv3rv9UOtjxWnAmBW%7cRqX9aFWdMlRqFIOMtgejDpdXzwUfWwCgK1Ad6Juyukq7JHmP_IN3lZpNzGBr9Rdtkaf1I0%7csysctxtz3Mpeh_ZTCQtI-r-l4B3ukyOs92avfL6BneZIYoK0FrxKbQDLgJg4JUOBe9bG9m%7c1286136960; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 30-Sep-2020 20:16:00 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 28-Sep-2030 20:16:00 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/04/2010 10:18 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=22.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=TBF6UJ2WWHJUS, tax=0.00, address_street=Quartier Castet, payment_date=01:18:04 Oct 04, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=64360, first_name=Sebastien, mc_fee=1.02, address_country_code=FR, address_name=Sebastien Piets, notify_version=3.0, custom=255934, payer_status=unverified, business=pmkdu35@gmail.com, address_country=France, address_city=Monein, quantity=15, verify_sign=AfDtAtNVX87KBJwoNfgZgr48.XqwApg94LasUxlEnACO-4YIpJ7WfVV5, payer_email=sebastienpiets@hotmail.com, txn_id=3U775614BF903190P, payment_type=instant, last_name=Piets, address_state=, receiver_email=pmkdu35@gmail.com, payment_fee=, receiver_id=YLJG5Z646MABL, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=255934, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 04 Oct 2010 08:18:09 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=QLk0uK0k5aXC8oRX_3-RVhrA6VdmNyw4n7Ss0Hh0m5CIVKmkoQCMfP6PTX0oQUStovKX63JGnI1J4yrnzoT8w5f5OGzJJc8yU_zQ9CeNNQhBOqB1fHPV7yP3bURvLoIXbUB0X0%7cjx06NeesrmvQNL0Y74OEYICcUz4_6fj2W2nr4dLtMKvqd7UF0Pa-_uxlj9MO2_dDgYQXf0%7cB4ixvVcYwFSALuEpIwnYHNMCuEKRxAeYhWxricpuoFrWiyTwvqxzxYO0JBTZE4EU45Q5cW%7c1286180290; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Thu, 01-Oct-2020 08:18:10 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 29-Sep-2030 08:18:10 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/04/2010 3:07 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=7.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=4KLKZXESRSW6Q, tax=0.00, address_street=14 fbg reclus, Le centenaire entrÈ b
+Apt 45, Ètage 9, payment_date=06:07:11 Oct 04, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=73000, first_name=prad, mc_fee=0.51, address_country_code=FR, address_name=prad jean pierre, notify_version=3.0, custom=242963, payer_status=verified, business=serveur.odyssee@gmail.com, address_country=France, address_city=Chambery, quantity=5, verify_sign=A0asK6oiIZmtBFrRCq-Iiqf8lrk.Ad6KfgPg8uHLzATblUXwuugNmK05, payer_email=abdnasser207@live.fr, txn_id=5XP02686ME2397131, payment_type=instant, last_name=jean pierre, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=242963, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 04 Oct 2010 13:07:20 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=AxVSA71uWz8D_tzRCvF40I8D-gAFJgIb6C9pEmzMbA8OHCYIrNHIE5sZExqVhV9P2B49RH1ucEdwllM3rOdVa-F3CdLaAj6EBwo4xU0BQoE3DKVbfNdmkvIu9WeSp_QyjiRbE0%7cyGWls5zIX68YbTH0tKR4FpeRfuDpAYxQso3sK1t6ATGdi2856pE3SnZGsXuIwIBOdZgvyW%7c1kSVWSRlUo7MYPNFEbLFVTJVgIMjp8PoQSy9XOCRowV_92PEXUtpyI_qCLpaGk-9FAQ9I0%7c1286197641; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Thu, 01-Oct-2020 13:07:21 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 29-Sep-2030 13:07:21 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/05/2010 11:14 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=22.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=KMHMBLJSYZSSY, tax=0.00, address_street=a 604 les marronniers
+rue paul eluard, payment_date=14:14:46 Oct 05, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=59300, first_name=cyril, mc_fee=1.02, address_country_code=FR, address_name=cyril huet, notify_version=3.0, custom=11929, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=aulnoy, quantity=15, verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAqqIaaK6D7sPgfP6xeUgLkUuR0aD, payer_email=percevalht@hotmail.fr, txn_id=16S69586BW781190V, payment_type=instant, last_name=huet, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=11929, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 05 Oct 2010 21:14:51 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=2ruRqxVal_rwNkZbV5oIO_RGQE-ZmzUQTgM3dPsZsqXnufiUZbcWElZ6Kzk7bq07FOpUXgY8Whj9joKpeQCgTCWb5lFChzQrImhJvprsDbcFOJoaqEMpNScno4Q6Ci0S3WwBaG%7czOsv8suotCbNSOtrJcAgySIWiSwslYfdgkuozl8vupY7PANaVBy5d8SqnmVHgd2I0y_SWG%7c4ZIfmXfzYsa1H6lYfGlU7XnxVxfFYmYDaHdbggOw0wiKLiNEe-RdyHFTXXgpTM_G9q3AeW%7c1286313292; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 02-Oct-2020 21:14:52 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Mon, 30-Sep-2030 21:14:52 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/05/2010 11:28 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=1.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=C7A3MNX956MFA, tax=0.00, address_street=Rue Provinciale 55, payment_date=14:28:04 Oct 05, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=4042, first_name=Ludovic, mc_fee=0.30, address_country_code=BE, address_name=Ludovic Franck, notify_version=3.0, custom=698, payer_status=verified, business=serveur.odyssee@gmail.com, address_country=Belgium, address_city=Liers, quantity=1, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31AXP7C5rY79n-2GiW8i9of0YHjnrR, payer_email=ludo_franck@yahoo.fr, txn_id=25X06508DU630952H, payment_type=instant, last_name=Franck, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=BE, handling_amount=0.00, transaction_subject=698, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 05 Oct 2010 21:28:08 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=IJTbxKhwS6Etgxit3bFTLQnbqA173bKiKP6s5Bikv0eMIibB-UjNKBCOCYNvWRt7bytRm0G3H9MiBaViwevGhFNa01rKfv5rjwMFKOiwRW8VGgktByAh1Mddok6BUwWtodlyj0%7cj6l_SsEiARaSbE7i1Ndk-G2av4_bzT8Ix4jtpbBWGPELEXBKLA28Lv_RLn9QgNbvQDkwSW%7cx5VsCZwpMEiRCkudG4MrAkYPYf3HimgA3Ihzik2289Mz0Ugm2_p0KZKUG2a79q_o9jE9iW%7c1286314088; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 02-Oct-2020 21:28:08 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Mon, 30-Sep-2030 21:28:08 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/06/2010 8:58 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=4.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=9CYZKPM83VBES, tax=0.00, address_street=flolecom95@hotmail.fr, payment_date=11:58:13 Oct 06, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=95620, first_name=fabien, mc_fee=0.40, address_country_code=FR, address_name=fabien lejeune, notify_version=3.0, custom=252167, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=parmain, quantity=3, verify_sign=AB8uKJ-cgis5XVZJfu8yXdO6dhrpA0wBMrIILVN4slBR7FWJKEKmKdU1, payer_email=flolecom95@hotmail.fr, txn_id=0HT635221C039704E, payment_type=instant, last_name=lejeune, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=252167, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 06 Oct 2010 18:58:23 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=JdCINzqNKpZbxH8z0eJNoCKlzuIkmtv8dQeHDzHXColiuQi6wkohXZsqBuOcwBZCmZjS0N_99_vaemLjAsgtvjcrJfm1LOqdH3U5nImp-HuUHXofv0iTFZyj9_PsXw1mh7FpGG%7cTRhpoB6V70GqIpCijP_sba_DNsLDvdXBJNdn0SNIZpa8y34iDXrHaizZTUjOIlsUFwpR1G%7cRbu_PL2Hgj_AlqUUdknt8EmO2EVT2KunxAX7f_FUGBLVqxcnHMbAGRhu8VEjuiQZDsFCGG%7c1286391503; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 03-Oct-2020 18:58:23 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 01-Oct-2030 18:58:23 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/06/2010 10:55 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=15.00, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=QX43PZ46L72LN, tax=0.00, address_street=lot hameau des 5 cantons N∞4, payment_date=13:55:33 Oct 06, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=40390, first_name=cedric, mc_fee=0.76, address_country_code=FR, address_name=cedric salomon, notify_version=3.0, custom=255668, payer_status=verified, business=serveur.odyssee@gmail.com, address_country=France, address_city=Saint andrÈ de seignanx, quantity=10, verify_sign=A9LC3Qajo-H2V8mPq4eIktgPvG2RANZH1yv9oPaq2rXljckAFJpjHCQG, payer_email=salomon40@sfr.fr, txn_id=1FX527735H770784F, payment_type=instant, last_name=salomon, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=255668, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 06 Oct 2010 20:55:42 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=zVZiH51iEWFjQ3scnZcTYXE3sy4uFOoBXqHm-DZKuix5k8qIV39m5EcqdW7z8NKF9rdgfLJR9Q2mxb561HSim4gGWvzpz2ScL3T8PC2q7RSsjWfnNweAIghP2Z2LdFZiZge77G%7c92YaJwKTNbhCo_2DOMD8thRbu3PEsC_c1GorKgl8VNptOaTnIHkChqgbmKktOhWC9euceW%7czgFhFYOg1UvgoZpSWusy0OYnYvM9QmxFRjWWHBNMmLntqtJ_bf0iKkdLt8n-1Mfal4AO-m%7c1286398543; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 03-Oct-2020 20:55:43 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 01-Oct-2030 20:55:43 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/07/2010 5:38 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=4.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=RMDKESQB3RG52, tax=0.00, address_street=613 St-Germain Est, payment_date=20:38:10 Oct 06, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=G5L 1G6, first_name=Jerome, mc_fee=0.43, address_country_code=CA, address_name=Jerome Poirier, notify_version=3.0, custom=260910, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=Canada, address_city=Rimouski, quantity=3, verify_sign=Ai1PaghZh5FmBLCDCTQpwG8jB264ADWWKGi3lh8Ne.lWWBChTBSsZWQJ, payer_email=jerpoir20@hotmail.com, txn_id=6LP39211AK958920A, payment_type=instant, last_name=Poirier, address_state=Quebec, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=CA, handling_amount=0.00, transaction_subject=260910, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 07 Oct 2010 03:38:15 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=4_-_6URZ7zI9JmVPFGUiEz5wqARZZ9WHMjd6M0mWuk6LetNkFJl75h_hdpHYBQHg4a5CrJNGFnbing95T3u-1BNaEpqy2Ko7CNCN6JadcUWSwx9np7v_hPa7ePiNmXqmby0Iwm%7ccKjcQl8w0157MrnqI0GB86Tojj6svV6cTz2DIeFBRIkg1Kg4gPe_A013RmZ9x7MSouLo10%7cKgM0Ol40VkxewV1PFaqq1ZHn6JQMkAbIx2DdtEunVqU0g52qFyh4y8vWZhciUiqK-NGDrG%7c1286422695; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 04-Oct-2020 03:38:15 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 02-Oct-2030 03:38:15 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/08/2010 6:03 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=4.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=64YHNYWT8WSGJ, tax=0.00, address_street=11 rue d'armentiere, payment_date=09:02:45 Oct 08, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=59200, first_name=sandrine, mc_fee=0.40, address_country_code=FR, address_name=sandrine loeuil, notify_version=3.0, custom=260932, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=tourcoing, quantity=3, verify_sign=A.CSYz4u5IILQm5wM0J0JbJiIcEuAZtVKQ9ID86kAGBQ.zCQe0vwRsi0, payer_email=pirate59200@hotmail.fr, txn_id=40C91929R0173611H, payment_type=instant, last_name=loeuil, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=260932, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 08 Oct 2010 16:02:56 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Zw3FBYFyJGEpagUYKOQoNX2gDIbdWTMHElaSrR_RObk7q8ptY8wWVK0OemTXU6CDXRmRVQNZtscbXr2u9gUm15xv2HVcTurT80XFedbSYytlXFMd_d0RJsNQH1gJ6SlEXwf7nG%7cTr8WG-xc15CSqcDQWaqFXed1ZjW7C-IpGNC7N-cTW5bUUrEWAOEWv3-Re5i4M_voHCHRpW%7cN17ZUE7FD0uxq5QlQ8-xA4XL0VJVqkV3rp_ptGLLOlsZXeUjnbz1ClCf9Zqqb4YHrNkIbG%7c1286553776; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 05-Oct-2020 16:02:56 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 03-Oct-2030 16:02:56 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/08/2010 8:20 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=10.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=B26AVNXB2XPTU, tax=0.00, address_street=roms590@hotmail.com, payment_date=11:19:55 Oct 08, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=27420, first_name=romain, mc_fee=0.61, address_country_code=FR, address_name=romain dubrulle, notify_version=3.0, custom=246558, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=gisors, quantity=7, verify_sign=ACUe-E7Hjxmeel8FjYAtjnx-yjHAAqfohqIkV1NIQpkmBOOgW32Xf2ND, payer_email=roms590@hotmail.com, txn_id=20119600VB281740G, payment_type=instant, last_name=dubrulle, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=246558, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 08 Oct 2010 18:20:01 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=dXNKY4nmllp_avZZVWxpohCr0FdrQ_1mkk0RyCza4QvpLYCF4mDmocwaxwcpvdotOOZYYAA8i6hUa4Spww9e1BWXNj0v8tjMa3NyXYN-4kd_20XV0lgV7X0HAKrsG8Sfjwu4E0%7cPW1A_glHZGQ7KJXTitKicsCqa-55GUyPmYR11BG2rsXIP6rJ18DlfhkDX847loDPzGFBqW%7cCG7t2U_Qb09QS4crLEa7JY9KZXjNFfyaSoUJq329McwOFgcRaumNqlJji4hfhZbPrLe6FG%7c1286562001; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 05-Oct-2020 18:20:01 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 03-Oct-2030 18:20:01 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/09/2010 5:32 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=22.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=4KLKZXESRSW6Q, tax=0.00, address_street=14 fbg reclus, Le centenaire entrÈ b
+Apt 45, Ètage 9, payment_date=08:32:33 Oct 09, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=73000, first_name=prad, mc_fee=1.02, address_country_code=FR, address_name=prad jean pierre, notify_version=3.0, custom=242963, payer_status=verified, business=serveur.odyssee@gmail.com, address_country=France, address_city=Chambery, quantity=15, verify_sign=AQU0e5vuZCvSg-XJploSa.sGUDlpAZpvVb-4ACe7rcOyj6Ktzcv-BWqx, payer_email=abdnasser207@live.fr, txn_id=87M67168W37289417, payment_type=instant, last_name=jean pierre, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=242963, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 09 Oct 2010 15:32:43 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=50VpRwAF42LW8LE7eyuGd0Okf83xqEIfBoJq3l6Eug_gsnEgwla0CGP5fzVst6ULwB32N30bMsXkIJ5ZpC3WCtll8eviLbebib26W_AHn9V1MYDOJkPvAiUCtDbn2hmicSKCCm%7c9wgCdqoryKB8PUVCKGfVjTJ217xi1o3j2dI8MY9DqoJH3WLS4apgJnYK5KG5rfO0WDTSHG%7cQXeZrgk4THGQZNKooyCzXCaQOAoav9g1nJYCZSv3r_BKbBqYdM6cf5v3kPb4DUminWqutG%7c1286638364; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Tue, 06-Oct-2020 15:32:44 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 04-Oct-2030 15:32:44 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/09/2010 6:27 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=30.00, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=SKD4JE4PR8QYY, tax=0.00, address_street=89 chemin des maures et des adrets, appartement C3, payment_date=09:27:09 Oct 09, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=06530, first_name=StÈphane, mc_fee=1.27, address_country_code=FR, address_name=StÈphane MONTLAHUC, notify_version=3.0, custom=253544, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=PEYMEINADE, quantity=20, verify_sign=Ai1PaghZh5FmBLCDCTQpwG8jB264A0Yki.qljZvBJqH5Kiz4mR.66nzi, payer_email=steph.m3009@wanadoo.fr, txn_id=8NK76352RR911073W, payment_type=instant, last_name=MONTLAHUC, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=253544, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 09 Oct 2010 16:27:20 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=-bjb3wvoF0VEzV8SL88oGJ_yDufXDMbFBpIbZ7ULkUP8BMz4ALjFtoBhxSNtNQ9hp2DRC2atPwnWcmPi0vpB9_RNBlGo2iJEWYv5OSE5KlcTlIa3fiuzDzXpCMe84Q6SS5m6bm%7cU1XtCstoAODui8F2-cV_0Ihzqh3okyCqW-mDTnBEw_6jc7W8q6hLqkhtzE0PQSfQgJYWIW%7cKjjsE6LFsktTPNj3AWuVDatkMHj5U8-yHW7V91Hmk5JwFTB_Am3iu6Cq1VBaceG22EJop0%7c1286641640; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Tue, 06-Oct-2020 16:27:20 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 04-Oct-2030 16:27:20 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/09/2010 7:45 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=3.00, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=K5DG7V9CQUBZU, tax=0.00, address_street=7 place des 7 fontaines, payment_date=10:45:24 Oct 09, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=95150, first_name=Julie, mc_fee=0.35, address_country_code=FR, address_name=Julie Tournier, notify_version=3.0, custom=8793, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=Taverny, quantity=2, verify_sign=AoS.E.01W2nV8a9ir19jmW2JxA6YAyZraR4Fy4CFPyO-xVuqUX8gnDsv, payer_email=julietournier@yahoo.fr, txn_id=8XH88352TL112115H, payment_type=instant, last_name=Tournier, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=8793, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 09 Oct 2010 17:45:40 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=ajDdUba6cL_sFRcyNaitwJ-ZrTZlefSgs_ItsxNtBouFryt5BqeiTAiXLb9KdEdJrVaOh7e5b1S3GNYMqjHGf5PIIlT3aq-9YcX8t4QgfapydMPdI-Mc4AouJo649vQnE47ZnG%7cuZqH-WwhMCFwuPOUZ9HqWRjUcVNLcy2OW-KzZywpnNJZRF5RigJ8Ah5CN5YJe2L35DHBs0%7cl-NEa1Pg-hovdi6fiapkn3OG2aq9jY9gIj4y5GMfT9XPT2Jv1vAW3zSWqBQMf7ONkLjQom%7c1286646341; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Tue, 06-Oct-2020 17:45:41 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 04-Oct-2030 17:45:41 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/09/2010 10:35 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=30.00, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=LKPC6UGMCK6Q8, tax=0.00, address_street=rue des courlis, payment_date=13:34:40 Oct 09, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=62600, first_name=thiery, mc_fee=1.27, address_country_code=FR, address_name=thiery laplanche, notify_version=3.0, custom=262522, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=berck, quantity=20, verify_sign=AVfSQ5PLCwiNa3zy.rOy.Na-EbloAm9CCeKaGJYOprqlQz9M1HXgoYi2, payer_email=laitier@laposte.net, txn_id=4G718787U5710043K, payment_type=instant, last_name=laplanche, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=262522, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 09 Oct 2010 20:34:53 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=5EM-DgzijuQt6PEYpmNwpX6Xl8eAJpMW-YZYYbbKPpbG_VD08_Fl-9a5gcayu4qKM7jcuexRUf191J67ag85o5PVK3G3R7Nn5XG9xa-rubBjgrcQsbp7pfLWXHMR5yKCV3qYbW%7c3DWLuNwDecGaYB-EdHY8rBkdkekm-2loErSVFAsbMI51t_IRjZ6TEnuxpvFCfyo5ryU5AG%7cWOgeGyQon1zVsJogiWe5xmzC8_2IG3ERDzSDUKhVPnqtHSfc7klJE-et5za1EEwPqDKPpG%7c1286656494; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Tue, 06-Oct-2020 20:34:54 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 04-Oct-2030 20:34:54 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/10/2010 6:45 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=4.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=RMDKESQB3RG52, tax=0.00, address_street=613 St-Germain Est, payment_date=21:44:53 Oct 09, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=G5L 1G6, first_name=Jerome, mc_fee=0.43, address_country_code=CA, address_name=Jerome Poirier, notify_version=3.0, custom=260910, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=Canada, address_city=Rimouski, quantity=3, verify_sign=A.RP.fom32LqmnIkvDjObbdyB0lUAlMK-zBoVoDhn6KlkWZpjtnefcRk, payer_email=jerpoir20@hotmail.com, txn_id=7KR58228AR151460M, payment_type=instant, last_name=Poirier, address_state=Quebec, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=CA, handling_amount=0.00, transaction_subject=260910, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 10 Oct 2010 04:44:56 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=9rJYKm42krLM8cgzhX3RWa73ynnZ271o3zL_Zur2IrsG5cJ6mx94yCI-Anzy1dNAY_PgGK8yHMYTq8E1A8-Np2avUzcyQBjlRIp0rcRilhzhjmq-J2hEzTD6AxybdVIQlLjyYm%7cNbYIrmvR2xfM0OQpjdcGWgjheUbZuZX2AFoe2c0MZ80mF6F4n6UM2k7j2_ZqSjdXmAjwVW%7cPcfAcrdEvapaGqD7S2hZdV60bWHvRuxbYwL7XxUALN36bZR9cGwn-qzM2JCqinJWEVQHN0%7c1286685897; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 07-Oct-2020 04:44:57 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 05-Oct-2030 04:44:57 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/11/2010 12:15 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=15.00, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=5P2Y4QDSYVSE6, tax=0.00, address_street=tauziette, payment_date=15:14:43 Oct 10, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=47600, first_name=zeutzius, mc_fee=0.76, address_country_code=FR, address_name=zeutzius stephane, notify_version=3.0, custom=240724, payer_status=verified, business=serveur.odyssee@gmail.com, address_country=France, address_city=Nerac, quantity=10, verify_sign=A--8MSCLabuvN8L.-MHjxC9uypBtAog7K4wXpO51bNR1zr.2KcOfiixd, payer_email=ptitroll@hotmail.com, txn_id=85T44652B0858811E, payment_type=instant, last_name=stephane, address_state=Aquitaine, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=240724, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 10 Oct 2010 22:14:50 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=5CkD7tI0Q3AmFkK10lk0-6q1gmii8Z4GQDU2sImhGjATAwWnKxw-Z-NgSdCNRL231Er8LJoV6kDQfoP-4k2K7xiZ_JT9Ot22R733PCYv-arEH5C_AKpf5Dop2Wd08WGfw9pqUm%7c4NJ4QfhpDTQRDQUeXo0lKU2bIz-oLg896MBJ_aI5htEktHQUekRGeiYGy0MLIFvoEi1-CW%7cTFcFrpVP2OLXrDJLeAyEd1UqTC07YSLrrXTkfgoXm70fnCYIXBEuxXMizoC-YOrSdI-qD0%7c1286748891; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 07-Oct-2020 22:14:51 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 05-Oct-2030 22:14:51 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/11/2010 9:13 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=12.00, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=J5VLGMD8Q879G, tax=0.00, address_street=17, le champ dufour, payment_date=12:13:20 Oct 11, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=50810, first_name=JÈrÈmy, mc_fee=0.66, address_country_code=FR, address_name=JÈrÈmy Levesque, notify_version=3.0, custom=23400, payer_status=verified, business=serveur.odyssee@gmail.com, address_country=France, address_city=St Jean des Baisants, quantity=8, verify_sign=ACUe-E7Hjxmeel8FjYAtjnx-yjHAAkwOBu2GgaSIU7RMI1uLfzwMnFHl, payer_email=grm.levesque@gmail.com, txn_id=5K174665UF982314X, payment_type=instant, last_name=Levesque, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=23400, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 11 Oct 2010 19:13:27 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=B07L0xVkO265KdTC0ZAZp-ColqaFnhJmLObpujXTVwtrDjD5hx59S3Oiz2TZlVg0zpBfxwT5MfRRg1MJLBrNaeQ_adg0ZnAf_uVnwgL6ZTFajlAGRwE4YIfzh36_qjq8k-TJL0%7cjDJPl3Q0dDEeZvVS13l-5HSseKw69hlJNRABFf9WL0VA3RGGevkMap97ks95cEziumRXum%7cz4d7oF_pcwTEe7OPzlJohCw00hEAoShuUNAEx08dBSyHrMtV3sCMYyOCRGYzaBN58CxdXG%7c1286824407; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Thu, 08-Oct-2020 19:13:27 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 06-Oct-2030 19:13:27 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/11/2010 11:20 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=30.00, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=M4UUUW758ZQWG, tax=0.00, address_street=17 allÈe de menars, payment_date=14:20:16 Oct 11, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=41220, first_name=Valentin, mc_fee=1.27, address_country_code=FR, address_name=Valentin Chotel, notify_version=3.0, custom=262101, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=Saint Laurent Nouan, quantity=20, verify_sign=ACUe-E7Hjxmeel8FjYAtjnx-yjHAAkMS-E.8qRY9d953UtKwJJ9LH5WO, payer_email=slipkorn_41@hotmail.fr, txn_id=3TA80461A8437131X, payment_type=instant, last_name=Chotel, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=262101, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 11 Oct 2010 21:20:22 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=NbC_u94SZwng37ZTF4Pz7WlY2N0vo5a088R6Q-oWeyXxgLjgR5GHleBV5Rs4EjRE9paZrYz-WzqPvbKO-PDcIRehGmh2f0EgnfmrNh1RRCpHKwMA38i0AYJe8eQMXqy2B-n-kG%7c0UXFQIJlGj_t_3uGtQQB3KTjSAC0K6ohBCTngXG2iPVYG0tjeE9XTDcB8sy5bKeeLypHl0%7co_FoHAbd-0V9w2DEV0m0p8E5NuyhdNt6nmKrGGW9zSODQVub23tqEE16UM24wD_lROllsm%7c1286832022; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Thu, 08-Oct-2020 21:20:22 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 06-Oct-2030 21:20:22 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/12/2010 1:39 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=1.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=UB5YANCE3KA7G, tax=0.00, address_street=9 chaussÈe de cÈsar, payment_date=04:39:19 Oct 12, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=18500, first_name=virginie, mc_fee=0.30, address_country_code=FR, address_name=virginie caillat, notify_version=3.0, custom=16283, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=mehun-sur-yËvre, quantity=1, verify_sign=ARyNDMbKwa-zLx7AtfPa-etrhyTVAcuKn5K2TAA.-gvWxI45z1G7fenq, payer_email=viviclar.18@hotmail.fr, txn_id=3KP79979PJ6032813, payment_type=instant, last_name=caillat, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=16283, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 12 Oct 2010 11:39:26 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=ZZq7xK23odxayyJnQaN8ZnErr5KIc9vRmHnEvUzZ2gbvrfewN1Je49kc9iRR2r631bk_Y3-xtc2OeCcJzwgfRE6F4idQIrqu6a9t6OLMafL3VqHR-X1buhyUVVi0AWAlE8RL7W%7cGTu0t5pB-hZxfIz7JfeE_D6fIMUSAzr9pVK6PZ_TeWefsnAfAwonUQcqOoblEKua64m5wG%7cYzBrZl1oMPwYIG3bhfuf7lLILZkfk--B1KvYaYJqoFHFNHkjWdk-WTB0Jq1W287PM9G2Dm%7c1286883566; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 09-Oct-2020 11:39:26 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Mon, 07-Oct-2030 11:39:26 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/12/2010 2:05 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=4.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=FRDJAP889H6BS, tax=0.00, address_street=23 allÈe des Abbesses, payment_date=05:05:36 Oct 12, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=76133, first_name=hugo, mc_fee=0.40, address_country_code=FR, address_name=hugo vernetti, notify_version=3.0, custom=261295, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=manÈglise, quantity=3, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31A7nqzJ2RPnP8cnWHAyC5iqkAIVOn, payer_email=hugo_vernetti@hotmail.com, txn_id=6R797642SJ771184E, payment_type=instant, last_name=vernetti, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=261295, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 12 Oct 2010 12:05:38 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=GdYVTO11e8RRK-7f6w7bFZL3zoa-jnQnCMuUA00MihJMaPPLfnisyT1ukQ7r5IALt7QxyH315fFN-V6IY8cEDgmy6qykStjJJqrU0yT5DCk7cypi7m3mdaFgkBfqjPRS1YLSSG%7cV7vUF3-xvj8dVOPUlWFBIkxRjwGodXYaxvVBc9RUfzvmLEzDBfpghuCKJz9CW5aE44z9r0%7cOaYuQ7C0goeeZ2zOJGD6glGSqPdhUX6lWR9xCrS-eyvRVqhg9J77F_WRJxpgD8l6K_9DFm%7c1286885139; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 09-Oct-2020 12:05:39 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Mon, 07-Oct-2030 12:05:39 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/13/2010 12:01 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=4.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=LWC7DYHFTHAGW, tax=0.00, address_street=35 rue andrÈ thierry, payment_date=03:00:51 Oct 13, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=77600, first_name=Eric, mc_fee=0.40, address_country_code=FR, address_name=Eric Martin, notify_version=3.0, custom=10321, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=Guermantes, quantity=3, verify_sign=AGs52InFHk3cJ5j80u2Udq.A26J4AHR3C-1mCUK6jUvnnER6rv0CxceT, payer_email=puppet-dream@hotmail.fr, txn_id=8NA11224V0728124D, payment_type=instant, last_name=Martin, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=10321, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 13 Oct 2010 10:01:00 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=P9Hpvyfnup6hnCJXAm2X0qNZ9KTnNeW59VhQ6lvwtmzVgdtu7TKa-k5LM8Ivksf6YNm-vkcl0VSxSjfCIQuBPyLurr0KLL_sdIFdwqElvd1uffsSNLLvrtFew2X-Ol7Wh2bLM0%7c-UZt81juMSoniHdmDQX9PwLly2ap_R-E6Q7CjT6mnVDUxNvazwjM--gkykyIvKFlYCQ7h0%7cZib2c7faxCRL_ku_i2nH57AP9AKw1eYSrTokDJtlMxXpc5r_BCh62XC8V0SLDMqPD13gDW%7c1286964060; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 10-Oct-2020 10:01:00 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 08-Oct-2030 10:01:00 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/14/2010 1:54 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=9.00, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=5M8FGFRRM2E82, tax=0.00, address_street=46 bd auguste allonneau, payment_date=16:54:07 Oct 13, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=49100, first_name=eddie, mc_fee=0.56, address_country_code=FR, address_name=eddie chavaroux, notify_version=3.0, custom=9338, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=angers, quantity=6, verify_sign=AHPcY3ymu6pC1Dddz970dQRt38T1A4O.g76htO58sOhocEybvFYa55Gu, payer_email=harryeddie@hotmail.fr, txn_id=2CB55397Y6541074B, payment_type=instant, last_name=chavaroux, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=9338, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 13 Oct 2010 23:54:17 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=qOLz89okjnsTlIW7HLBErTnAGy57BYK8r9-UkYD0cFntthQF-jTPtg-rkutesBGGR8YnboYGBlapONnqnwLb3NFNXOELOYFDRwEMR_9jq85dh3in8EWucGzxpC36NjpP1eE5AW%7cCKDhUGq-FPYDvWqEvMY2G2PzOVTZxS_d-fhZxXiVpM2ZstQjT-axNxlnC_y_RVfTl_w0rW%7ciB9Yf3Nf8D92ZKCs-JrAV8sF6s8ZvxwF3UmvbXHT7I7xT3w5aAj3pXYJ5d5VqTYniSYIZ0%7c1287014057; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 10-Oct-2020 23:54:17 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 08-Oct-2030 23:54:17 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/14/2010 3:35 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=1.50, protection_eligibility=Ineligible, address_status=unconfirmed, payer_id=F7YGX7ZNPDURL, tax=0.00, address_street=120b rue gilles bouvier, payment_date=06:34:42 Oct 14, 2010 PDT, payment_status=Completed, charset=windows-1252, address_zip=76300, first_name=Antoine, mc_fee=0.30, address_country_code=FR, address_name=Antoine Touch, notify_version=3.0, custom=259789, payer_status=unverified, business=serveur.odyssee@gmail.com, address_country=France, address_city=Sotteville les rouen, quantity=1, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31ATaFo0Rra9BNsKS1vkTJ-LRzq8Jh, payer_email=medor_1992@hotmail.com, txn_id=5C725039LS534550U, payment_type=instant, last_name=Touch, address_state=, receiver_email=serveur.odyssee@gmail.com, payment_fee=, receiver_id=3RL4G7QB4NLW2, txn_type=web_accept, item_name=Lot de 2 points Odyss√©e Serveur, mc_currency=EUR, item_number=, residence_country=FR, handling_amount=0.00, transaction_subject=259789, payment_gross=, shipping=0.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 14 Oct 2010 13:34:48 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=IFxIxtpcHIfZI7bjp_Q2XFqjMlZAdh9e9i8Ij7O6-E85vZpf1Vp16mnOD3XEVYZPHLy3pm4ivN95txHssweKOmPvyrGoronY1UJu8zB8lua8LlZ72FkXRatEZPNp5VKaPMhQ5W%7cOpjFJ92pUmNfTont0fqY-kYYB7ExefEnLTkdeZRYtWhRnMyNJ8bq-jmJZSZb6fJsZ3HJuW%7cGu7bsRwwjI5bVd-9e_56pQIAh_q8I9KTOS-E7DTR665BsU3S-MBABYwXe45rdDhtgJGqw0%7c1287063289; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 11-Oct-2020 13:34:49 GMT; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 09-Oct-2030 13:34:49 GMT; domain=.paypal.com; path=/; HttpOnly
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+

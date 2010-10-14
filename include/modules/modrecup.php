@@ -1,0 +1,1 @@
+<a href="../../recuperation.php" title="Rejoignez l'epopee odyssee en effectuant une recuperation de perso simple et gratuite"> <img src="medias/images/modrecup.jpg" alt="Rejoignez l'épopée odyssée en effectuant une récupération de personnage simple et gratuite" longdesc="Rejoignez l'épopée odyssée en effectuant une récupération de personnage simple et gratuite" /> </a>

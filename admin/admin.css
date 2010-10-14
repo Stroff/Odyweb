@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* These styles just pretty up the page a bit. */
+body {
+   font: 82.5%/1.2 Arial, Helvetica, sans-serif;
+   }
+ a
+ {
+	 color:#69F;
+ }
+ a:hover
+ {
+	 color:#699;
+ }
+
+#wrap {
+   font-size: 1.3em;
+   width: 700px;
+   padding: 50px;
+   margin: 0 auto; 
+   background-color: #fff;
+   position: relative; }
+
+/* These styles create the dropdown menus. */
+h1
+{
+	color:#09F;
+}
+#navbar {
+   margin: 0;
+   padding: 0;
+   height: 1em; }
+#navbar li {
+   list-style: none;
+   float: left; }
+#navbar li a {
+   display: block;
+   padding: 6px 14px;
+   background-color: #5e8ce9;
+   color: #fff;
+   text-decoration: none; }
+#navbar li ul {
+   display: none; 
+   width: 10em; /* Width to help Opera out */
+   background-color: #69f;}
+#navbar li:hover ul, #navbar li.hover ul {
+   display: block;
+   position: absolute;
+   margin: 0;
+   padding: 0; }
+#navbar li:hover li, #navbar li.hover li {
+   float: none; }
+#navbar li:hover li a, #navbar li.hover li a {
+   background-color: #69f;
+   border-bottom: 1px solid #fff;
+   color: #fff; }
+#navbar li li a:hover {
+   background-color: #8db3ff; }
+.search-box
+{
+	float:right; border:1px solid #5e8ce9; background-color: #a7c1f5; color: #fff; padding:5px; text-align:center; width:30%; margin-bottom:30px;
+}

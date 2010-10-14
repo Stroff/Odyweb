@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Horizontal Carousel</title>
+<script type="text/javascript" src="mootools.svn.js"></script>
+
+<script type="text/javascript">
+window.addEvent('domready', function(){ 
+	  var totIncrement		= 0;
+	  var increment			= 212;
+	  var maxRightIncrement	= increment*(-6);
+	  var fx = new Fx.Style('myList', 'margin-left', {
+				duration: 1000,
+				transition: Fx.Transitions.Back.easeInOut,
+				wait: true
+	   });
+	   
+	   //-------------------------------------
+	  // EVENTS for the button "previous"
+	  $('previous').addEvents({ 
+          'click' : function(event){ 
+		  if(totIncrement<0){
+					totIncrement = totIncrement+increment;
+					fx.stop()
+					fx.start(totIncrement);
+				}
+			}			  	  
+      }); 
+	 
+       //-------------------------------------
+	  // EVENTS for the button "next"
+  	  $('next').addEvents({ 
+          'click' : function(event){ 
+			 if(totIncrement>maxRightIncrement){
+				 totIncrement = totIncrement-increment;
+		    	fx.stop()
+				fx.start(totIncrement);
+			}
+          }		  		  
+      })
+
+	 
+});
+	</script>
+	
+	
+<style type="text/css">
+body{
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#333333;
+	background-color:#FFFFFF;
+}
+a:link, a:visited, a:hover{color:#0066CC; text-decoration:none;}
+#stage{width:632px; overflow: auto;overflow-x:hidden; overflow-y:hidden; height:200px; margin:0 auto;}
+#slider-buttons{width:632px; margin:0 auto;}
+	#myList{width:2000px; border:0; margin:0; padding:0; left:400px;}
+	#myList li{
+		list-style:none; 
+		margin:0; 
+		padding:0; 
+		border:0; 
+		margin-right:4px;
+		padding:4px; 
+		background:#DEDEDE;
+		float:left;
+		width:200px;
+		height:200px;
+		}
+</style>
+</head>
+
+<body>
+<h3>More tutorial here: <a href="http://woork.blogspot.com">http://woork.blogspot.com</a></h3>
+<p>Click on Previous or Next Button </p>
+<div id="stage">
+<ul id="myList">
+    <li id="l1">Box 1</li>
+    <li id="l2">Box 2</li>
+    <li id="l3">Box 3</li>
+    <li id="l4">Box 4</li>
+	<li id="l5">Box 5</li>
+    <li id="l6">Box 6</li>
+    <li id="l7">Box 7</li>
+	<li id="l8">Box 8</li>
+    <li id="l9">Box 9</li>
+    <li id="l10">Box 10</li>
+</ul>
+</div>
+<div id="slider-buttons">
+<a href="#" id="previous">Previous</a> | <a href="#" id="next">Next</a>
+</div>
+</body>
+</html>

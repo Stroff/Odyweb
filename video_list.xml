@@ -1,0 +1,5 @@
+<!-- <video src="{Fichier Vidéo Web(FLV)}" img="{Fichier Image Web(JPEG, GIF, PNG, BMP) de résolution 121x82}" /> -->
+
+<videoList>
+	<video src="Reflets_Odyssee.flv" img="medias/videos/Reflets_Odyssee.JPG" />
+</videoList>
