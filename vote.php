@@ -114,14 +114,13 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
     </tr>
 <?php
 $sql = "SELECT accounts.username, 
-	accounts.points_top_votes
-FROM accounts
-ORDER BY accounts.points_top_votes DESC LIMIT 10";
+		accounts_vote_saison.nombre_votes
+	FROM accounts_vote_saison INNER JOIN accounts ON accounts_vote_saison.id_account = accounts.id WHERE accounts_vote_saison.id_vote_saison = '".$id_vote_saison."' ORDER BY accounts_vote_saison.nombre_votes DESC LIMIT 10";
 $liste_comptes = mysql_query($sql) or die (mysql_error()); 
 while($compte = mysql_fetch_array($liste_comptes)){
 	echo '<tr>
         <td>'.$compte['username'].'</th>
-        <td>'.$compte['points_top_votes'].'</th>
+        <td>'.$compte['nombre_votes'].'</th>
     </tr>';
 }
 ?>	
