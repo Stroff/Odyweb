@@ -29,7 +29,7 @@ fclose($monfichier);
 $connexion = mysql_connect($host_site, $user_site , $pass_site);
 mysql_select_db($site_database ,$connexion);
 mysql_query("SET NAMES 'utf8'");
-$resultat  = mysql_query("SELECT valeur FROM configuration WHERE nom='points_par_votes' OR nom='temp_entre_votes' OR nom = 'pp_par_votes'");
+$resultat  = mysql_query("SELECT valeur FROM configuration WHERE nom='points_par_votes' OR nom='temp_entre_votes' OR nom = 'pp_par_votes' OR nom = 'id_vote_saison'");
 $points_par_vote = mysql_fetch_array($resultat);
 $points_par_vote = $points_par_vote[0];
 
@@ -39,9 +39,12 @@ $temp_entre_votes = $temp_entre_votes[0];
 $pp_par_votes = mysql_fetch_array($resultat);
 $pp_par_votes = $pp_par_votes[0];
 
+$id_vote_saison = mysql_fetch_array($resultat);
+$id_vote_saison = $id_vote_saison[0];
+
 $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
 
-	if ($_POST['token']&&$_POST['token']<>'') {
+	if (isset($_POST['token'])&&$_POST['token']<>'') {
 		$mon_token = mysql_escape_string ( $_POST['token']);
 		$check_token = mysql_query("SELECT id FROM accounts WHERE key_activation= '".$mon_token."-4PGkOkg'");
 		if(mysql_num_rows($check_token)==1 && $timestamp_actuel>=$timestamp_db) {
@@ -51,7 +54,17 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
 				$log_vote = mysql_query("INSERT INTO logs_votes SET username='".$compte_username."', temps_en_plus='".$temps_en_plus."', date=NOW()");
 			}
 
-			$resultat  = mysql_query("UPDATE accounts SET key_activation='',next_vote_date='".$prochain_vote ."',points=".$nouveau_nbr_points.",points_top_votes=points_top_votes+1,pp=pp+".$pp_par_votes." WHERE id='".$compte_id."' LIMIT 1") or die(mysql_error());
+			$resultat  = mysql_query("UPDATE accounts SET key_activation='',next_vote_date='".$prochain_vote ."',points=".$nouveau_nbr_points." WHERE id='".$compte_id."' LIMIT 1") or die(mysql_error());
+			
+			$check_top_vote = mysql_query("SELECT nombre_votes FROM accounts_vote_saison WHERE id_account= '".$compte_id."' AND id_vote_saison='".$id_vote_saison."'");
+			if (mysql_num_rows($check_top_vote)==0){
+				//insert alors
+				$top_vote  = mysql_query("INSERT INTO accounts_vote_saison SET nombre_votes=nombre_votes+1, id_account='".$compte_id."', id_vote_saison='".$id_vote_saison."'") or die(mysql_error());
+			}else {
+				// update alors
+				$top_vote  = mysql_query("UPDATE accounts_vote_saison SET nombre_votes=nombre_votes+1 WHERE id_account='".$compte_id."' AND id_vote_saison='".$id_vote_saison."' LIMIT 1") or die(mysql_error());
+			}
+			
 			echo "<p>Vous allez être redirigé vers la page de <a href=\"http://www.rpg-paradize.com/?page=vote&vote=5683\">Rpg Paradize</a> pour finir votre vote. Vous avez maintenant ".$nouveau_nbr_points." points</p>
 			<META http-equiv='refresh' content='0; URL=http://www.rpg-paradize.com/?page=vote&vote=5683'>";
 		} else {

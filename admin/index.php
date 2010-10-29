@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<?php $secure_lvl=2;
+﻿<?php 
+$secure_lvl=2;
 include '../secure.php';
 include_once '../include/php/fonctions.php';
 ?>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-  <title>Page temporaire Administration</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Page temporaire Administration</title>
 </head>
 
 
@@ -20,7 +20,7 @@ include_once '../include/php/fonctions.php';
 	$nom = 'Développeurs';
 	$email = 'dev@odyssee-serveur.com';
 }
-if($_SESSION['gm']==6){
+if($_SESSION['gm']==6 || $_SESSION['gm']==5){
 	$nom = 'Administration';
 	$email = 'admin@odyssee-serveur.com';
 }
@@ -74,37 +74,19 @@ Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a
 
 <form action='script1.php' method='POST'>
   <br>
-<textarea name='texte' cols='37' rows='6'>
-</textarea><br>
-<input type=text name="pseudo">
-<input type='submit' value='Valider'>
-</form>
-
-
-	<?php
-// on se connecte à MySQL
-$db = mysql_connect('host', 'root', 'pass');
-
-// on sélectionne la base
-mysql_select_db('site',$db);
-
+<textarea name='texte' cols='37' rows='6'><?php
+$connexion = mysql_connect($host_site, $user_site , $pass_site);
+mysql_select_db($site_database ,$connexion);
+mysql_query("SET NAMES 'utf8'");
 // on crée la requête SQL
 $sql = "SELECT valeur FROM configuration WHERE nom ='bloc_note'";
-
 // on envoie la requête
 $req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
-
-// on fait une boucle qui va faire un tour pour chaque enregistrement
-while($data = mysql_fetch_assoc($rep))
-    {
-    // on affiche les informations de l'enregistrement en cours
-    echo '<b>'.$data['nom'].' '.$data['valeur'];
-    }
-
-
-// on ferme la connexion à mysql
-mysql_close();
-?> 
-
+$data = mysql_fetch_array($req);
+echo $data["valeur"];
+?>
+</textarea><br>
+<input type='submit' value='Valider'>
+</form>
 </body>
 </html>
