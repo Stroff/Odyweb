@@ -73,7 +73,11 @@ Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a
 
 
 <form action='script1.php' method='POST'>
-  <br>
+<head>
+<span style="color: rgb(255, 0, 0);">Bloc-Note pour mettre
+les infos à partager :</span>
+</head> 
+ <br>
 <textarea name='texte' cols='37' rows='6'><?php
 $connexion = mysql_connect($host_site, $user_site , $pass_site);
 mysql_select_db($site_database ,$connexion);
