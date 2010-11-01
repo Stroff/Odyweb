@@ -1,6 +1,8 @@
 <?php
 exit();
-$connexion = mysql_connect('localhost', 'ipbsite' , 'eze13xsqx56zd44e42dsqdq');
+include '../config/config.php';
+$connexion = mysql_connect($host_site, $user_site , $pass_site);
+mysql_select_db($site_database ,$connexion);
 //252811 
 $sql = mysql_query("SELECT username, id FROM site.accounts WHERE id > 259174");
 // pour tous les comptes

@@ -1,6 +1,8 @@
 <?php
-$connexion = mysql_connect('serveur.odywow.com', 'site' , 'errhkncsqd53535dzede');
-//total des joueurs
+include '../config/config.php';
+$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
+mysql_select_db($wow_characters ,$connexion);
+mysql_query("SET NAMES 'utf8'");//total des joueurs
 $sql = mysql_query("SELECT race FROM characters.characters WHERE online=1");
 $race = array (
 	1 => 'Humain',
@@ -41,7 +43,8 @@ $s -= $m*60;
 if ($d) $uptime = abs($d) . 'j ';
 if ($h) $uptime .= abs($h) . 'h ';
 if ($m) $uptime .= abs($m) . 'm ';
-$connexion = mysql_connect('188.165.223.35', 'ipbsite' , 'eze13xsqx56zd44e42dsqdq');
+$connexion = mysql_connect($host_site, $user_site , $pass_site);
+mysql_select_db($site_database ,$connexion);
 $sql = mysql_query("UPDATE site.statistiques SET valeur='".$uptime."' WHERE nom = 'uptime'");
 $sql = mysql_query("UPDATE site.statistiques SET valeur='".$total_online."' WHERE nom = 'joueurs_online'");
 $sql = mysql_query("UPDATE site.statistiques SET valeur='".$faction['Horde']."' WHERE nom = 'joueurs_online_horde'");
