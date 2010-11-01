@@ -1,4 +1,4 @@
-﻿<?php 
+﻿<?php
 $secure_lvl=2;
 include '../secure.php';
 include_once '../include/php/fonctions.php';
