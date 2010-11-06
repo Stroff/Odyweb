@@ -10,7 +10,30 @@ $(document).ready(function(){
 	$(":input[name='add']").click(function () { 
       $("div[id='file']:last").clone(true).insertAfter("div[id='file']:last");
 	});
-	
+	$("#guid_perso").change(function() {
+		if ($("select#guid_perso").val() == '' ) {
+			return false;
+		}
+		var post_string = "valeur=" +  $("select#guid_perso").val(); 
+		post_string += "&type=classe_race";
+			// Send the request and update sub category dropdown  
+			$.ajax({  
+				type: "POST",  
+				data: post_string,  
+				dataType: "json",  
+				cache: false,  
+				url: 'ajax_recup_race_classe.php',  
+				timeout: 2000,  
+				error: function() {  
+					alert("Failed to submit");  
+				},  
+				success: function(data) {  
+					//alert(data); 
+					//	$("#race").val(data.perso.race);
+					//	$("#classe").val(data.perso.classe);
+				}  
+			});  
+		});
 	$("#form").validationEngine({
 	inlineValidation: false,
 	success :  true,
@@ -31,7 +54,7 @@ $(document).ready(function(){
 
 
    <label class="form-fill"> Perso sur le serveur :</label>
-    <div class="form-fill2">  <SELECT name="guid_perso"> 
+    <div class="form-fill2">  <SELECT name="guid_perso" id="guid_perso"> 
 		<?php
 		$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 		mysql_select_db($wow_characters ,$connexion);
@@ -46,7 +69,7 @@ $(document).ready(function(){
 
 	<br />
    <label class="form-fill"> Race (personnage sur le serveur) :</label>
-   	 <div class="form-fill2"> 	<SELECT name="race">
+   	 <div class="form-fill2"> 	<SELECT name="race" id="race">
 			<OPTION VALUE="1">Humain</OPTION>
 			<OPTION VALUE="2">Orc</OPTION>
 			<OPTION VALUE="3">Nain</OPTION>
@@ -61,7 +84,7 @@ $(document).ready(function(){
 
 	<br />
    <label class="form-fill"> Classe :</label>
-    <div class="form-fill2">  <SELECT name="classe">
+    <div class="form-fill2">  <SELECT name="classe" id="classef">
 		<OPTION VALUE="1">Guerrier</OPTION>
 		<OPTION VALUE="2">Paladin</OPTION>
 		<OPTION VALUE="3">Chasseur</OPTION>
