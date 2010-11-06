@@ -68,8 +68,8 @@ $(document).ready(function(){
 
 
 	<br />
-   <label class="form-fill"> Race (personnage sur le serveur) :</label>
-   	 <div class="form-fill2"> 	<SELECT name="race" id="race">
+   <label class="form-fill"> Race ( /!\ du personnage niveau 1 sur le serveur) :</label>
+   	 <div class="form-fill2"> 	<SELECT name="race"  id="race">
 			<OPTION VALUE="1">Humain</OPTION>
 			<OPTION VALUE="2">Orc</OPTION>
 			<OPTION VALUE="3">Nain</OPTION>
