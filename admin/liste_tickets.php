@@ -31,14 +31,15 @@ include '../secure.php';
 <a href="index.php"> Retour a l'accueil </a> <br/>
 	<?php
 	include 'config/config.php';
+		
 		$sql = "SELECT DISTINCT t.guid, t.name, t.createtime, c.online 
 			FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.playerGuid) 
-			WHERE t.closed = 0 ORDER BY t.guid DESC";
+			WHERE t.closed = 0 ORDER BY c.online DESC, t.guid ASC";
 		$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 		mysql_select_db($wow_characters ,$connexion);
 		mysql_query("SET NAMES 'utf8'");
 		$resultats = mysql_query($sql);
-		echo '<p> Nombre de tickets : '.mysql_num_rows($resultats).'</p>
+		echo '<p> Nombre de tickets : '.mysql_num_rows($resultats).' <br/> Tickets en ligne: </p>
 		<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">';
 		echo '
 		<thead>
@@ -56,7 +57,7 @@ include '../secure.php';
 			echo '<td>'.$demande['name'].'</td>';
 			echo '<td>'.date('H:i:s d-m-Y', $demande['createtime']).'</td>';
 			echo '<td>';
-			if( $demande['online'] == 0 ) echo 'Hors ligne'; else echo 'En ligne';
+			if( $demande['online'] == 0 ) echo 'Hors ligne'; else  echo 'En ligne';
 			echo '</td>';
 			echo'</tr>';
 		}
