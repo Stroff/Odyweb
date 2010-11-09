@@ -10,30 +10,6 @@ $(document).ready(function(){
 	$(":input[name='add']").click(function () { 
       $("div[id='file']:last").clone(true).insertAfter("div[id='file']:last");
 	});
-	$("#guid_perso").change(function() {
-		if ($("select#guid_perso").val() == '' ) {
-			return false;
-		}
-		var post_string = "valeur=" +  $("select#guid_perso").val(); 
-		post_string += "&type=classe_race";
-			// Send the request and update sub category dropdown  
-			$.ajax({  
-				type: "POST",  
-				data: post_string,  
-				dataType: "json",  
-				cache: false,  
-				url: 'ajax_recup_race_classe.php',  
-				timeout: 2000,  
-				error: function() {  
-					alert("Failed to submit");  
-				},  
-				success: function(data) {  
-					//alert(data); 
-					//	$("#race").val(data.perso.race);
-					//	$("#classe").val(data.perso.classe);
-				}  
-			});  
-		});
 	$("#form").validationEngine({
 	inlineValidation: false,
 	success :  true,
@@ -48,9 +24,12 @@ $(document).ready(function(){
    <label class="form-fill"> Nom du perso de la récup :</label>
    <div class="form-fill2"> <input name="pseudo" type="text" id="pseudo" size="20" class="validate[required]" value="" /> </div> <br />
 	
-	
+
    <label class="form-fill"> Serveur d'origine :</label>
     <div class="form-fill2"> <input name="serveur" type="text" id="serveur" size="20" class="validate[required]" size="4" value="" /> </div> <br />
+
+   <label class="form-fill"> Niveau :</label>
+    <div class="form-fill2">  <input name="level" type="text" id="level" size="3" class="validate[required,custom[onlyNumber],length[0,2]]" value="" /> </div> <br />
 
 
    <label class="form-fill"> Perso sur le serveur :</label>
@@ -59,7 +38,7 @@ $(document).ready(function(){
 		$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 		mysql_select_db($wow_characters ,$connexion);
 		mysql_query("SET NAMES 'utf8'");
-		$persos = mysql_query("SELECT name,guid FROM characters WHERE account = '".$compte_id."'");
+		$persos = mysql_query("SELECT name,guid FROM characters WHERE account = '".$compte_id."' AND level < 30");
 		while ($perso = mysql_fetch_array($persos)) {
 			echo '<option value="'.$perso['guid'].'">'.$perso['name'].'</option>';
 		}
@@ -67,41 +46,7 @@ $(document).ready(function(){
 	</select></div> 
 
 
-	<br />
-   <label class="form-fill"> Race ( /!\ du personnage niveau 1 sur le serveur) :</label>
-   	 <div class="form-fill2"> 	<SELECT name="race"  id="race">
-			<OPTION VALUE="1">Humain</OPTION>
-			<OPTION VALUE="2">Orc</OPTION>
-			<OPTION VALUE="3">Nain</OPTION>
-			<OPTION VALUE="4">Elfe de la Nuit</OPTION>
-			<OPTION VALUE="5">Mort Vivant</OPTION>
-			<OPTION VALUE="6">Tauren</OPTION>
-			<OPTION VALUE="7">Gnome</OPTION>
-			<OPTION VALUE="8">Troll</OPTION>
-			<OPTION VALUE="10">Elfe de Sang</OPTION>
-			<OPTION VALUE="11">Draeneï</OPTION>
-		</select> </div> 
-
-	<br />
-   <label class="form-fill"> Classe :</label>
-    <div class="form-fill2">  <SELECT name="classe" id="classef">
-		<OPTION VALUE="1">Guerrier</OPTION>
-		<OPTION VALUE="2">Paladin</OPTION>
-		<OPTION VALUE="3">Chasseur</OPTION>
-		<OPTION VALUE="4">Voleur</OPTION>
-		<OPTION VALUE="5">Prêtre</OPTION>
-		<OPTION VALUE="6">Chevalier de la Mort</OPTION>
-		<OPTION VALUE="7">Chaman</OPTION>
-		<OPTION VALUE="8">Mage</OPTION>
-		<OPTION VALUE="9">Démoniste</OPTION>
-		<OPTION VALUE="11">Druide</OPTION>
-	</SELECT> </div> 
-
-	<br />
-   <label class="form-fill"> Niveau :</label>
-    <div class="form-fill2">  <input name="level" type="text" id="level" size="3" class="validate[required,custom[onlyNumber],length[0,2]]" value="" /> </div> <br />
-
-
+<br/>
     <label class="form-fill"> Métier 1 et niveau :</label>
  <div class="form-fill2"> <select name="metier1">
     <OPTION VALUE="0">Aucun</OPTION>
