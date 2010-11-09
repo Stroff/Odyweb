@@ -5,6 +5,7 @@ include '../secure.php';
 if($_SESSION['gm']==4 || $_SESSION['gm']==3){
  echo "<h1>juste pour les admins et resp, dsl</h1>";
  exit();
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -38,7 +39,7 @@ if (isset ($_POST["filtres"]))
 	// variable qui permet d'ajouter "and" dans la requete
 	$ajouter_and = 0;
 	
-	// si ya n'y a aucun MJ ou tous les mjs selectionné on affiche les commandes des 3 derniers jours
+	// si ya n'y a aucun MJ ou tous les mjs selectionné on affiche 
 	if (isset ($_POST["MJ"]) && $_POST["MJ"] !=0)
 	{
 		$sql .= "account_id = ".$_POST["MJ"]." ";
@@ -49,7 +50,7 @@ if (isset ($_POST["filtres"]))
 }
 $sql .= "date > DATE_SUB(CURDATE(), INTERVAL 3 DAY) ";
 $sql .= "ORDER BY id DESC";
-// r equete avec MJ selectionné
+
 $MJ= mysql_query("Select a.id, s.pseudo_forum from site.staff_usernames AS s, realmd.account AS a WHERE a.username LIKE s.nom_compte;"); ?>
 
 <form action="#" method="post">
