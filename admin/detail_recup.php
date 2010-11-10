@@ -129,7 +129,7 @@ require "../lib/phpmailer/class.phpmailer.php";
 			mysql_query($sql);
 			if($sql) {
 				echo '<p style="color:green;">Modification recup Ok</p>';
-				if (isset($_POST['rendre_pp'])) {
+				if (isset($_POST['bloque_compte'])) {
 					mysql_query("INSERT INTO accounts_blocage_recup SET id_compte = '".$id_compte."', id_recup='".$id_recup."', fin_blocage = DATE_ADD(NOW(),INTERVAL 7 DAY)");
 				}
 			} else {
