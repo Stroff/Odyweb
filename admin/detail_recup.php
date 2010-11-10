@@ -130,12 +130,8 @@ require "../lib/phpmailer/class.phpmailer.php";
 			if($sql) {
 				echo '<p style="color:green;">Modification recup Ok</p>';
 				if (isset($_POST['rendre_pp'])) {
-					mysql_query("UPDATE accounts SET pp=pp+30 WHERE id='".$id_compte."'");
+					mysql_query("INSERT INTO accounts_blocage_recup SET id_compte = '".$id_compte."', id_recup='".$id_recup."', fin_blocage = DATE_ADD(NOW(),INTERVAL 7 DAY)");
 				}
-				if (isset($_POST['rendre_pp_10'])) {
-					mysql_query("UPDATE accounts SET pp=pp+10 WHERE id='".$id_compte."'");
-				}
-
 			} else {
 				echo '<p style="color:red;">Erreur dans la modification de la recup</p>';
 			}
@@ -541,9 +537,8 @@ echo '<br />';
 	<br />
 
     <br />
-	<label>Rendre 30pp : </label><input type="checkbox" name="rendre_pp" value="oui"><input type="hidden" name="id_compte" value="<?php echo $recup['id_compte'] ?>"><br />
-	<br />
-		<label>Rendre 10pp : </label><input type="checkbox" name="rendre_pp_10" value="oui"><br />
+	<label>Bloqué les demandes de recups 7jrs : </label><input type="checkbox" name="bloque_compte" value="oui"><input type="hidden" name="id_compte" value="<?php echo $recup['id_compte'] ?>"><br />
+	
 <br />
 <input name="new_valid" id="new_valid" type="submit" value="Valider" /><br />
 </form>
