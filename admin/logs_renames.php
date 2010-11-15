@@ -87,7 +87,7 @@ $liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM log
 	<tbody>
     <?php
 	while($achat = mysql_fetch_array($liste_achats)) {
-		echo '<tr>';
+		echo '<tr class="gradeA">';
 		echo '<td>'.$achat['date'].'</td>';		
 		echo '<td id="example2">'.$achat['guid'].'</td>';
 		echo '<td>'.$achat['oldname'].'</td>';

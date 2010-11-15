@@ -58,6 +58,11 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 </ul>
 </div>
  <div class="search-box">
+ 		  <form method="post" action="pinfo.php">
+    	Recherche du nom de compte, de perso ou du guid dans les persos:  
+        <input type="text" name="filtre" value="" size="15" />
+        <input type="submit" name="Recherche" />       	
+    </form>
          <form method="post" action="liste_recup.php">
    	   Recherche de nom de compte / perso dans toutes les recup: <br/>
  <input type="text" name="termes" value="" size="15" />

@@ -113,10 +113,10 @@ $MJ= mysql_query("Select a.id, s.pseudo_forum from site.staff_usernames AS s, re
  <tbody>
  <?php
 // echo $sql."<br />\n";
-	$res = mysql_query($sql) or die("PD");
+	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
 	{ ?>
-	<tr>
+	<tr class="gradeA">
     	<td>
         	<?php echo $val["id"]; ?>
         </td>
