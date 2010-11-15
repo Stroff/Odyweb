@@ -129,13 +129,9 @@ require "../lib/phpmailer/class.phpmailer.php";
 			mysql_query($sql);
 			if($sql) {
 				echo '<p style="color:green;">Modification recup Ok</p>';
-				if (isset($_POST['rendre_pp'])) {
-					mysql_query("UPDATE accounts SET pp=pp+30 WHERE id='".$id_compte."'");
+				if (isset($_POST['bloque_compte'])) {
+					mysql_query("INSERT INTO accounts_blocage_recup SET id_compte = '".$id_compte."', id_recup='".$id_recup."', fin_blocage = DATE_ADD(NOW(),INTERVAL 7 DAY)");
 				}
-				if (isset($_POST['rendre_pp_10'])) {
-					mysql_query("UPDATE accounts SET pp=pp+10 WHERE id='".$id_compte."'");
-				}
-
 			} else {
 				echo '<p style="color:red;">Erreur dans la modification de la recup</p>';
 			}
@@ -541,12 +537,23 @@ echo '<br />';
 	<br />
 
     <br />
-	<label>Rendre 30pp : </label><input type="checkbox" name="rendre_pp" value="oui"><input type="hidden" name="id_compte" value="<?php echo $recup['id_compte'] ?>"><br />
-	<br />
-		<label>Rendre 10pp : </label><input type="checkbox" name="rendre_pp_10" value="oui"><br />
+	<label>Bloqué les demandes de recups 7jrs : </label><input type="checkbox" name="bloque_compte" value="oui"><input type="hidden" name="id_compte" value="<?php echo $recup['id_compte'] ?>"><br />
+	
 <br />
 <input name="new_valid" id="new_valid" type="submit" value="Valider" /><br />
 </form>
+<?php
+// recherche de la derniére modificanntion et affichage uniquement aux resp et plus
+if($_SESSION['gm']>4){
+	$req_derniere_modif = mysql_query("SELECT accounts.username, logs_mj_recups.date
+	FROM logs_mj_recups INNER JOIN demandes_recups ON logs_mj_recups.id_demande_recup = demandes_recups.id
+		 INNER JOIN accounts ON logs_mj_recups.id_compte_mj = accounts.id WHERE demandes_recups.id = '".$id_recup."' ORDER BY logs_mj_recups.id DESC LIMIT 1");
+	if(mysql_num_rows($req_derniere_modif)>0){
+		$dernere_modif = mysql_fetch_array($req_derniere_modif);
+		echo "<p>Dernière modification par ".$dernere_modif["username"]." le ".$dernere_modif["date"]."";
+	}
+}
+?>
 <p>Liste avec le même nom de perso:</p>
 
 
