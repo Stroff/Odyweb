@@ -29,8 +29,14 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
                <li> <a href="liste_demandes_guildes.php">Liste des demandes de guilde</a> </li>
            </ul>
          </li>
-         <li> <a href="../renames_logs.php">Logs renames</a></li>
-		<li> <a href="liste_bans.php">Logs bans</a></li>
+         <li> <a href="#">Logs divers</a>
+ 	        <ul><li> <a href="logs_renames.php">Logs renames</a></li>
+            <?php
+				if($_SESSION['gm']==5 || $_SESSION['gm']==6){
+				 echo "<li>  <a href="gm_logs.php">Logs MJ</a></li>";?>
+            <li> <a href="ip_tool.php"> Recherche d'ip</a> </li>
+			<li> <a href="liste_bans.php">Logs bans</a></li></ul>            
+         </li>
          <li><a href="#">Boutique</a>
             <ul>
                <li><a href="logs_achats_boutique.php">Liste des achats d'objets boutique</a></li><li>
@@ -38,18 +44,16 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
                 <a href="ajout_categorie.php">Ajout d'une catégorie</a> </li><li>
                <a href="ajout_type.php">Ajout d'un type</a></li>
               <li><a href="ajout_item.php">Ajout d'un item</a></li>
-           </ul>         
+           </ul>        
          </li>
          
          <li> <a href="liste_tickets.php">Tickets IG</a> </li>
-	 <li> <a href="pma/">Base de données</a></li>
-          <li><a href="#">Archives</a>
-            <ul>
-               <li><a href="old/list_recup.php?cat=0">Liste des vieilles recups ouvertes</a></li><li>
-                <a href="old/list_recup_f.php?cat=0">Liste de toutes les vieilles recups</a> </li><li>
-                <a href="old/list_demande_onisan.php?cat=0">Liste des vieilles demandes onisan</a> </li><li>      
-           </ul>         
-         </li>
+         
+          <?php
+				if($_SESSION['gm']==5 || $_SESSION['gm']==6 || $_SESSION['gm']==4) {
+				 echo " <li> <a href="pma/">Base de données</a></li>"; ?>
+   
+
         
 </ul>
 </div>
@@ -75,7 +79,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 				<?php
 				if($_SESSION['gm']==5 || $_SESSION['gm']==6){
 				 echo "<br/><form method='post' action='liste_comptes.php'>
-					        recherche de nom de compte pour modif:  <br/>
+					        recherche de compte pour modif Pody:  <br/>
 					        <input type='text' name='termes' value=''' size='15' />
 					        <input type='submit' name='Recherche' />
 					        </form>
