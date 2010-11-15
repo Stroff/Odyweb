@@ -52,9 +52,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
           <?php
 				if($_SESSION['gm']==5 || $_SESSION['gm']==6 || $_SESSION['gm']==4) {
 				 echo " <li> <a href=\"pma/\">Base de données</a></li>";} ?>
-   
 
-        
 </ul>
 </div>
  <div class="search-box">
