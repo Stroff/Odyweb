@@ -1,4 +1,4 @@
-﻿<?php $secure_lvl=2; require '../secure.php'; ?>
+﻿<?php $secure_lvl=2; require_once '../secure.php'; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -66,16 +66,14 @@ Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a
 
 <p>Ancien syst&eacute;me de r&eacute;cup&eacute;ration -&gt;  <a href="old/list_recup.php?cat=0">Liste des recups ouvertes</a> <a href="old/list_recup_f.php?cat=0">Liste de toutes les recups</a> - <a href="old/list_demande_onisan.php?cat=0">Liste des demandes onisan</a></p>
 
-<p><a href="%3C?=$url?%3E">Connexion sur le syst&egrave;me de support</a></p>
+<p><a href="<?=$url?>">Connexion sur le syst&egrave;me de support</a></p>
 <span style="color: #333; font-weight:bold;">Bloc-Note:</span> 
 
 <br/>
 <div class="blocnote-display">
 <img src="images/bulle.gif"/>
 <?php
-$connexion = mysql_connect($host_site, $user_site , $pass_site);
-mysql_select_db($site_database ,$connexion);
-mysql_query("SET NAMES 'utf8'");
+
 // on crée la requête SQL
 $sql = "SELECT valeur FROM configuration WHERE nom ='bloc_note'";
 // on envoie la requête

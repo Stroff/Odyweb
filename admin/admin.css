@@ -4,8 +4,10 @@
 /* These styles just pretty up the page a bit. */
 body {
    font: 82.5%/1.2 Arial, Helvetica, sans-serif;
+   color:#294577 ;
    background:#fff url(images/bg.jpg) right bottom no-repeat;
-   min-height:730px;}
+   min-height:730px;
+   }
  a
  {
 	 color:#69F;
@@ -19,6 +21,10 @@ body {
 	background: url(images/logody.jpg) no-repeat;
 	height:40px;
 
+}
+thead
+{
+	background:url(images/degrad%C3%A9.jpg) repeat-x;
 }
 .infos a
 {
