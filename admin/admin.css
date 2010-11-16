@@ -4,7 +4,8 @@
 /* These styles just pretty up the page a bit. */
 body {
    font: 82.5%/1.2 Arial, Helvetica, sans-serif;
-   }
+   background:#fff url(images/bg.jpg) right bottom no-repeat;
+   min-height:730px;}
  a
  {
 	 color:#69F;
@@ -13,13 +14,30 @@ body {
  {
 	 color:#699;
  }
+.infos
+{
+	background: url(images/logody.jpg) no-repeat;
+	height:40px;
 
+}
+.infos a
+{
+	margin-left:65px;
+	margin-top:25px;
+	line-height:40px;
+	color:#666;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:110%;
+
+	text-decoration:none;
+
+}
 #wrap {
    font-size: 1.3em;
    width: 700px;
    padding: 50px;
    margin: 0 auto; 
-   background-color: #fff;
+ 
    position: relative; }
 
 /* These styles create the dropdown menus. */
@@ -30,7 +48,9 @@ h1
 #navbar {
    margin: 0;
    padding: 0;
-   height: 1em; }
+   height: 1em;
+   
+}
 #navbar li {
    list-style: none;
    float: left; }
@@ -61,3 +81,22 @@ h1
 {
 	float:right; border:1px solid #5e8ce9; background-color: #a7c1f5; color: #fff; padding:5px; text-align:center; width:30%; margin-bottom:30px;
 }
+.blocnote-display
+{
+	width: 50%;
+	float:left;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:120%;
+	font-style:italic;
+	color:#333;
+	padding:20px;
+	margin:20px;
+	border:#5e8ce9 1px solid;
+	background-color:#e7e7e7;
+}
+.blocnote-input
+{
+	width:35%;
+	float:left;
+}
+	
