@@ -39,9 +39,12 @@ include '../secure.php';
 		mysql_select_db($wow_characters ,$connexion);
 		mysql_query("SET NAMES 'utf8'");
 		$resultats = mysql_query($sql);
-		echo '<p> Nombre de tickets : '.mysql_num_rows($resultats).' <br/> Tickets en ligne: </p>
-		<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">';
-		echo '
+		$enligne = "SELECT DISTINCT t.guid, c.online FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.playerGuid)   WHERE t.closed = 0 AND c.online=1";
+		$nb =  mysql_query($enligne);
+		echo '<p> Nombre de tickets : '.mysql_num_rows($resultats).'<br/>';
+         echo 'Tickets en ligne: '.mysql_num_rows($nb).' </p>'; ?>
+		<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+		
 		<thead>
 		<tr>
 			<th>Num du ticket</th>
@@ -50,8 +53,8 @@ include '../secure.php';
 			<th>En ligne</th>
 		</tr>
 		</thead>
-		<tbody>';
-		while($demande = mysql_fetch_array($resultats)) {
+		<tbody>
+		<?php while($demande = mysql_fetch_array($resultats)) {
 			echo '<tr class="gradeA">';
 			echo '<td><a href="detail_ticket.php?id='.$demande['guid'].'">'.$demande['guid'].'</a></td>';
 			echo '<td>'.$demande['name'].'</td>';

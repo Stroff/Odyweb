@@ -37,9 +37,9 @@ include "navbar.php";
 
 
 
-
-  
-<p> boutique -&gt;
+<div style=" margin:10px;">
+  <div  style="padding:10px; margin-top:150px; width:95%; margin-left:auto; margin-right:auto;">
+<p> <br/>boutique -&gt;
 Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a href="ajout_type.php">Ajout d'un type</a> <a href="ajout_item.php">Ajout d'un item</a>
 
   </p>
@@ -70,15 +70,12 @@ Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a
 <p>Ancien syst&eacute;me de r&eacute;cup&eacute;ration -&gt;  <a href="old/list_recup.php?cat=0">Liste des recups ouvertes</a> <a href="old/list_recup_f.php?cat=0">Liste de toutes les recups</a> - <a href="old/list_demande_onisan.php?cat=0">Liste des demandes onisan</a></p>
 
 <p><a href="%3C?=$url?%3E">Connexion sur le syst&egrave;me de support</a></p>
+<span style="color: #333; font-weight:bold;">Bloc-Note:</span> 
 
-
-<form action='script1.php' method='POST'>
-<head>
-<span style="color: rgb(255, 0, 0);">Bloc-Note pour mettre
-les infos à partager:</span>
-</head> 
- <br>
-<textarea name='texte' cols='37' rows='6'><?php
+<br/>
+<div class="blocnote-display">
+<img src="images/bulle.gif"/>
+<?php
 $connexion = mysql_connect($host_site, $user_site , $pass_site);
 mysql_select_db($site_database ,$connexion);
 mysql_query("SET NAMES 'utf8'");
@@ -89,8 +86,24 @@ $req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 $data = mysql_fetch_array($req);
 echo $data["valeur"];
 ?>
-</textarea><br>
+</div>
+<div class="blocnote-input">
+<form action='script1.php' method='POST'>
+
+ <br>
+<textarea name='texte' cols='37' rows='6'><?php
+
+echo $data["valeur"];
+?>
+</textarea>
+<br/>
 <input type='submit' value='Valider'>
 </form>
+<br/>
+<span style="color: #333; font-style:italic; font-size:80%"> * Utilisez < br/> (sans espace) pour les sauts de ligne.
+</div>
+
+</div>
+</div>
 </body>
 </html>

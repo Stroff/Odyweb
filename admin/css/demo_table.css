@@ -168,22 +168,22 @@ table.display td.center {
  * DataTables row classes
  */
 table.display tr.odd.gradeA {
-	background-color: #ddffdd;
+	background-color: #d5e2fa;
 }
 
 table.display tr.even.gradeA {
-	background-color: #eeffee;
+	background-color: #d5e2fa;
 }
 
 
 
 
 table.display tr.odd.gradeA {
-	background-color: #ddffdd;
+	background-color: #bfd7ff;
 }
 
 table.display tr.even.gradeA {
-	background-color: #eeffee;
+	background-color: #d5e2fa;
 }
 
 table.display tr.odd.gradeC {
@@ -348,19 +348,19 @@ tr.even td.sorting_3 {
 	  ee > e2
  */
 tr.odd.gradeA td.sorting_1 {
-	background-color: #c4ffc4;
+	background-color: #bfd7ff;
 }
 
 tr.odd.gradeA td.sorting_2 {
-	background-color: #d1ffd1;
+	background-color: #d5e2fa;
 }
 
 tr.odd.gradeA td.sorting_3 {
-	background-color: #d1ffd1;
+	background-color: #d5e2fa;
 }
 
 tr.even.gradeA td.sorting_1 {
-	background-color: #d5ffd5;
+	background-color: #d5e2fa;
 }
 
 tr.even.gradeA td.sorting_2 {
@@ -372,7 +372,7 @@ tr.even.gradeA td.sorting_3 {
 }
 
 tr.odd.gradeC td.sorting_1 {
-	background-color: #c4c4ff;
+	background-color: #bfd7ff;
 }
 
 tr.odd.gradeC td.sorting_2 {
@@ -384,7 +384,7 @@ tr.odd.gradeC td.sorting_3 {
 }
 
 tr.even.gradeC td.sorting_1 {
-	background-color: #d5d5ff;
+	background-color: #bfd7ff;
 }
 
 tr.even.gradeC td.sorting_2 {
@@ -396,7 +396,7 @@ tr.even.gradeC td.sorting_3 {
 }
 
 tr.odd.gradeX td.sorting_1 {
-	background-color: #ffc4c4;
+	background-color: #bfd7ff;
 }
 
 tr.odd.gradeX td.sorting_2 {
