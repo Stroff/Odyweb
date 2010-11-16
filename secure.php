@@ -46,7 +46,7 @@ if (strtoupper($maintenance)=='OUI') {
 
 		//now validating the username and password
 
-		$sql="SELECT password,next_vote_date,points,pp,extension,id,gm,email FROM accounts WHERE username='".$login."' AND password = '".$pass."' AND activation=1";
+		$sql="SELECT password,next_vote_date,points,extension,id,gm,email FROM accounts WHERE username='".$login."' AND password = '".$pass."' AND activation=1";
 		$result=mysql_query($sql);
 		//j'update l'ip et je recup les points pour les autres pages
 		//if username exists
@@ -58,13 +58,11 @@ if (strtoupper($maintenance)=='OUI') {
 		} else {
 			$compte = mysql_fetch_array($result);
 			$_SESSION['next_vote_date'] = $compte['next_vote_date'];
-			$_SESSION['pp'] =  $compte['pp'];
 			$_SESSION['points'] =  $compte['points'];
 			$_SESSION['extension'] =  $compte['extension'];
 			$_SESSION['id'] =  $compte['id'];
 			$_SESSION['email'] =  $compte['email'];
 			$_SESSION['gm'] =  $compte['gm'];
-			$_SESSION['next_vote_date_gowonda'] = $compte['next_vote_date_gowonda'];
 
 			$sql="UPDATE accounts SET last_ip = '".get_ip()."', last_activite=NOW() WHERE username='".$login."'";
 			$result=mysql_query($sql);
