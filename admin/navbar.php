@@ -75,11 +75,6 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
          </li>
          
          <li> <a href="liste_tickets.php">Tickets IG</a> </li>
-         
-          <?php
-				if($_SESSION['gm']==5 || $_SESSION['gm']==6 || $_SESSION['gm']==4) {
-				 echo " <li> <a href=\"pma/\">Base de données</a></li>";} ?>
-
 </ul>
 </div>
 
