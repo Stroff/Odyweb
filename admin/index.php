@@ -1,16 +1,19 @@
 ﻿<?php
+ob_start();
 $secure_lvl=2;
 require_once '../secure.php';
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Administration</title>
+<title>Page temporaire Administration</title>
 </head>
-
-
-
+<?php
+include "navbar.php";
+ob_end_flush();
+?>
 
 <form id="form1" name="form1" method="post" action="ajout_categorie.php">
 </form>
@@ -29,16 +32,12 @@ if($_SESSION['gm']==3){
 }
 $sso = generate_multipass_tender($email, $nom);
 $url = "http://odyssee.tenderapp.com?sso=".$sso;
-
-
-include "navbar.php";
 ?>
 
 
 
 <div style=" margin:10px;">
-  <div  style="padding:10px; margin-top:150px; width:95%; margin-left:auto; margin-right:auto;
- ">
+  <div  style="padding:10px; margin-top:150px; width:95%; margin-left:auto; margin-right:auto;">
 <p> <br/>boutique -&gt;
 Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a href="ajout_type.php">Ajout d'un type</a> <a href="ajout_item.php">Ajout d'un item</a>
 

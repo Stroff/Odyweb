@@ -42,6 +42,9 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
         </td>
        
     </tr>
+	<tr>
+		<td>Version mise à jour par GIT_AUTHOR_NAME(GIT_AUTHOR_EMAIL)</td>
+	</tr>
 </table>
 <br/>
 
