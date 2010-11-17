@@ -1,5 +1,4 @@
 ﻿<?php
-ob_start();
 $secure_lvl=2;
 require_once '../secure.php';
 
@@ -12,7 +11,6 @@ require_once '../secure.php';
 </head>
 <?php
 include "navbar.php";
-ob_end_flush();
 ?>
 
 <form id="form1" name="form1" method="post" action="ajout_categorie.php">
