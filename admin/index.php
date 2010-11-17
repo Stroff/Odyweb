@@ -1,5 +1,5 @@
 ﻿<?php
-session_start() or die("Impossible de créer la sessions!!");
+ob_start();
 $secure_lvl=2;
 require_once '../secure.php';
 
@@ -34,6 +34,7 @@ $url = "http://odyssee.tenderapp.com?sso=".$sso;
 
 
 include "navbar.php";
+ob_end_flush();
 ?>
 
 
