@@ -1,4 +1,8 @@
-﻿<?php $secure_lvl=2; require '../secure.php'; ?>
+﻿<?php
+$secure_lvl=2;
+include '../secure.php';
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -34,8 +38,7 @@ include "navbar.php";
 
 
 <div style=" margin:10px;">
-  <div  style="padding:10px; margin-top:150px; width:95%; margin-left:auto; margin-right:auto;
- ">
+  <div  style="padding:10px; margin-top:150px; width:95%; margin-left:auto; margin-right:auto;">
 <p> <br/>boutique -&gt;
 Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a href="ajout_type.php">Ajout d'un type</a> <a href="ajout_item.php">Ajout d'un item</a>
 
