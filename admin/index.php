@@ -1,9 +1,12 @@
-﻿<?php $secure_lvl=2; require_once '../secure.php'; ?>
+﻿<?php
+$secure_lvl=2;
+require_once '../secure.php';
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Page temporaire Administration</title>
+<title>Administration</title>
 </head>
 
 
@@ -75,7 +78,7 @@ Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a
 <?php
 
 // on crée la requête SQL
-$sql = "SELECT valeur FROM configuration WHERE nom ='bloc_note'";
+$sql = "SELECT valeur FROM site.configuration WHERE nom ='bloc_note'";
 // on envoie la requête
 $req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 $data = mysql_fetch_array($req);

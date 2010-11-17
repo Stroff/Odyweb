@@ -93,7 +93,6 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
         recherche de nom de compte/ perso dans les logs boutique:  <br/>
         <input type="text" name="logsearch" value="" size="15" />
         <input type="submit" name="Recherche" />
-        	
         </form>
 		<form method="post" action="liste_bans.php">
 		        recherche de nom de compte/ nom de mj/ip dans les bans:  <br/>
@@ -102,7 +101,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 		        </form>
 				<?php
 				if($_SESSION['gm']==5 || $_SESSION['gm']==6){
-				 echo "<br/><form method='post' action='liste_comptes.php'>
+				 echo "<form method='post' action='liste_comptes.php'>
 					        recherche de compte pour modif Pody:  <br/>
 					        <input type='text' name='termes' value=''' size='15' />
 					        <input type='submit' name='Recherche' />

@@ -79,7 +79,7 @@ $MJ= mysql_query("Select a.id, s.pseudo_forum from site.staff_usernames AS s, re
 </form>
 <p>Liste des commandes MJ</p>
 <a href="index.php"> Retour a l'accueil </a> <br/>
-<table id="example" class="display">
+<table  class="display" id="example" cellpadding="0" cellspacing="0">
  <thead>
  	<tr>
     	<th>
