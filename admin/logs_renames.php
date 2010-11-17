@@ -67,9 +67,8 @@ elseif (isset ( $_POST['nom']) && $nom != "'Recherche par nom'" && $guid == "'Re
 }
 else 
 {			
-	mysql_query("SET NAMES 'utf8'");
-echo "Liste de tous les renames:";	
-$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM site.log_rename ORDER BY DATE");
+	echo "Liste de tous les renames:";	
+	$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM site.log_rename ORDER BY DATE");
 }
 ?>
 

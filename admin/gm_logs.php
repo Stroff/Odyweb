@@ -1,6 +1,6 @@
 <?php
 $secure_lvl=2;
-include '../secure.php';
+require_once '../secure.php';
 
 if($_SESSION['gm']==4 || $_SESSION['gm']==3){
  echo "<h1>juste pour les admins et resp, dsl</h1>";
