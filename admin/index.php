@@ -10,9 +10,10 @@ require_once '../secure.php';
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Page temporaire Administration</title>
 </head>
-
-
-
+<?php
+include "navbar.php";
+ob_end_flush();
+?>
 
 <form id="form1" name="form1" method="post" action="ajout_categorie.php">
 </form>
@@ -31,10 +32,6 @@ if($_SESSION['gm']==3){
 }
 $sso = generate_multipass_tender($email, $nom);
 $url = "http://odyssee.tenderapp.com?sso=".$sso;
-
-
-include "navbar.php";
-ob_end_flush();
 ?>
 
 
