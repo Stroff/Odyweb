@@ -581,7 +581,7 @@ $sql = "SELECT motifs_recups.raison_fermeture,
 	demandes_recups.etat_ouverture, 
 	demandes_recups.date_demande
 FROM demandes_recups INNER JOIN accounts ON demandes_recups.id_compte = accounts.id
-	 INNER JOIN motifs_recups ON demandes_recups.etat_ouverture = motifs_recups.id WHERE demandes_recups.nom_perso = '".$recup['nom_perso']."' AND demandes_recups.id != '".$id_recup."'";
+	 INNER JOIN motifs_recups ON demandes_recups.etat_ouverture = motifs_recups.id WHERE demandes_recups.nom_perso = '".mysql_escape_string($recup['nom_perso'])."' AND demandes_recups.id != '".$id_recup."'";
 $connexion = mysql_connect($host_site, $user_site , $pass_site);
 mysql_select_db($site_database ,$connexion);
 mysql_query("SET NAMES 'utf8'");
@@ -624,7 +624,7 @@ $sql = "SELECT motifs_recups.raison_fermeture,
 	demandes_recups.etat_ouverture, 
 	demandes_recups.date_demande
 FROM demandes_recups INNER JOIN accounts ON demandes_recups.id_compte = accounts.id
-	 INNER JOIN motifs_recups ON demandes_recups.etat_ouverture = motifs_recups.id WHERE demandes_recups.nom_perso = '".$recup['nom_perso']."'AND demandes_recups.serveur_origine = '".$recup['serveur_origine']."' AND demandes_recups.id != '".$id_recup."'";
+	 INNER JOIN motifs_recups ON demandes_recups.etat_ouverture = motifs_recups.id WHERE demandes_recups.nom_perso = '".mysql_escape_string($recup['nom_perso'])."'AND demandes_recups.serveur_origine = '".mysql_escape_string($recup['serveur_origine'])."' AND demandes_recups.id != '".$id_recup."'";
 $connexion = mysql_connect($host_site, $user_site , $pass_site);
 mysql_select_db($site_database ,$connexion);
 mysql_query("SET NAMES 'utf8'");
