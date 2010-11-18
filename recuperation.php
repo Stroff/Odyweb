@@ -31,8 +31,7 @@
 									$date_fin_blocage_compte = mysql_fetch_array($check_blocage_compte);
 									echo '<p>Votre compte est bloqué a cause d\'un trop grande nombre de demandes de récupérations refusée. Il serra débloqué automatiquement le '.$date_fin_blocage_compte["fin_blocage"].'</p>';
 								} else {
-									echo '<p>Les récupérations sont désactivées pour le moment</p>';
-									// require "recup_formulaire.php";
+									 require "recup_formulaire.php";
 								} ?>
                             </div>
                             
