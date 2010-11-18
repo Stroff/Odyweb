@@ -447,7 +447,7 @@ require "../lib/phpmailer/class.phpmailer.php";
 	echo '<br />
 	<label>Armurerie : </label><a href="'.$recup['armurerie'].'" target="_blank"> '.$recup['armurerie'].' </a><br />';
 }
-
+/*
 echo '<br />
 <label>Images : </label>';
 $images_uploader = scandir('/var/www/odyssee/demandes/recups/'.md5($recup['id']).'');
@@ -459,7 +459,22 @@ foreach($images_uploader  as $image_name ) {
 	echo '<a target="_blank" href="'.$url_site.'/demandes/recups/'.md5($recup['id']).'/'.$image_name.'"><img src="'.$url_site.'/demandes/recups/'.md5($recup['id']).'/'.$image_name.'?width=100"></a>';
 $i++;
 }
-echo '<br />';
+echo '<br />';*/
+echo '
+<br />
+<label>Images S3 : </label>';
+include_once "../lib/amazon_sdk/sdk.class.php";
+$s3 = new AmazonS3("AKIAJ5WT2F6RPZ5K3AXA", "aKNfOk5MgRq7AtxhIV10ZUtd1eZqBkAM7XMMmaFv");
+$responses = $s3->list_objects("odyssee-recups",array(
+		'delimiter' => 'demandes/recups/'.md5($recup['id'])
+	));
+foreach( $responses->body->Contents as $fichier){
+	// c'est un fichier
+	if($fichier->Size > 0){
+		echo '<a target="_blank" href="https://s3-eu-west-1.amazonaws.com/odyssee-recups/'.$fichier->Key.'"><img src="https://s3-eu-west-1.amazonaws.com/odyssee-recups/'.$fichier->Key.'"></a>';
+	}
+}
+echo '<br />'
 ?>
 
     <br />

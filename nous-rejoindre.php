@@ -20,7 +20,7 @@
                     	<div class="blocpage-texte">
                          <br/>
 <p align="center">
-                   			 Pour nous rejoindre vous devez <a href="inscription.php">créer un compte</a> et disposer de la version 3.3.5 du jeu ainsi que de son extension WOTLK. <br> 
+                   			 Pour nous rejoindre vous devez <a href="inscription.php">créer un compte</a> et disposer de la version 3.3.5a du jeu ainsi que de son extension WOTLK. <br> 
 <a href="#install">Cliquez ici pour plus d’informations. </a><br> <br> 
 							Vous pouvez récupérer vos personnages des serveurs officiels ou privés par le biais de <a href="recuperation.php">notre système de récupération</a> une fois votre compte crée.<br> 
                                 <a href="recuperation.php#faqrecup">Pour plus d’informations sur les conditions d’une récupération, cliquez ici.</a>

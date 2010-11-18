@@ -1,5 +1,5 @@
 <?php
-
+include_once "lib/amazon_sdk/sdk.class.php";
 //$cout = 30;
 $cout=0;
 $secure_lvl = 1;
@@ -94,7 +94,7 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 				$maj_pp=true;
 				//creation des répertoires 
 				$repertoire = 'demandes/recups/' . md5($id_demande)  . '/';
-				mkdir ( $repertoire, 0755 );
+				//mkdir ( $repertoire, 0755 );
 				$erreur_notification='';
 
 
@@ -105,9 +105,18 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 						'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
 						'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
 					$fichier_nom = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier_nom);
-					move_uploaded_file($_FILES["file"]['tmp_name'][$key], "$repertoire/$fichier_nom");
-
+					//partie sur le cloud storage
+					//move_uploaded_file($_FILES["file"]['tmp_name'][$key], "$repertoire/$fichier_nom");
+					//partie en as3
+					$s3 = new AmazonS3("AKIAJ5WT2F6RPZ5K3AXA", "aKNfOk5MgRq7AtxhIV10ZUtd1eZqBkAM7XMMmaFv");
+					
+					$s3->batch()->create_object("odyssee-recups",$repertoire.$fichier_nom,array(
+						'fileUpload' =>  $_FILES["file"]['tmp_name'][$key],
+						'acl' => AmazonS3::ACL_PUBLIC,
+						'storage' => AmazonS3::STORAGE_REDUCED
+					));
 				}
+				 $s3->batch()->send();
 				if($ajout_demande && $maj_pp&&$ajout_demande_guilde) {
 					$message .= "Votre demande de récupération s'est bien déroulée, Vous devez attendre qu'un maitre du jeu valide votre demande. Une fois validé vous allez pouvoir faire .recup à partir du perso sélectionné dans le formulaire précédent. Merci";
 				} else {
