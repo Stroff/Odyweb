@@ -466,10 +466,9 @@ echo '
 include_once "../lib/amazon_sdk/sdk.class.php";
 $s3 = new AmazonS3("AKIAJ5WT2F6RPZ5K3AXA", "aKNfOk5MgRq7AtxhIV10ZUtd1eZqBkAM7XMMmaFv");
 $responses = $s3->list_objects("odyssee-recups",array(
-		'delimiter' => 'demandes/recups/'.md5($recup['id'])
+		'prefix' => 'demandes/recups/'.md5($recup['id'])."/"
 	));
 foreach( $responses->body->Contents as $fichier){
-	// c'est un fichier
 	if($fichier->Size > 0){
 		echo '<a target="_blank" href="https://s3-eu-west-1.amazonaws.com/odyssee-recups/'.$fichier->Key.'"><img src="https://s3-eu-west-1.amazonaws.com/odyssee-recups/'.$fichier->Key.'"></a>';
 	}
