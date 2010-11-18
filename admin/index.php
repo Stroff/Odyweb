@@ -7,7 +7,7 @@ require_once '../secure.php';
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Page temporaire Administration</title>
+<title>Administration Odyssee</title>
 </head>
 <?php
 include "navbar.php";
@@ -35,7 +35,7 @@ $url = "http://odyssee.tenderapp.com?sso=".$sso;
 
 
 <div style=" margin:10px;">
-  <div  style="padding:10px; margin-top:150px; width:95%; margin-left:auto; margin-right:auto;">
+  <div  style="padding:10px; width:95%; margin-left:auto; margin-right:auto;">
 <p> <br/>boutique -&gt;
 Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a href="ajout_type.php">Ajout d'un type</a> <a href="ajout_item.php">Ajout d'un item</a>
 

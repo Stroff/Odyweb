@@ -16,15 +16,21 @@ body {
  {
 	 color:#699;
  }
+ .banniere
+ {float:left; width:575px; background:url(images/banniereleft.jpg) no-repeat; height:200px;
+}
+.infostable
+{ float: Right; width: 200px;}
 .infos
 {
 	background: url(images/logody.jpg) no-repeat;
 	height:40px;
 
+
 }
 thead
 {
-	background:url(images/degrad%C3%A9.jpg) repeat-x;
+	background:url(images/degrad.jpg) repeat-x;
 }
 .infos a
 {
@@ -33,8 +39,6 @@ thead
 	line-height:40px;
 	color:#666;
 	font-family:Georgia, "Times New Roman", Times, serif;
-	font-size:110%;
-
 	text-decoration:none;
 
 }
@@ -42,8 +46,8 @@ thead
    font-size: 1.3em;
    width: 700px;
    padding: 50px;
-   margin: 0 auto; 
- 
+   margin: 0 auto;
+
    position: relative; }
 
 /* These styles create the dropdown menus. */
@@ -55,7 +59,8 @@ h1
    margin: 0;
    padding: 0;
    height: 1em;
-   
+   height: 30px;
+
 }
 #navbar li {
    list-style: none;
@@ -67,7 +72,7 @@ h1
    color: #fff;
    text-decoration: none; }
 #navbar li ul {
-   display: none; 
+   display: none;
    width: 10em; /* Width to help Opera out */
    background-color: #69f;}
 #navbar li:hover ul, #navbar li.hover ul {
@@ -85,7 +90,7 @@ h1
    background-color: #8db3ff; }
 .search-box
 {
-	float:right; border:1px solid #5e8ce9; background-color: #a7c1f5; color: #fff; padding:5px; text-align:center; width:30%; margin-bottom:30px;
+	 border:1px solid #5e8ce9; font-size: 80%; background-image: url(images/search-deg.jpg); background-repeat: repeat-x ; color: #fff; padding:5px; text-align:center; width:100%;
 }
 .blocnote-display
 {
