@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start() or die("Impossible de créer la sessions!!");
 require('config/config.php');
 require('include/php/fonctions.php');
 

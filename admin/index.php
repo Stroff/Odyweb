@@ -1,15 +1,17 @@
 ﻿<?php
-$secure_lvl="2";
-include '../secure.php';?>
+$secure_lvl=2;
+require_once '../secure.php';
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Page temporaire Administration</title>
+<title>Administration Odyssee</title>
 </head>
-
-
-
+<?php
+include "navbar.php";
+?>
 
 <form id="form1" name="form1" method="post" action="ajout_categorie.php">
 </form>
@@ -28,15 +30,12 @@ if($_SESSION['gm']==3){
 }
 $sso = generate_multipass_tender($email, $nom);
 $url = "http://odyssee.tenderapp.com?sso=".$sso;
-
-
-include "navbar.php";
 ?>
 
 
 
 <div style=" margin:10px;">
-  <div  style="padding:10px; margin-top:150px; width:95%; margin-left:auto; margin-right:auto;">
+  <div  style="padding:10px; width:95%; margin-left:auto; margin-right:auto;">
 <p> <br/>boutique -&gt;
 Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a href="ajout_type.php">Ajout d'un type</a> <a href="ajout_item.php">Ajout d'un item</a>
 
@@ -67,18 +66,16 @@ Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a
 
 <p>Ancien syst&eacute;me de r&eacute;cup&eacute;ration -&gt;  <a href="old/list_recup.php?cat=0">Liste des recups ouvertes</a> <a href="old/list_recup_f.php?cat=0">Liste de toutes les recups</a> - <a href="old/list_demande_onisan.php?cat=0">Liste des demandes onisan</a></p>
 
-<p><a href="%3C?=$url?%3E">Connexion sur le syst&egrave;me de support</a></p>
+<p><a href="<?=$url?>">Connexion sur le syst&egrave;me de support</a></p>
 <span style="color: #333; font-weight:bold;">Bloc-Note:</span> 
 
 <br/>
 <div class="blocnote-display">
 <img src="images/bulle.gif"/>
 <?php
-$connexion = mysql_connect($host_site, $user_site , $pass_site);
-mysql_select_db($site_database ,$connexion);
-mysql_query("SET NAMES 'utf8'");
+
 // on crée la requête SQL
-$sql = "SELECT valeur FROM configuration WHERE nom ='bloc_note'";
+$sql = "SELECT valeur FROM site.configuration WHERE nom ='bloc_note'";
 // on envoie la requête
 $req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 $data = mysql_fetch_array($req);

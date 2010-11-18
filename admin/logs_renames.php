@@ -52,24 +52,23 @@ $nom= "'".$_POST['nom']."'";
 
 if (isset ( $_POST['nom']) &&isset ( $_POST['guid']) && $guid != "'Recherche par GUID'" && $nom != "'Recherche par nom'")
 {
-	$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM log_rename WHERE guid = $guid AND (oldname like $nom OR newname like $nom);");
+	$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM site.log_rename WHERE guid = $guid AND (oldname like $nom OR newname like $nom);");
 	echo "recherche par GUID et par Nom: Termes de recherche=".$guid." et ".$nom ;	
 }
 elseif (isset ( $_POST['guid']) && $guid != "'Recherche par GUID'" && $nom == "'Recherche par nom'")
 {
-	$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM log_rename WHERE guid = $guid;");
+	$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM site.log_rename WHERE guid = $guid;");
 	echo "recherche par GUID: Termes de recherche=".$guid ;	
 }
 elseif (isset ( $_POST['nom']) && $nom != "'Recherche par nom'" && $guid == "'Recherche par GUID'" )
 {
-	$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM log_rename WHERE oldname like $nom OR newname like $nom;");
+	$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM site.log_rename WHERE oldname like $nom OR newname like $nom;");
 	echo "recherche par nom: Termes de recherche=".$nom ;
 }
 else 
 {			
-	mysql_query("SET NAMES 'utf8'");
-echo "Liste de tous les renames:";	
-$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM log_rename ORDER BY DATE");
+	echo "Liste de tous les renames:";	
+	$liste_achats = mysql_query("SELECT guid,oldname,newname,accountid,date FROM site.log_rename ORDER BY DATE");
 }
 ?>
 

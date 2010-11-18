@@ -1,6 +1,6 @@
 <?php
 $secure_lvl=2;
-include '../secure.php';
+require_once '../secure.php';
 
 if($_SESSION['gm']==4 || $_SESSION['gm']==3){
  echo "<h1>juste pour les admins et resp, dsl</h1>";
@@ -47,8 +47,11 @@ if (isset ($_POST["filtres"]))
 	}
 	if( $ajouter_and )
 		$sql .= " AND ";
+		
+	$sql .= "date > DATE_SUB(CURDATE(), INTERVAL 30 DAY) ";
 }
-$sql .= "date > DATE_SUB(CURDATE(), INTERVAL 3 DAY) ";
+else
+	$sql .= "date > DATE_SUB(CURDATE(), INTERVAL 3 DAY) ";
 $sql .= "ORDER BY id DESC";
 // r equete avec MJ selectionné
 $MJ= mysql_query("Select a.id, s.pseudo_forum from site.staff_usernames AS s, realmd.account AS a WHERE a.username LIKE s.nom_compte;"); ?>
