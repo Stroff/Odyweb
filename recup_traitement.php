@@ -110,13 +110,13 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 					//partie en as3
 					$s3 = new AmazonS3("AKIAJ5WT2F6RPZ5K3AXA", "aKNfOk5MgRq7AtxhIV10ZUtd1eZqBkAM7XMMmaFv");
 					
-					$s3->batch()->create_object("odyssee-recups",$repertoire.$fichier_nom,array(
+					$s3->create_object("odyssee-recups",$repertoire.$fichier_nom,array(
 						'fileUpload' =>  $_FILES["file"]['tmp_name'][$key],
 						'acl' => AmazonS3::ACL_PUBLIC,
 						'storage' => AmazonS3::STORAGE_REDUCED
 					));
 				}
-				 $s3->batch()->send();
+			
 				if($ajout_demande && $maj_pp&&$ajout_demande_guilde) {
 					$message .= "Votre demande de récupération s'est bien déroulée, Vous devez attendre qu'un maitre du jeu valide votre demande. Une fois validé vous allez pouvoir faire .recup à partir du perso sélectionné dans le formulaire précédent. Merci";
 				} else {
