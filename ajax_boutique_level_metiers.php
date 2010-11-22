@@ -58,41 +58,7 @@ switch ($_POST['type']) {
 		//dépasse le max autorisé du lvl
 		$new_lvl_prix=-2;
 	}else{
-		$level_actuel = $metier['value'];
-		if($level_actuel<25) {
-			$new_lvl_prix =  0.5;
-		}else if($level_actuel<50) {
-			$new_lvl_prix = 0.75;
-		}else if($level_actuel<75) {
-			$new_lvl_prix =  1;
-		}else if($level_actuel<100) {
-			$new_lvl_prix =  1.25;
-		}else if($level_actuel<125) {
-			$new_lvl_prix =  1.5;
-		} else if ($level_actuel<150) {
-			$new_lvl_prix = 1.75; 
-		}else if ($level_actuel<175) {
-			$new_lvl_prix = 2; 
-		}else if ($level_actuel<200) {
-			$new_lvl_prix = 2.25; 
-		}else if ($level_actuel<225) {
-			$new_lvl_prix = 2.5; 
-		}else if ($level_actuel<250) {
-			$new_lvl_prix = 2.75; 
-		}else if ($level_actuel<275) {
-			$new_lvl_prix = 3; 
-		}else if ($level_actuel<300) {
-			$new_lvl_prix = 3.25; 
-		}else if ($level_actuel<325) {
-			$new_lvl_prix = 3.5; 
-		}else if ($level_actuel<350) {
-			$new_lvl_prix = 3.75;
-		}else if ($level_actuel==350) {
-			$new_lvl_prix = 4; 
-		} else {
-			// n'est pas dans les offres possible
-			$new_lvl_prix = -1; 
-		}
+		$new_lvl_prix = calcul_prix($metier['value']);
 	}
 	$arr['prix'] = $new_lvl_prix;
 	print json_encode($arr);
@@ -105,11 +71,14 @@ switch ($_POST['type']) {
 	mysql_query("SET NAMES 'utf8'");
 	
 	$guid_perso = mysql_escape_string ($_POST ["valeur"]);
+	$metier_perso = mysql_escape_string ($_POST ["metier"]);
 	$id_compte = mysql_escape_string ($_SESSION['id']);
 	$compte_points = mysql_escape_string ($_SESSION['points']);
 	
 	if ($guid_perso =='') {
 		echo '<div class="error_message">Vous devez mettre un personnage pour l\'achat.</div>';
+	} else if ($metier_perso =='') {
+		echo '<div class="error_message">Vous devez mettre un metier pour l\'achat.</div>';
 	} else {
 		$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 		mysql_select_db($wow_characters ,$connexion);
@@ -119,48 +88,54 @@ switch ($_POST['type']) {
 		if (mysql_num_rows($persos) == 1) {
 			// c'est bien un perso du compte de la personne je calcul le nouveau lvl
 			$perso = mysql_fetch_array($persos);
-			$level_actuel = $perso['level'];
-			if($level_actuel<15) {
-				$lvl_en_plus =  7;
-			}else if($level_actuel<28) {
-				$lvl_en_plus = 6;
-			}else if($level_actuel<40) {
-				$lvl_en_plus =  5;
-			}else if($level_actuel<51) {
-				$lvl_en_plus =  4;
-			}else if($level_actuel<61) {
-				$lvl_en_plus =  3;
-			} else if ($level_actuel==69) {
-				$lvl_en_plus = 1; 
-			}else if ($level_actuel<70) {
-				$lvl_en_plus = 2; 
-			} else {
-				$lvl_en_plus = 0;
+			// controle s'il posséde bien le metier 
+			$metiers = mysql_query("SELECT skill,value,max FROM character_skills WHERE guid = '".$guid_perso."'");
+			while($metier = mysql_fetch_array($metiers)){
+				// recherche du métier déclaré
+				if($metier_perso==$metier["skill"]){
+					$metier_perso_check["max"] = $metier["max"];
+					$metier_perso_check["metier"] = $metier["skill"];
+					$metier_perso_check["value"] = $metier["value"];
+					break;
+				}
 			}
-			
-			$new_lvl_prix = $level_actuel+$lvl_en_plus;
-			if ($new_lvl_prix == $level_actuel) {
-				echo '<div class="error_message">Vous ne pouvez pas acheter 0 niveaux.</div>';
-			} else {
-				if ($compte_points >=2) {
-					$resReqWow = mysql_query ( "UPDATE characters SET level = '".$new_lvl_prix."' WHERE guid='" . $guid_perso . "' LIMIT 1" ) or die ( mysql_error () );
-					mysql_close();
-					$connexion = mysql_connect($host_site, $user_site , $pass_site);
-					mysql_select_db($site_database ,$connexion);
-					mysql_query("SET NAMES 'utf8'");
-					$resReqSite = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), account_id = '".$id_compte."', objet_id='".$lvl_en_plus." levels', perso_id ='" . $guid_perso . "',perso_nom='".$perso['name']."'" ) or die ( mysql_error () );
-					$resReqSite2 = mysql_query ( "UPDATE accounts SET points=points-2 WHERE id='".$id_compte."' LIMIT 1" ) or die ( mysql_error () );
-					if ($resReqSite && $resReqWow&& $resReqSite2) {
-						echo "<div id='success_page'>";
-						 echo "<p>Vous avez maintenant le niveau ".$new_lvl_prix." sur le perso ".$perso['name'].".</p>";
-						 echo "</div>";
-						echo '<div id="bottom_contenu"></div>';
+			if(isset($metier_perso_check["metier"])){
+				//il poséde bien le metier, reste a voir pour le prix
+				$lvl_metier = mysql_query("SELECT value,max FROM character_skills WHERE guid = '".$guid_perso."' AND skill='".$metier_perso."'");
+				$metier = mysql_fetch_array($lvl_metier);
+				if($metier['value']+25>$metier['max']){
+					//dépasse le max autorisé du lvl
+					$new_lvl_prix=-2;
+				}else{
+					$new_lvl_prix = calcul_prix($metier['value']);
+				}
+				if($new_lvl_prix== -1){
+					echo '<div class="error_message">Vous ne pouvez pas dépassez le niveau 375 via boutique</div>';
+				}else if($new_lvl_prix == -2){
+					echo '<div class="error_message">Vous ne pouvez pas prendre plus de levels. Vous avez surement besoin d\'aller voir le maitre de votre métier</div>';
+				}else {
+					//ça semble bon, le prix est calculé, le metier est bien présent sur le perso, il dépasse pas le max et c'est bien à lui
+					if ($compte_points >=$new_lvl_prix) {
+						$new_value_metier = $metier_perso_check["value"]+25;
+						$resReqWow = mysql_query ( "UPDATE character_skills SET value = '".$new_value_metier."' WHERE guid='" . $guid_perso . "' AND skill='".$metier_perso."' LIMIT 1" ) or die ( mysql_error () );
+						mysql_close();
+						$connexion = mysql_connect($host_site, $user_site , $pass_site);
+						mysql_select_db($site_database ,$connexion);
+						mysql_query("SET NAMES 'utf8'");
+						$resReqSite = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), account_id = '".$id_compte."', objet_id='25 lvl metiers', perso_id ='" . $guid_perso . "',perso_nom='".$perso['name']."'" ) or die ( mysql_error () );
+						$resReqSite2 = mysql_query ( "UPDATE accounts SET points=points-$new_lvl_prix WHERE id='".$id_compte."' LIMIT 1" ) or die ( mysql_error () );
+						if ($resReqSite && $resReqWow&& $resReqSite2) {
+							echo "<div id='success_page'>";
+							 echo "<p>Vous avez maintenant 25 niveaux en plus dans votre metier sur le perso ".$perso['name'].".</p>";
+							 echo "</div>";
+							echo '<div id="bottom_contenu"></div>';
+						} else {
+							echo '<div class="error_message">Erreur avec le serveur de base de données dans le changement du niveau.</div>';
+						}
 					} else {
-						echo '<div class="error_message">Erreur avec le serveur de base de données dans le changement du niveau.</div>';
+						// pas assez de po
+						echo '<div class="error_message">Vous n\'avez pas assez de points.</div>';
 					}
-				} else {
-					// pas assez de po
-					echo '<div class="error_message">Vous n\'avez pas assez de points.</div>';
 				}
 			}
 		} else {
@@ -168,7 +143,44 @@ switch ($_POST['type']) {
 			echo '<div class="error_message">Le personnage n\'appartient pas à votre compte.</div>';
 		}
 	}
-	
 	break;
+
+}
+function calcul_prix($level_actuel){
+	if($level_actuel<25) {
+		$new_lvl_prix =  0.5;
+	}else if($level_actuel<50) {
+		$new_lvl_prix = 0.75;
+	}else if($level_actuel<75) {
+		$new_lvl_prix =  1;
+	}else if($level_actuel<100) {
+		$new_lvl_prix =  1.25;
+	}else if($level_actuel<125) {
+		$new_lvl_prix =  1.5;
+	} else if ($level_actuel<150) {
+		$new_lvl_prix = 1.75; 
+	}else if ($level_actuel<175) {
+		$new_lvl_prix = 2; 
+	}else if ($level_actuel<200) {
+		$new_lvl_prix = 2.25; 
+	}else if ($level_actuel<225) {
+		$new_lvl_prix = 2.5; 
+	}else if ($level_actuel<250) {
+		$new_lvl_prix = 2.75; 
+	}else if ($level_actuel<275) {
+		$new_lvl_prix = 3; 
+	}else if ($level_actuel<300) {
+		$new_lvl_prix = 3.25; 
+	}else if ($level_actuel<325) {
+		$new_lvl_prix = 3.5; 
+	}else if ($level_actuel<350) {
+		$new_lvl_prix = 3.75;
+	}else if ($level_actuel==350) {
+		$new_lvl_prix = 4; 
+	} else {
+		// n'est pas dans les offres possible
+		$new_lvl_prix = -1; 
+	}
+	return $new_lvl_prix;
 }
 ?>

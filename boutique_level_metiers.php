@@ -92,7 +92,7 @@ color:#1C8400;
 								$("#message").html("").removeClass('response-msg error ui-corner-all');
 								$("#prix").html("");
 								if(data.prix==-2){
-									$("#message").html("Vous ne pouvez pas prendre plus de levels. Vous avez surement besoin d'aller voir le maitre de votre metier").addClass('response-msg error ui-corner-all').fadeTo(900,1);							
+									$("#message").html("Vous ne pouvez pas prendre plus de levels. Vous avez surement besoin d'aller voir le maitre de votre métier").addClass('response-msg error ui-corner-all').fadeTo(900,1);							
 								}else if(data.prix == -1){
 									$("#message").html("Vous ne pouvez pas dépassez le niveau 375 via boutique").addClass('response-msg error ui-corner-all').fadeTo(900,1);							
 								}else {
@@ -114,6 +114,7 @@ color:#1C8400;
 
 						$.post(action, { 
 							valeur: $('#perso').val(),
+							metier: $('#metier').val(),
 							type: 'achat_level'
 						},
 							function(data){
