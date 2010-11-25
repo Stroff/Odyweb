@@ -2,6 +2,8 @@
 /* CSS Document */
 
 /* These styles just pretty up the page a bit. */
+img
+{border:0px;}
 body {
    font: 82.5%/1.2 Arial, Helvetica, sans-serif;
    color:#294577 ;
@@ -111,4 +113,36 @@ h1
 	width:35%;
 	float:left;
 }
-	
+.arena_search
+{
+    float: left;
+    width : 20%;
+   border:#5e8ce9 1px solid;
+   background-color:#e7e7e7;
+   padding: 15px;
+   margin: 15px;
+}
+.arena_filters
+{
+    background-image: url(images/search-deg.jpg);
+    background-repeat: repeat-x ;
+    background-color: #a2c0fb;
+    float: right;
+    width: 69%;
+    color:white;
+    font-weight: bold;
+    padding: 15px;
+
+}
+.arena_teams
+{
+    background-color: white;
+    color: black;
+    padding: 10px;
+
+}
+.arena_header
+{
+    float: left;
+    width: 100%;
+}
