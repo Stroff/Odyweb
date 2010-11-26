@@ -27,6 +27,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
          </li>
          <li> <a href="#">Logs divers</a>
  	        <ul><li> <a href="logs_renames.php">Logs renames</a></li>
+                    <li> <a href="logs_arene.php">Logs Arene</a></li>
             <?php
 				if($_SESSION['gm']==5 || $_SESSION['gm']==6){
 				 echo "<li>  <a href=\"gm_logs.php\">Logs MJ</a></li>"; } ?>
