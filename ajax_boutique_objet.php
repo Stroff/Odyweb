@@ -43,7 +43,7 @@ switch ($_POST['type']) {
 					$connexion = mysql_connect($host_site, $user_site , $pass_site);
 					mysql_select_db($site_database ,$connexion);
 					mysql_query("SET NAMES 'utf8'");
-					$resReqSite = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), account_id = '".$id_compte."', objet_id='".$objet['id_objet']." objet', perso_id ='" . $guid_perso . "',perso_nom='".$perso['name']."'" ) or die ( mysql_error () );
+					$resReqSite = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), ip='".get_ip()."', account_id = '".$id_compte."', objet_id='".$objet['id_objet']." objet', perso_id ='" . $guid_perso . "',perso_nom='".$perso['name']."'" ) or die ( mysql_error () );
 					$resReqSite2 = mysql_query ( "UPDATE accounts SET points=points-".$objet['prix']." WHERE id='".$id_compte."' LIMIT 1" ) or die ( mysql_error () );
 					if ($resReqSite && $resReqWow&& $resReqSite2&&$resReqWow2) {
 						echo "<div class='success_message'>";
