@@ -74,7 +74,26 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 		 ?>
 
         </td>
+		</tr>
+		<tr>
+	    	<td>
+	        <?php
+			$process = curl_init(); 
+			$headers="";
+			$headers[] = 'Accept: application/vnd.tender-v1+json'; 
+			$headers[] = "X-Multipass: $sso";
+			curl_setopt($process, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($process, CURLOPT_HEADER, 0);
+			curl_setopt($process, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($process, CURLOPT_URL, "http://api.tenderapp.com/odyssee/discussions/pending");
+			$return = curl_exec($process); 
+			curl_close($process);
+			$data = json_decode($return);
+	         echo '<div class="infos"><a href="'.$url.'">tickets hors ligne: '.$data->total.'</a> </p>';
 
+	        ?>
+	        </td>
+	     </tr>
     </tr>
 	<tr>
 		<td>Version mise à jour par GIT_AUTHOR_NAME(GIT_AUTHOR_EMAIL)</td>

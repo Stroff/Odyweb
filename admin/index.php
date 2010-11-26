@@ -1,7 +1,6 @@
 ﻿<?php
 $secure_lvl=2;
 require_once '../secure.php';
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,13 +9,7 @@ require_once '../secure.php';
 <title>Administration Odyssee</title>
 </head>
 <?php
-include "navbar.php";
-?>
-
-<form id="form1" name="form1" method="post" action="ajout_categorie.php">
-</form>
-
-<?php if($_SESSION['gm']==4){
+if($_SESSION['gm']==4){
 	$nom = 'Développeurs';
 	$email = 'dev@odyssee-serveur.com';
 }
@@ -30,7 +23,14 @@ if($_SESSION['gm']==3){
 }
 $sso = generate_multipass_tender($email, $nom);
 $url = "http://odyssee.tenderapp.com?sso=".$sso;
+
+include "navbar.php";
 ?>
+
+<form id="form1" name="form1" method="post" action="ajout_categorie.php">
+</form>
+
+
 
 
 
