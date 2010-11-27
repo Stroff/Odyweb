@@ -50,8 +50,10 @@ if($type_recup !="Normal" && $type_recup != "Prenium"){
 } else {
 	if($type_recup =="Normal"){
 		$cout = 1;
+		$jeton_id = 0;
 	} else {
 		$cout = 3;
+		$jeton_id = 250008;
 	}
 }
 if(	$compte_points < $cout){
@@ -92,7 +94,7 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 				$ajout_demande = mysql_query("INSERT INTO demandes_recups SET id_compte = '".$compte_id."', nom_perso ='".$pseudo."',serveur_origine='".$serveur."',lvl='".$level."',race='".$race."',classe='".$classe."',
 					metier1='".$metier1."', metier2='".$metier2."', lvl_metier1='".$lvl_metier1."',lvl_metier2='".$lvl_metier2."',metier_secondaire1='".$metier_secondaire1."',metier_secondaire2='".$metier_secondaire2."',
 					metier_secondaire3='".$metier_secondaire3."',lvl_metier_secondaire1='".$lvl_metier_secondaire1."',lvl_metier_secondaire2='".$lvl_metier_secondaire2."',lvl_metier_secondaire3='".$lvl_metier_secondaire3."',
-					armurerie = '".$armurerie."', type_recup = '".$type_recup."', date_demande = NOW(), lvl_mount = '".$lvl_mount."', id_perso_cible='".$id_perso_cible."',etat_ouverture='".$etat_demande."'");
+					armurerie = '".$armurerie."', type_recup = '".$type_recup."', date_demande = NOW(), lvl_mount = '".$lvl_mount."', id_perso_cible='".$id_perso_cible."',etat_ouverture='".$etat_demande."', jeton_id = $jeton_id");
 
 				$id_demande = mysql_insert_id();
 				if($guilde_recup<>'') {

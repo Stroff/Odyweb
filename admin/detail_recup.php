@@ -165,7 +165,7 @@ require "../lib/phpmailer/class.phpmailer.php";
 	$jeton["250003"] = "Jeton S1";
 	$jeton["250004"] = "Jeton S2";
 	$jeton["250007"] = "Jeton Stuff 78";
-//	$jeton["250008"] = "Jeton Stuff Haineux";
+	$jeton["250008"] = "Jeton Stuff Haineux/T7";
 	
 	
 	if (mysql_num_rows($resultat)==0) {
@@ -187,6 +187,8 @@ require "../lib/phpmailer/class.phpmailer.php";
 	<br />
 	<label> Date demande : </label><?php echo $recup['date_demande'] ?> <br />
 
+	<br />
+	<label> Type demande : </label><span style"color=red;"><?php echo $recup['type_recup'] ?></span> <br />
 
 	<br />
 	<label> Nom du perso origine: </label>
