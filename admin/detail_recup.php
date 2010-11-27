@@ -132,6 +132,18 @@ require "../lib/phpmailer/class.phpmailer.php";
 				if (isset($_POST['bloque_compte'])) {
 					mysql_query("INSERT INTO accounts_blocage_recup SET id_compte = '".$id_compte."', id_recup='".$id_recup."', fin_blocage = DATE_ADD(NOW(),INTERVAL 7 DAY)");
 				}
+				if (isset($_POST['rembourse_compte'])) {
+					$resultat_recup_prix = mysql_query("SELECT type_recup FROM demandes_recups WHERE id = '".$id_recup."'");
+					$resultat_recup_prix = mysql_fetch_array($resultat_recup_prix);
+					if($resultat_recup_prix['type_recup'] =="Normal"){
+						$cout = 1;
+					}else if($resultat_recup_prix['type_recup'] =="Prenium"){
+						$cout = 3;
+					}else {
+						$cout = 0;
+					}
+					mysql_query("UPDATE accounts SET points=points+$cout WHERE id = '".$id_compte."'");
+				}
 			} else {
 				echo '<p style="color:red;">Erreur dans la modification de la recup</p>';
 			}
@@ -555,6 +567,8 @@ echo '<br />'
     <br />
 	<label>Bloqué les demandes de recups 7jrs : </label><input type="checkbox" name="bloque_compte" value="oui"><input type="hidden" name="id_compte" value="<?php echo $recup['id_compte'] ?>"><br />
 	
+	<br />
+	<label>Remboursement de la récupération : </label><input type="checkbox" name="rembourse_compte" value="oui"><br />
 <br />
 <input name="new_valid" id="new_valid" type="submit" value="Valider" /><br />
 </form>
