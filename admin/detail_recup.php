@@ -568,7 +568,7 @@ echo '<br />'
 	<label>Bloqué les demandes de recups 7jrs : </label><input type="checkbox" name="bloque_compte" value="oui"><input type="hidden" name="id_compte" value="<?php echo $recup['id_compte'] ?>"><br />
 	
 	<br />
-	<label>Remboursement de la récupération : </label><input type="checkbox" name="rembourse_compte" value="oui"><br />
+	<!--<label>Remboursement de la récupération : </label><input type="checkbox" disable="disable" name="rembourse_compte" value="oui"><br />-->
 <br />
 <input name="new_valid" id="new_valid" type="submit" value="Valider" /><br />
 </form>
