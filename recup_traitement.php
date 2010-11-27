@@ -1,7 +1,5 @@
 <?php
 include_once "lib/amazon_sdk/sdk.class.php";
-//$cout = 30;
-$cout=0;
 $secure_lvl = 1;
 $header_titre = "Demande de récupération";
 require "include/template/header_cadres.php";
@@ -13,6 +11,7 @@ $armurerie = mysql_escape_string ( $_POST ["armurerie"]);
 $metier1 = mysql_escape_string ( $_POST ["metier1"]);
 $lvl_metier1 = mysql_escape_string ( $_POST ["lvl_metier1"]);
 $lvl_mount = mysql_escape_string ( $_POST ["lvl_mount"]);
+$type_recup = mysql_escape_string ( $_POST ["type_recup"]);
 
 if($lvl_metier1=='') {
 	$lvl_metier1= 0;
@@ -46,6 +45,18 @@ foreach ($_FILES["file"]["error"] as $key => $error) {
 if($nombre_fichiers==0){
 	$message .="Vous devez mettre des images dans la demande";
 }
+if($type_recup !="Normal" && $type_recup != "Prenium"){
+	$message .="Vous devez mettre un type de demande";
+} else {
+	if($type_recup =="Normal"){
+		$cout = 1;
+	} else {
+		$cout = 3;
+	}
+}
+if(	$compte_points < $cout){
+	$message .= "Vous n'avez pas assez de point pour une récupération.";
+}
 $metiers = array("51304","51309","50305","51313","51300","50300","51306","51311","50310","51302","45363","0","51296","51294","45542");
 if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level<60) {
 	if (($level<=80&&$level>=60)||$level==''){
@@ -62,7 +73,7 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 		$guilde_recup = '';
 		$etat_demande = 1;
 	}
-	if($message==""&&$lvl_metier_secondaire1<=450&&$lvl_metier_secondaire1>=0&&$lvl_metier_secondaire2<=450&&$lvl_metier_secondaire2>=0&&$lvl_metier_secondaire3<=450&&$lvl_metier_secondaire3>=0&&$lvl_metier1<=450&&$lvl_metier1>=0&&$lvl_metier2<=450&&$lvl_metier2>=0&&in_array($metier1,$metiers)&&in_array($metier2,$metiers)&&in_array($metier_secondaire1,$metiers)&&in_array($metier_secondaire2,$metiers)&&in_array($metier_secondaire3,$metiers)&&$lvl_mount<=300&&$lvl_mount>=0) {
+	if($message==''&&$lvl_metier_secondaire1<=450&&$lvl_metier_secondaire1>=0&&$lvl_metier_secondaire2<=450&&$lvl_metier_secondaire2>=0&&$lvl_metier_secondaire3<=450&&$lvl_metier_secondaire3>=0&&$lvl_metier1<=450&&$lvl_metier1>=0&&$lvl_metier2<=450&&$lvl_metier2>=0&&in_array($metier1,$metiers)&&in_array($metier2,$metiers)&&in_array($metier_secondaire1,$metiers)&&in_array($metier_secondaire2,$metiers)&&in_array($metier_secondaire3,$metiers)&&$lvl_mount<=300&&$lvl_mount>=0) {
 		$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 		mysql_select_db($wow_characters ,$connexion);
 		mysql_query("SET NAMES 'utf8'");
@@ -81,7 +92,7 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 				$ajout_demande = mysql_query("INSERT INTO demandes_recups SET id_compte = '".$compte_id."', nom_perso ='".$pseudo."',serveur_origine='".$serveur."',lvl='".$level."',race='".$race."',classe='".$classe."',
 					metier1='".$metier1."', metier2='".$metier2."', lvl_metier1='".$lvl_metier1."',lvl_metier2='".$lvl_metier2."',metier_secondaire1='".$metier_secondaire1."',metier_secondaire2='".$metier_secondaire2."',
 					metier_secondaire3='".$metier_secondaire3."',lvl_metier_secondaire1='".$lvl_metier_secondaire1."',lvl_metier_secondaire2='".$lvl_metier_secondaire2."',lvl_metier_secondaire3='".$lvl_metier_secondaire3."',
-					armurerie = '".$armurerie."', date_demande = NOW(), lvl_mount = '".$lvl_mount."', id_perso_cible='".$id_perso_cible."',etat_ouverture='".$etat_demande."'");
+					armurerie = '".$armurerie."', type_recup = '".$type_recup."', date_demande = NOW(), lvl_mount = '".$lvl_mount."', id_perso_cible='".$id_perso_cible."',etat_ouverture='".$etat_demande."'");
 
 				$id_demande = mysql_insert_id();
 				if($guilde_recup<>'') {
@@ -89,9 +100,9 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 				} else {
 					$ajout_demande_guilde =true;
 				}
-				$nouveau_pp = $compte_pp - $cout;
-				//	$maj_pp = mysql_query("UPDATE accounts SET pp=$nouveau_pp WHERE id =$compte_id");
-				$maj_pp=true;
+				$maj_pp = mysql_query("UPDATE accounts SET points=points-$cout WHERE id =$compte_id");
+				$log_achats = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), ip='".get_ip()."', account_id = '".$id_compte."', objet_id='Récupération de type ".$type_recup."', perso_id ='" . $id_perso_cible . "',perso_nom='".$pseudo."'" ) or die ( mysql_error () );
+
 				//creation des répertoires 
 				$repertoire = 'demandes/recups/' . md5($id_demande)  . '/';
 				//mkdir ( $repertoire, 0755 );
@@ -130,7 +141,9 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 			$message .= "Le Personnage ne vous appartient pas.";
 		}
 	} else {
-		$message .= "Les niveaux de métiers doivent etre entre 0 et 450.";
+		if($message=='') {
+			$message .= "Les niveaux de métiers doivent etre entre 0 et 450.";
+		}
 	}
 }
 ?>
