@@ -130,7 +130,8 @@ $(document).ready(function(){
 
 				
 <br /><br />
-<p>Vous devez mettre des images de votre équipement (quelques items seulement), de vos métiers et montes, de votre temps de jeu (/played), ainsi que l'affichage de la sélection des personnages</p>
+<font color="red"> ATTENTION: Pour recuperer en premium vous devez avoir des items du'un niveau 200 minimum (epique 80) pour beneficier des recups premium </font> <br/>
+<p>Vous devez mettre des images de votre équipement (quelques items seulement pour une recup normale, tous pour une premium), de vos métiers et montes, de votre temps de jeu (/played), ainsi que l'affichage de la sélection des personnages</p>
 	<div id="file">
 	<br />
     <label class="form-fill">Image : </label>

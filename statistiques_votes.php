@@ -12,7 +12,7 @@ for($i=1;$i<=$id_vote_saison;$i++){
 	echo "<h3>$nom_vote_saison[0]</h3>";
 	echo '<table>
 		<tr>
-	        <th>Compte</th>
+	        <th width="260px">Compte</th>
 	        <th>Nombres de votes</th>
 	    </tr>';
 	$sql = "SELECT accounts.username, 

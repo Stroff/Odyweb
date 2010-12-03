@@ -42,7 +42,7 @@
 <p>Vous pouvez télécharger votre client ici: <a href="http://www.teamspeak.com/?page=downloads">http://www.teamspeak.com/?page=downloads</a></p>
 <p>Version du serveur en cours: 3.0.0-beta25 [Build: 11421]</p>
 <p>Adresse de connection au serveur:	</p>
-<p align="center"><strong>teamspeak.odyssee-serveur.com</strong></p>
+<p align="center"><strong>voix.odyssee-serveur.com</strong></p>
 <p>&nbsp;</p>
 <h3><strong>Votre guilde utilise Teamspeak?</strong></h3>
 <p>Renseignez vous auprès d'elle pour le mot de passe utilisé sur leur canal. </p>
