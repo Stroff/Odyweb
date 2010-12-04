@@ -39,7 +39,7 @@ require "../lib/phpmailer/class.phpmailer.php";
 <body>
 <div id="dt_example">
 <?php include "navbar.php"; ?>
-<p><a href="liste_recup.php">Liste des recupérations</a></p>
+<p><a href="liste_recup.php">Liste des récupérations</a></p>
 	<?php
 	include 'config/config.php';
 	
@@ -107,7 +107,7 @@ require "../lib/phpmailer/class.phpmailer.php";
 				}
 				$mail = new PHPmailer();
 				$mail->IsSMTP();
-				$mail->Host='127.0.0.1';
+				$mail->Host='smtp.free.fr';
 				$mail->CharSet	=	"UTF-8";
 				$mail->IsHTML(true);
 				$mail->From=$email_mj;
@@ -117,6 +117,30 @@ require "../lib/phpmailer/class.phpmailer.php";
 				$mail->Body=$message;				
 				$mail->FromName="Odyssée Serveur";
 				$mail->Send();
+				
+				//remboursement ou pas du prix de la demande de recup.
+				$resultat_demande = mysql_query("SELECT * FROM demandes_recups WHERE id = '".$id_recup."'");
+				$recup_old = mysql_fetch_array($resultat_demande);
+				//si c'est prenium et qu'il recup un jeton psa prenium et que c'est validé
+				if($recup_old["type_recup"]=="Prenium" && $id_jeton!=250008 && $raison_fermeture==10){
+					//controle du nombre de rembousements fait.
+					$nbr_remboursements = mysql_query("SELECT * FROM accounts_remboursement_recups WHERE account_id = '".$id_compte."'");
+					if(mysql_num_rows($nbr_remboursements)==0){
+						//dans ce cas remboursement car jamais eu lieux avant
+						$remboursement_log = mysql_query("INSERT INTO accounts_remboursement_recups SET account_id = '".$id_compte."', recup_id = '".$id_recup."', date_remboursement = NOW() ");
+						$remboursement_account = mysql_query("UPDATE accounts SET points=points+2 WHERE id = '".$id_compte."'");
+					}
+				}
+				//remboursement si pas accepté
+				if($recup_old["type_recup"]=="Prenium" && $id_jeton==250008 && $raison_fermeture!=4 && $raison_fermeture!=10){
+					//controle du nombre de rembousements fait.
+					$nbr_remboursements = mysql_query("SELECT * FROM accounts_remboursement_recups WHERE account_id = '".$id_compte."'");
+					if(mysql_num_rows($nbr_remboursements)==0){
+						//dans ce cas remboursement car jamais eu lieux avant
+						$remboursement_log = mysql_query("INSERT INTO accounts_remboursement_recups SET account_id = '".$id_compte."', recup_id = '".$id_recup."', date_remboursement = NOW() ");
+						$remboursement_account = mysql_query("UPDATE accounts SET points=points+3 WHERE id = '".$id_compte."' ");
+					}
+				}
 			}
 		
 			$sql = "UPDATE demandes_recups SET lvl = '".$lvl."', nom_perso = '".$nom_perso."',classe = '".$classe."',race = '".$race."',serveur_origine = '".$serveur_origine."',etat_ouverture='".$raison_fermeture."', 
