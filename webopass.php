@@ -43,7 +43,7 @@ include "include/template/header_cadres.php" ;
 
 			$nouveau_nbr_points= $compte_points+$points_par_allopass;
 
-			$resultat  = mysql_query("UPDATE accounts SET points=".$nouveau_nbr_points.", pp=pp+".$pp_par_achat." WHERE id='".$compte_id."' LIMIT 1") or die(mysql_error());
+			$resultat  = mysql_query("UPDATE accounts2 SET points=".$nouveau_nbr_points.", pp=pp+".$pp_par_achat." WHERE id='".$compte_id."' LIMIT 1") or die(mysql_error());
 			$log = mysql_query("INSERT INTO logs_achat_points (account_id, type,nombre_points,date) VALUES ($compte_id, 'webopass',$points_par_allopass,NOW())");
 			if ($resultat && $log) {
 				$message = 'Vous avez bien acheté '.$points_par_allopass.' points Odyssée. Merci de votre soutien';

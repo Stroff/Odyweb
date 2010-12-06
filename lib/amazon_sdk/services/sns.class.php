@@ -385,7 +385,7 @@ class AmazonSNS extends CFRuntime
 	/**
 	 * Method: add_permission()
 	 * 	The AddPermission action adds a statement to a topic's access control policy, granting access for
-	 * 	the specified AWS accounts to the specified actions.
+	 * 	the specified AWS accounts2 to the specified actions.
 	 *
 	 * Access:
 	 *	public
@@ -393,7 +393,7 @@ class AmazonSNS extends CFRuntime
 	 * Parameters:
 	 *	$topic_arn - _string_ (Required) The ARN of the topic whose access control policy you wish to modify.
 	 *	$label - _string_ (Required) A unique identifier for the new policy statement.
-	 *	$account_id - _string_|_array_ (Required) The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service. Pass a string for a single value, or an indexed array for multiple values.
+	 *	$account_id - _string_|_array_ (Required) The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts2, but do not need to be signed up for this service. Pass a string for a single value, or an indexed array for multiple values.
 	 *	$action_name - _string_|_array_ (Required) The action you want to allow for the specified principal(s). Pass a string for a single value, or an indexed array for multiple values.
 	 *	$opt - _array_ (Optional) An associative array of parameters that can have the keys listed in the following section.
 	 *

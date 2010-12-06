@@ -28,7 +28,7 @@ if ($_POST ["username_perdu"]) {
 	$connexion = mysql_connect($host_site, $user_site , $pass_site);
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");
-	$sql_check_compte = mysql_query("SELECT activation,key_activation,email FROM accounts WHERE username='".$demande_username."'");
+	$sql_check_compte = mysql_query("SELECT activation,key_activation,email FROM accounts2 WHERE username='".$demande_username."'");
 	
 	if (mysql_num_rows($sql_check_compte)==1) {
 		$row = mysql_fetch_array($sql_check_compte); 

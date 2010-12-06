@@ -49,7 +49,7 @@ include "include/template/header_cadres.php";
 					$mail->Body="<p>Odyssée vous informe que l'adresse email de votre compte ".$_SESSION['login']." a été changé. La nouvelle adresse est maintenant ".$_POST ["email"].". Si ce n'est pas votre email vous pouvez retrouvé l'ancienne email avec ce lien : <a href='".$url_site."/rollback_email.php?code=".$token."'>".$url_site."/rollback_email.php?code=".$token."</a><p> <p>Merci.</p>";
 					$mail->Send();
 					
-					$req_email = mysql_query ( "UPDATE accounts SET email = '".$email_new."' WHERE id='" . $compte_id . "' LIMIT 1" ) or die ( mysql_error () );
+					$req_email = mysql_query ( "UPDATE accounts2 SET email = '".$email_new."' WHERE id='" . $compte_id . "' LIMIT 1" ) or die ( mysql_error () );
 					$_SESSION['email'] = $_POST ["email"];
 			}
 			
@@ -66,7 +66,7 @@ include "include/template/header_cadres.php";
 				mysql_close();					
 				$connexion = mysql_connect($host_site, $user_site , $pass_site);
 				mysql_select_db($site_database ,$connexion);
-				$resReqSite = mysql_query ( "UPDATE accounts SET extension = '".$extension."' WHERE id='" . $compte_id . "' LIMIT 1" ) or die ( mysql_error () );
+				$resReqSite = mysql_query ( "UPDATE accounts2 SET extension = '".$extension."' WHERE id='" . $compte_id . "' LIMIT 1" ) or die ( mysql_error () );
 								
 				if ($resReqSite && $resReqWow) {
 					echo '<div style="margin-left:20px;"><p> Votre compte a bien été modifié, vous avez changé d\'extension</p>';
@@ -94,7 +94,7 @@ include "include/template/header_cadres.php";
 					mysql_close();					
 					$connexion = mysql_connect($host_site, $user_site , $pass_site);
 					mysql_select_db($site_database ,$connexion);
-					$resReqWow = mysql_query ( "UPDATE accounts SET password='" . $hash_new_nouveau_password . "', password_old='', extension = '".$extension."' WHERE id='" . $compte_id . "' LIMIT 1" ) or die ( mysql_error () );
+					$resReqWow = mysql_query ( "UPDATE accounts2 SET password='" . $hash_new_nouveau_password . "', password_old='', extension = '".$extension."' WHERE id='" . $compte_id . "' LIMIT 1" ) or die ( mysql_error () );
 				
 					mysql_query("UPDATE redmine.users SET hashed_password='".$hash_new_nouveau_password ."' WHERE login='".$_SESSION['login']."' LIMIT 1");
 				

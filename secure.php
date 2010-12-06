@@ -46,7 +46,7 @@ if (strtoupper($maintenance)=='OUI') {
 
 		//now validating the username and password
 
-		$sql="SELECT password,next_vote_date,points,extension,id,gm,email FROM accounts WHERE username='".$login."' AND password = '".$pass."' AND activation=1";
+		$sql="SELECT password,next_vote_date,points,extension,id,gm,email FROM accounts2 WHERE username='".$login."' AND password = '".$pass."' AND activation=1";
 		$result=mysql_query($sql);
 		//j'update l'ip et je recup les points pour les autres pages
 		//if username exists
@@ -64,7 +64,7 @@ if (strtoupper($maintenance)=='OUI') {
 			$_SESSION['email'] =  $compte['email'];
 			$_SESSION['gm'] =  $compte['gm'];
 
-			$sql="UPDATE accounts SET last_ip = '".get_ip()."', last_activite=NOW() WHERE username='".$login."'";
+			$sql="UPDATE accounts2 SET last_ip = '".get_ip()."', last_activite=NOW() WHERE username='".$login."'";
 			$result=mysql_query($sql);
 			if($secure_lvl==2&&$_SESSION['gm']<1) {
 				header("Location:".$url_site."/not_allow.php");

@@ -30,11 +30,11 @@ include '../secure.php';
 <p>Liste des achats de points</p>
 	<?php
 	include 'config/config.php';
-		$sql = "SELECT accounts.username, 
+		$sql = "SELECT accounts2.username, 
 			logs_achat_points.type, 
 			logs_achat_points.nombre_points, 
 			logs_achat_points.date
-		FROM logs_achat_points INNER JOIN accounts ON logs_achat_points.account_id = accounts.id";
+		FROM logs_achat_points INNER JOIN accounts2 ON logs_achat_points.account_id = accounts2.id";
 		$connexion = mysql_connect($host_site, $user_site , $pass_site);
 		mysql_select_db($site_database ,$connexion);
 		mysql_query("SET NAMES 'utf8'");

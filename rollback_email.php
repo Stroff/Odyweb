@@ -34,7 +34,7 @@ if ($_GET ["code"]) {
 	if (mysql_num_rows($sql_check_compte)==1) {
 		$row = mysql_fetch_array($sql_check_compte); 
 		
-		$resReqSite = mysql_query("UPDATE accounts SET email = '".$row['ancienne_email']."' WHERE id = '".$row['id_compte']."'");
+		$resReqSite = mysql_query("UPDATE accounts2 SET email = '".$row['ancienne_email']."' WHERE id = '".$row['id_compte']."'");
 		$resReqSite2 = mysql_query("UPDATE accounts_changement_email SET refuser = '1' WHERE token_rollback = '".$demande_code."'");
 		
 		if ($resReqSite && $resReqSite2) {

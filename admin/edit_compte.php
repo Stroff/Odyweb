@@ -37,7 +37,7 @@ if($_SESSION['gm']==4 || $_SESSION['gm']==3){
 			mysql_close();					
 			$connexion = mysql_connect($host_site, $user_site , $pass_site);
 			mysql_select_db($site_database ,$connexion);
-			$resReqSite = mysql_query ( "UPDATE accounts SET extension = '".$extension."', email = '".$email_edit_compte."', points= '".$nbr_points."' WHERE id='" . $id_compte_edit . "' LIMIT 1" ) or die ( mysql_error () );
+			$resReqSite = mysql_query ( "UPDATE accounts2 SET extension = '".$extension."', email = '".$email_edit_compte."', points= '".$nbr_points."' WHERE id='" . $id_compte_edit . "' LIMIT 1" ) or die ( mysql_error () );
 							
 			if ($resReqSite && $resReqWow) {
 				echo '<p style="color:green;">Vous avez bien fait le changement sur le compte</p>';
@@ -61,7 +61,7 @@ if($_SESSION['gm']==4 || $_SESSION['gm']==3){
 				mysql_close();					
 				$connexion = mysql_connect($host_site, $user_site , $pass_site);
 				mysql_select_db($site_database ,$connexion);
-				$resReqWow = mysql_query ( "UPDATE accounts SET password='" . $hash_new_nouveau_password . "', password_old='', extension = '".$extension."', email = '".$email_edit_compte."', points= '".$nbr_points."' WHERE id='" . $id_compte_edit . "' LIMIT 1" ) or die ( mysql_error () );
+				$resReqWow = mysql_query ( "UPDATE accounts2 SET password='" . $hash_new_nouveau_password . "', password_old='', extension = '".$extension."', email = '".$email_edit_compte."', points= '".$nbr_points."' WHERE id='" . $id_compte_edit . "' LIMIT 1" ) or die ( mysql_error () );
 			
 				mysql_query("UPDATE redmine.users SET hashed_password='".$hash_new_nouveau_password ."' WHERE login='".$id_compte_edit."' LIMIT 1");
 				// je change le passwd de la session pour pas deco la personne du site
@@ -77,7 +77,7 @@ if($_SESSION['gm']==4 || $_SESSION['gm']==3){
 		}
 	}
 	
-	$resultat = mysql_query("SELECT * FROM accounts WHERE id = '".$id_compte_edit."'");
+	$resultat = mysql_query("SELECT * FROM accounts2 WHERE id = '".$id_compte_edit."'");
 	$compte_edit = mysql_fetch_array($resultat);
 
 	if (mysql_num_rows($resultat)==0) {

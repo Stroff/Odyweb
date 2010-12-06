@@ -41,12 +41,12 @@ if($_SESSION['gm']==4 || $_SESSION['gm']==3){
 <p>Liste des bans</p>
 	<?php
 	include 'config/config.php';
-		$sql = "SELECT accounts.username, 
-			accounts.id, 
-			accounts.email, 
-			accounts.last_ip, 
-			accounts.points
-		FROM accounts WHERE email LIKE '%".$_POST['termes']."%' OR username LIKE '%".$_POST['termes']."%' OR last_ip LIKE '%".$_POST['termes']."%'";
+		$sql = "SELECT accounts2.username, 
+			accounts2.id, 
+			accounts2.email, 
+			accounts2.last_ip, 
+			accounts2.points
+		FROM accounts2 WHERE email LIKE '%".$_POST['termes']."%' OR username LIKE '%".$_POST['termes']."%' OR last_ip LIKE '%".$_POST['termes']."%'";
 		$connexion = mysql_connect($host_site, $user_site , $pass_site);
 		mysql_select_db($site_database ,$connexion);	
 		mysql_query("SET NAMES 'utf8'");

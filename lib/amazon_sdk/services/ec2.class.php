@@ -486,7 +486,7 @@ class AmazonEC2 extends CFRuntime
 	 * 	The DescribeAvailabilityZones operation describes availability zones that are currently available to
 	 * 	the account and their states.
 	 *
-	 * 	Availability zones are not the same across accounts. The availability zone us-east-1a for account A
+	 * 	Availability zones are not the same across accounts2. The availability zone us-east-1a for account A
 	 * 	is not necessarily the same as us-east-1a for account B. Zone assignments are mapped independently
 	 * 	for each account.
 	 *

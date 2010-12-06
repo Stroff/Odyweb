@@ -30,12 +30,12 @@ include '../secure.php';
 <p>Liste des achats de points</p>
 	<?php
 	include 'config/config.php';
-		$sql = "SELECT accounts.username AS nom_compte_mj, 
+		$sql = "SELECT accounts2.username AS nom_compte_mj, 
 			logs_mj_recups.id AS id_demande_recup, 
 			logs_mj_recups.date AS date, 
 			motifs_recups.raison_fermeture,
 			motifs_recups.raison_fermeture,	
-		FROM accounts INNER JOIN logs_mj_recups ON accounts.id = logs_mj_recups.id_compte_mj
+		FROM accounts2 INNER JOIN logs_mj_recups ON accounts2.id = logs_mj_recups.id_compte_mj
 			 INNER JOIN motifs_recups ON motifs_recups.id = logs_mj_recups.id_nouveau_etat_demande AND motifs_recups.id = logs_mj_recups.id_ancien_etat_demande";
 		$connexion = mysql_connect($host_site, $user_site , $pass_site);
 		mysql_select_db($site_database ,$connexion);

@@ -41,20 +41,20 @@ include '../secure.php';
 	
 	if (isset($_POST['logsearch']))
 	{
-		$sql = "SELECT accounts.username, 
+		$sql = "SELECT accounts2.username, 
 			logs_achat_boutique.objet_id, 
 			logs_achat_boutique.perso_nom, 
 			logs_achat_boutique.date
-		FROM logs_achat_boutique INNER JOIN accounts ON logs_achat_boutique.account_id = accounts.id WHERE logs_achat_boutique.perso_nom LIKE '%".$_POST['logsearch']."%' OR accounts.username LIKE '%".$_POST['logsearch']."%'";
+		FROM logs_achat_boutique INNER JOIN accounts2 ON logs_achat_boutique.account_id = accounts2.id WHERE logs_achat_boutique.perso_nom LIKE '%".$_POST['logsearch']."%' OR accounts2.username LIKE '%".$_POST['logsearch']."%'";
 	}
 	else
 	{
 	
-		$sql = "SELECT accounts.username, 
+		$sql = "SELECT accounts2.username, 
 			logs_achat_boutique.objet_id, 
 			logs_achat_boutique.perso_nom, 
 			logs_achat_boutique.date
-		FROM logs_achat_boutique INNER JOIN accounts ON logs_achat_boutique.account_id = accounts.id";
+		FROM logs_achat_boutique INNER JOIN accounts2 ON logs_achat_boutique.account_id = accounts2.id";
 	}
 		$connexion = mysql_connect($host_site, $user_site , $pass_site);
 		mysql_select_db($site_database ,$connexion);

@@ -102,7 +102,7 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 				} else {
 					$ajout_demande_guilde =true;
 				}
-				$maj_pp = mysql_query("UPDATE accounts SET points=points-$cout WHERE id =$compte_id");
+				$maj_pp = mysql_query("UPDATE accounts2 SET points=points-$cout WHERE id =$compte_id");
 				$log_achats = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), ip='".get_ip()."', account_id = '".$id_compte."', objet_id='Récupération de type ".$type_recup."', perso_id ='" . $id_perso_cible . "',perso_nom='".$pseudo."'" ) or die ( mysql_error () );
 
 				//creation des répertoires 

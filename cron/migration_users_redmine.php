@@ -1,7 +1,7 @@
 <?php
 exit();
 /*$connexion = mysql_connect('localhost', 'ipbsite' , 'eze13xsqx56zd44e42dsqdq');
-$sql = mysql_query("SELECT username, password, email FROM site.accounts");
+$sql = mysql_query("SELECT username, password, email FROM site.accounts2");
 // pour tous les comptes
 while($un_compte = mysql_fetch_array($sql)) {
 	if($un_compte['password']<>''){

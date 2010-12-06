@@ -9,7 +9,7 @@ mysql_query("SET NAMES 'utf8'");
 $login_check=mysql_escape_string($_POST['login']);
 $password=$_POST['password']; 
 //now validating the username and password
-$sql="SELECT username, password,password_old,points,pp,next_vote_date,activation,email FROM accounts WHERE username='".$login_check."'";
+$sql="SELECT username, password,password_old,points,pp,next_vote_date,activation,email FROM accounts2 WHERE username='".$login_check."'";
 $result=mysql_query($sql);
 $row=mysql_fetch_array($result); 
 //if username exists
@@ -22,7 +22,7 @@ if(mysql_num_rows($result)>0) {
         {
 			if ($row['password']=='') {
 				// je doit faire la migration en sha1 du mdp
-				mysql_query("UPDATE accounts SET password='".$pass."', password_old='' WHERE username= '".$login_check."'");
+				mysql_query("UPDATE accounts2 SET password='".$pass."', password_old='' WHERE username= '".$login_check."'");
 				
 				// je migre pour flyspeay maintenant
 				mysql_query("INSERT into flyspray.flyspray_users SET user_name='".$row['username']."', user_pass='".md5($password)."', real_name='".$row['username']."',email_address='".$row['email']."',account_enabled='1',tasks_perpage='25',register_date='".time()."'");

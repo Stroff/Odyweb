@@ -47,7 +47,7 @@ $(document).ready(function(){
 												$new_compte_email = mysql_escape_string ( $_POST ["email"]);
 												$new_compte_extension = mysql_escape_string ( $_POST ["extension"]);
 
-												$sql_check_nom = mysql_query("SELECT username FROM accounts where username = '".$new_compte_nom."'");
+												$sql_check_nom = mysql_query("SELECT username FROM accounts2 where username = '".$new_compte_nom."'");
 
 												if (mysql_num_rows($sql_check_nom)==0&&check_email_address($new_compte_email)&&$new_compte_nom<>''&&$new_compte_extension<>''&&$_POST ['password1']==$_POST ['password2']) {
 													$oldhash_nouveau_password = sha1(strtoupper($new_compte_nom).':'.strtoupper($_POST['password1']));
@@ -55,7 +55,7 @@ $(document).ready(function(){
 													$token = md5(uniqid(rand(), true));
 
 													//le serveur site				
-													$sql = "INSERT INTO accounts SET password='" . $newhash_nouveau_password . "',password_old='" . $oldhash_nouveau_password . "',activation='0',email='".$new_compte_email."', key_activation='".$token."', extension = '".$new_compte_extension."', username='" . $new_compte_nom . "',next_vote_date=NOW(),last_ip='".get_ip()."'" ;
+													$sql = "INSERT INTO accounts2 SET password='" . $newhash_nouveau_password . "',password_old='" . $oldhash_nouveau_password . "',activation='0',email='".$new_compte_email."', key_activation='".$token."', extension = '".$new_compte_extension."', username='" . $new_compte_nom . "',next_vote_date=NOW(),last_ip='".get_ip()."'" ;
 													$resReqWow = mysql_query ($sql ) or die ( mysql_error () );
 
 													// migration redmine

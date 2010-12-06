@@ -46,7 +46,7 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
 
 	if (isset($_POST['token'])&&$_POST['token']<>'') {
 		$mon_token = mysql_escape_string ( $_POST['token']);
-		$check_token = mysql_query("SELECT id FROM accounts WHERE key_activation= '".$mon_token."-4PGkOkg'");
+		$check_token = mysql_query("SELECT id FROM accounts2 WHERE key_activation= '".$mon_token."-4PGkOkg'");
 		if(mysql_num_rows($check_token)==1 && $timestamp_actuel>=$timestamp_db) {
 			$nouveau_nbr_points= $compte_points+$points_par_vote;
 			$temps_en_plus = $timestamp_actuel - $timestamp_db;
@@ -54,7 +54,7 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
 				$log_vote = mysql_query("INSERT INTO logs_votes SET username='".$compte_username."', temps_en_plus='".$temps_en_plus."', date=NOW()");
 			}
 
-			$resultat  = mysql_query("UPDATE accounts SET key_activation='',next_vote_date='".$prochain_vote ."',points=".$nouveau_nbr_points." WHERE id='".$compte_id."' LIMIT 1") or die(mysql_error());
+			$resultat  = mysql_query("UPDATE accounts2 SET key_activation='',next_vote_date='".$prochain_vote ."',points=".$nouveau_nbr_points." WHERE id='".$compte_id."' LIMIT 1") or die(mysql_error());
 			
 			$check_top_vote = mysql_query("SELECT nombre_votes FROM accounts_vote_saison WHERE id_account= '".$compte_id."' AND id_vote_saison='".$id_vote_saison."'");
 			if (mysql_num_rows($check_top_vote)==0){
@@ -74,7 +74,7 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
 	} else {
 		if ($timestamp_actuel>=$timestamp_db) {
 		$token = md5(uniqid(rand(), true));
-		mysql_query("UPDATE accounts SET key_activation= '".$token."-4PGkOkg' WHERE id='".$compte_id."' LIMIT 1");
+		mysql_query("UPDATE accounts2 SET key_activation= '".$token."-4PGkOkg' WHERE id='".$compte_id."' LIMIT 1");
 		echo '<p>Vous pouvez voter, mais pour cela vous devez juste cliquer sur le bouton pour éviter les programmes de votes automatique</p>'.'<form style="padding-left:15px;" action = "vote.php" method="post"><input type="hidden" name="token" value="'.$token.'"/><input  type="submit" value="Je suis humain !" /></form>';
 		
 		} else {
@@ -113,9 +113,9 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
         <th>Nombres de votes</th>
     </tr>
 <?php
-$sql = "SELECT accounts.username, 
+$sql = "SELECT accounts2.username, 
 		accounts_vote_saison.nombre_votes
-	FROM accounts_vote_saison INNER JOIN accounts ON accounts_vote_saison.id_account = accounts.id WHERE accounts_vote_saison.id_vote_saison = '".$id_vote_saison."' ORDER BY accounts_vote_saison.nombre_votes DESC LIMIT 10";
+	FROM accounts_vote_saison INNER JOIN accounts2 ON accounts_vote_saison.id_account = accounts2.id WHERE accounts_vote_saison.id_vote_saison = '".$id_vote_saison."' ORDER BY accounts_vote_saison.nombre_votes DESC LIMIT 10";
 $liste_comptes = mysql_query($sql) or die (mysql_error()); 
 while($compte = mysql_fetch_array($liste_comptes)){
 	echo '<tr>

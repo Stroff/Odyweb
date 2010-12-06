@@ -29,7 +29,7 @@ if ($_GET ["code"]) {
 	
 	$demande_code = mysql_escape_string ( $_GET["code"]);
 	
-	$sql_check_compte = mysql_query("SELECT username FROM accounts WHERE key_activation = '".$demande_code."'");
+	$sql_check_compte = mysql_query("SELECT username FROM accounts2 WHERE key_activation = '".$demande_code."'");
 	
 	if (mysql_num_rows($sql_check_compte)==1) {
 		$row = mysql_fetch_array($sql_check_compte); 
@@ -38,7 +38,7 @@ if ($_GET ["code"]) {
 		$nouveau_mdp= sha1($nouveau_mdp_clair);
 		$old_nouveau_mdp = sha1(strtoupper($row['username']).':'.strtoupper($nouveau_mdp_clair));
 		
-		$resReqSite = mysql_query("UPDATE accounts SET key_activation = '',password='".$nouveau_mdp."' WHERE key_activation = '".$demande_code."'");
+		$resReqSite = mysql_query("UPDATE accounts2 SET key_activation = '',password='".$nouveau_mdp."' WHERE key_activation = '".$demande_code."'");
 		
 		//serveur wow connexion ici
 		mysql_close();
@@ -69,7 +69,7 @@ if ($_GET ["code"]) {
 	$connexion = mysql_connect($host_site, $user_site , $pass_site);
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");
-	$sql_check_compte = mysql_query("SELECT activation,email FROM accounts WHERE username='".$demande_username."'");
+	$sql_check_compte = mysql_query("SELECT activation,email FROM accounts2 WHERE username='".$demande_username."'");
 	
 	if (mysql_num_rows($sql_check_compte)==1) {
 		$row = mysql_fetch_array($sql_check_compte); 
@@ -77,7 +77,7 @@ if ($_GET ["code"]) {
 			$message = "Vous n'avez pas activé votre compte. Vous avez dèjà recu un email avec le lien. Si vous l'avez perdu rendez vous sur ce <a href='".$url_site."/activation_lost.php'>lien</a>";
 		} else {
 			$token = md5(uniqid(rand(), true));
-			$resReqSite = mysql_query ( "UPDATE accounts SET key_activation = '".$token."' WHERE username='" . $demande_username. "'" ) or die ( mysql_error () );
+			$resReqSite = mysql_query ( "UPDATE accounts2 SET key_activation = '".$token."' WHERE username='" . $demande_username. "'" ) or die ( mysql_error () );
 			
 			if ($resReqSite) {
 				
