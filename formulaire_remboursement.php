@@ -18,18 +18,18 @@ if ((isset($_POST['confirmyes'])) AND (isset($_POST['confirm'])) AND ($_POST['co
     $tel = $_POST['tel'];
     $qte = $_POST['qte'];
 
-    $message = "Vous recevez cet email automatique du compte : " . $_SESSION['login'] . "\n"
-            . "Plateforme : " . $plateforme . "\n"
-            . "Media : " . $media . "\n"
-            . "Heure début : " . $heure_debut . "\n"
-            . "Heure fin : " . $heure_fin . "\n"
-            . "Code : " . $code . "\n"
-            . "Telephone : " . $tel . "\n"
-            . "Quantité : " . $qte . "\n"
-            . "Le formulaire a été posté le " . date(DATE_RFC822) . " avec l'adresse IP : " . $_SERVER['REMOTE_ADDR'] . "\n"
-            . "Gros bisous et bonne journée";
+    $message = "Vous recevez cet email automatique du compte : " . $_SESSION['login'] . "<br/>"
+            . "Plateforme : " . $plateforme . "<br/>"
+            . "Media : " . $media . "<br/>"
+            . "Heure début : " . $heure_debut . "<br/>"
+            . "Heure fin : " . $heure_fin . "<br/>"
+            . "Code : " . $code . "<br/>"
+            . "Telephone : " . $tel . "<br/>"
+            . "Quantité : " . $qte . "<br/>"
+            . "Le formulaire a été poste le " . date(DATE_RFC822) . " avec l'adresse IP : " . $_SERVER['REMOTE_ADDR'] . "<br/>"
+            . "Gros bisous et bonne journee";
 
-    $res = mail("lauriane.bart@gmail.com", "Site: Problème boutique", $message);
+    $res = mail("lauriane.bart@gmail.com", "Site: Remboursement boutique", $message);
     if (!$res) {
         die("Impossible d'envoyer le formulaire, veuillez envoyer votre demande à stroff@odyssee-serveur.com");
     } else {
