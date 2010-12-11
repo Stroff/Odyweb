@@ -1,12 +1,13 @@
 <?php
-$secure_lvl=1;
+
 require "include/template/header_cadres.php";
 include "secure.php";
 
 ?>
 
 <?php
-
+if (isset($_SESSION['login']))
+{
 if ((isset($_POST['confirmyes'])) AND (isset($_POST['confirm'])) AND ($_POST['confirm'] == "Oui")) {
     // Envoi de l'email
     $plateforme = $_POST['plateforme'];
@@ -121,7 +122,13 @@ if (!isset($_POST['OK'])) {
                         </select>
                         <input type="submit" name="confirmyes">
                     </form>
-<?php } ?>
+<?php }}
+ else {
+
+ {
+     echo "Vous devez être loggué sur votre compte pour acceder au formulaire. <a href=\"login.php\">Page de connection</a>";
+ }
+}?>
 
                     <br/> 	<br/> 	<br/>
 
