@@ -33,13 +33,10 @@ if ((isset($_POST['confirmyes'])) AND (isset($_POST['confirm'])) AND ($_POST['co
     if (!$res) {
         die("Impossible d'envoyer le formulaire, veuillez envoyer votre demande à stroff@odyssee-serveur.com");
     } else {
-        echo "Votre demande est prise en compte, nous vous contacterons par email pour vous informer de l'avancement de votre remboursement <br/> Bonne journée et bon jeu sur Odyssée" ;
+        echo "<div style=\"text-align: center; color: #66cccc; font-weight: bold \">Votre demande est prise en compte, nous vous contacterons par email pour vous informer de l'avancement de votre remboursement <br/> Bonne journée et bon jeu sur Odyssée </div>" ;
     }
 }
-elseif ((isset($_POST['confirmyes'])) AND (isset($_POST['confirm'])) AND ($_POST['confirm'] == "Non"))
-{
-     header('Location: formulaire_remboursement.php');  
-}
+
 ?>
 
 <div class="encadrepage-haut">
