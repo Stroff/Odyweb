@@ -1,7 +1,6 @@
 <?php
 
 require "include/template/header_cadres.php";
-include "secure.php";
 
 ?>
 
@@ -130,7 +129,7 @@ if (!isset($_POST['OK'])) {
  }
 }?>
 
-                    <br/> 	<br/> 	<br/>
+                    <br/><br/><br/>
 
             </div>
         </div>
