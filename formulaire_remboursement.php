@@ -6,12 +6,7 @@ include "secure.php";
 ?>
 
 <?php
-if (secure_lvl< 1)
-{
-    echo "Vous devez être loggué pour acceder au formulaire";
-}
-else
-{
+
 if ((isset($_POST['confirmyes'])) AND (isset($_POST['confirm'])) AND ($_POST['confirm'] == "Oui")) {
     // Envoi de l'email
     $plateforme = $_POST['plateforme'];
@@ -126,7 +121,7 @@ if (!isset($_POST['OK'])) {
                         </select>
                         <input type="submit" name="confirmyes">
                     </form>
-<?php }} ?>
+<?php } ?>
 
                     <br/> 	<br/> 	<br/>
 
