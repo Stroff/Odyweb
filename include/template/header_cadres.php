@@ -2,6 +2,8 @@
 include_once 'secure.php';
 include_once 'config/config.php'; 
 
+if(isset($_SESSION['id']))
+{
 //Connexion Base de donnée Reamld
 	$co = mysql_connect($host_site, $user_site, $pass_site);
 	mysql_select_db($site_database, $co);
@@ -18,7 +20,7 @@ include_once 'config/config.php';
 	{
 		header("location: message/?msg=1");
 	}
-
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
