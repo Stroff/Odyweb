@@ -1,6 +1,24 @@
 <?php
 include_once 'secure.php';
 include_once 'config/config.php'; 
+
+//Connexion Base de donnée Reamld
+	$co = mysql_connect($host_site, $user_site, $pass_site);
+	mysql_select_db($site_database, $co);
+	mysql_query("SET NAMES 'utf8'");
+
+//Recherche compte dans account_banned
+	$search_acc_bann = mysql_query("SELECT * FROM account_banned WHERE id=".$_SESSION['id']);
+
+//nombre résultat
+	$num_search_acc_bann = mysql_num_rows($search_acc_bann);
+
+//Si le nombre de compte banni est different de 0 alors il est banni donc redirigé vers msg.php avec le msg numéro 1
+	if($num_search_acc_bann != 0)
+	{
+		header("location: /message/?msg=1");
+	}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -20,6 +38,7 @@ if (isset($header_titre)) {
 <link href="1440/css/global.css" rel="stylesheet" type="text/css" title="1440" disabled/> 
 <link href="1680/css/global.css" rel="stylesheet" type="text/css" title="1680" disableb/> 
 <link href="1920/css/global.css" rel="stylesheet" type="text/css" title="1920" disabled/> 
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript" src="Scripts/dynamiclayout.js"></script>
 </head>
