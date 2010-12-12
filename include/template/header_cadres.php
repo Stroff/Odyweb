@@ -13,7 +13,7 @@ if(isset($_SESSION['id']))
 	$search_acc_bann = mysql_query("SELECT COUNT(*) FROM account_banned WHERE id=".$_SESSION['id']);
 
 //Si le nombre de compte banni est different de 0 alors il est banni donc redirigé vers msg.php avec le msg numéro 1
-	if($earch_acc_bann != 0)
+	if($search_acc_bann != 0)
 	{
 		header("location: message/?msg=1");
 	}
