@@ -10,13 +10,10 @@ if(isset($_SESSION['id']))
 	mysql_query("SET NAMES 'utf8'");
 
 //Recherche compte dans account_banned
-	$search_acc_bann = mysql_query("SELECT * FROM account_banned WHERE id=".$_SESSION['id']);
-
-//nombre résultat
-	$num_search_acc_bann = mysql_num_rows($search_acc_bann);
+	$search_acc_bann = mysql_query("SELECT COUNT(*) FROM account_banned WHERE id=".$_SESSION['id']);
 
 //Si le nombre de compte banni est different de 0 alors il est banni donc redirigé vers msg.php avec le msg numéro 1
-	if($num_search_acc_bann != 0)
+	if($earch_acc_bann != 0)
 	{
 		header("location: message/?msg=1");
 	}
