@@ -16,7 +16,7 @@ include_once 'config/config.php';
 //Si le nombre de compte banni est different de 0 alors il est banni donc redirigé vers msg.php avec le msg numéro 1
 	if($num_search_acc_bann != 0)
 	{
-		header("location: /message/?msg=1");
+		header("location: message/?msg=1");
 	}
 
 ?>
