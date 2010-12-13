@@ -15,9 +15,9 @@ for($i=1;$i<=$id_vote_saison;$i++){
 	        <th width="260px">Compte</th>
 	        <th>Nombres de votes</th>
 	    </tr>';
-	$sql = "SELECT accounts2.username, 
+	$sql = "SELECT accounts.username, 
 			accounts_vote_saison.nombre_votes
-		FROM accounts_vote_saison INNER JOIN accounts2 ON accounts_vote_saison.id_account = accounts2.id WHERE accounts_vote_saison.id_vote_saison = '".$i."' ORDER BY accounts_vote_saison.nombre_votes DESC LIMIT 10";
+		FROM accounts_vote_saison INNER JOIN accounts ON accounts_vote_saison.id_account = accounts.id WHERE accounts_vote_saison.id_vote_saison = '".$i."' ORDER BY accounts_vote_saison.nombre_votes DESC LIMIT 10";
 	$liste_comptes = mysql_query($sql) or die (mysql_error()); 
 	while($compte = mysql_fetch_array($liste_comptes)){
 		echo '<tr>

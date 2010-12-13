@@ -44,8 +44,8 @@ include '../secure.php';
 	if(!isset($_GET['demandes']) && !isset($_POST['termes'])) {
 		
 		$sql = "SELECT motifs_recups.raison_fermeture, 
-			accounts2.username AS nom_compte, 
-			accounts2.email,
+			accounts.username AS nom_compte, 
+			accounts.email,
 			demandes_recups.id, 
 			demandes_recups.etat_ouverture, 
 			demandes_recups.nom_perso, 
@@ -53,7 +53,7 @@ include '../secure.php';
 			demandes_recups.lvl, 
 			demandes_recups.etat_ouverture, 
 			demandes_recups.date_demande
-			FROM demandes_recups INNER JOIN accounts2 ON demandes_recups.id_compte = accounts2.id
+			FROM demandes_recups INNER JOIN accounts ON demandes_recups.id_compte = accounts.id
 			INNER JOIN motifs_recups ON demandes_recups.etat_ouverture = motifs_recups.id 
 			WHERE demandes_recups.etat_ouverture=1 OR demandes_recups.etat_ouverture=12";
 
@@ -88,19 +88,19 @@ include '../secure.php';
 		}
 	} else {
 		if(isset($_POST['termes']))
-			$recherche="WHERE (accounts2.username LIKE '%".$_POST['termes']."%' OR demandes_recups.nom_perso LIKE '%".$_POST['termes']."%')";		
+			$recherche="WHERE (accounts.username LIKE '%".$_POST['termes']."%' OR demandes_recups.nom_perso LIKE '%".$_POST['termes']."%')";		
 			
 		$sql = "SELECT motifs_recups.raison_fermeture, 
-			accounts2.username AS nom_compte, 
+			accounts.username AS nom_compte, 
 			demandes_recups.id, 
-			accounts2.email,
+			accounts.email,
 			demandes_recups.etat_ouverture, 
 			demandes_recups.nom_perso, 
 			demandes_recups.serveur_origine, 
 			demandes_recups.lvl, 
 			demandes_recups.etat_ouverture, 
 			demandes_recups.date_demande
-			FROM demandes_recups INNER JOIN accounts2 ON demandes_recups.id_compte = accounts2.id
+			FROM demandes_recups INNER JOIN accounts ON demandes_recups.id_compte = accounts.id
 			INNER JOIN motifs_recups ON demandes_recups.etat_ouverture = motifs_recups.id ".$recherche;
 		$connexion = mysql_connect($host_site, $user_site , $pass_site);
 		mysql_select_db($site_database ,$connexion);

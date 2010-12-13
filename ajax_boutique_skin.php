@@ -32,7 +32,7 @@ switch ($_POST['type']) {
 					mysql_select_db($site_database ,$connexion);
 					mysql_query("SET NAMES 'utf8'");
 					$resReqSite = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), ip='".get_ip()."', account_id = '".$id_compte."', objet_id='Changement de skin', perso_id ='" . $guid_perso . "',perso_nom='".$perso['name']."'" ) or die ( mysql_error () );
-					$resReqSite2 = mysql_query ( "UPDATE accounts2 SET points=points-$prix_points WHERE id='".$id_compte."' LIMIT 1" ) or die ( mysql_error () );
+					$resReqSite2 = mysql_query ( "UPDATE accounts SET points=points-$prix_points WHERE id='".$id_compte."' LIMIT 1" ) or die ( mysql_error () );
 					if ($resReqSite && $resReqWow&& $resReqSite2) {
 						echo "<div id='success_page'>";
 						 echo "<p>Vous avez bien fait la demande, lors de votre prochaine connexion vous pourrez changer l'apparence de votre personnage.</p>";

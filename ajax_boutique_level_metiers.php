@@ -123,7 +123,7 @@ switch ($_POST['type']) {
 						mysql_select_db($site_database ,$connexion);
 						mysql_query("SET NAMES 'utf8'");
 						$resReqSite = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), ip='".get_ip()."', account_id = '".$id_compte."', objet_id='25 lvl metiers', perso_id ='" . $guid_perso . "',perso_nom='".$perso['name']."'" ) or die ( mysql_error () );
-						$resReqSite2 = mysql_query ( "UPDATE accounts2 SET points=points-$new_lvl_prix WHERE id='".$id_compte."' LIMIT 1" ) or die ( mysql_error () );
+						$resReqSite2 = mysql_query ( "UPDATE accounts SET points=points-$new_lvl_prix WHERE id='".$id_compte."' LIMIT 1" ) or die ( mysql_error () );
 						if ($resReqSite && $resReqWow&& $resReqSite2) {
 							echo "<div id='success_page'>";
 							 echo "<p>Vous avez maintenant 25 niveaux en plus dans votre metier sur le perso ".$perso['name'].".</p>";

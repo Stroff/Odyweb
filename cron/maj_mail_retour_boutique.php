@@ -42,7 +42,7 @@ while($un_item = mysql_fetch_array($sql_boutique)) {
 }
 if(count($mail)>0){
 	foreach ($mail as $clee => $valeurs) {
-		mysql_query("UPDATE accounts2 SET points=points+".$item[$valeurs['item_template']]['prix']." WHERE id = '".$valeurs['id_compte']."'");
+		mysql_query("UPDATE accounts SET points=points+".$item[$valeurs['item_template']]['prix']." WHERE id = '".$valeurs['id_compte']."'");
 		mysql_query("INSERT INTO logs_achat_boutique SET account_id='".$valeurs['id_compte']."',perso_id='".$valeurs['perso_id']."', perso_nom='".$valeurs['perso_nom']."', objet_id ='prix=".$item[$valeurs['item_template']]['prix'].";item=".$item[$valeurs['item_template']]['id_wowhead']."',date=NOW()");
 	}
 }
