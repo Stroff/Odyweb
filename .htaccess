@@ -1,4 +1,8 @@
 php_value magic_quotes_gpc off
 RewriteEngine On
+
 RewriteCond %{QUERY_STRING}	^.+$
 RewriteRule ^(.*)(jpg|gif|png)$		resize.php?source=$1$2&$3	[QSA,NC,L]
+
+RewriteCond %{HTTP_USER_AGENT} ^.*internal\ dummy\ connection.*$ [NC]
+RewriteRule ^/$ /blank.html [L]
