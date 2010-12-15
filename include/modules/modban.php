@@ -1,13 +1,13 @@
 <?php
 	//include_once "include/php/fonctions.php";
 
+	//Connexion Base de donnée Reamld
+	$co = mysql_connect($host_site, $user_site, $pass_site);
+	mysql_select_db($site_database, $co);
+	mysql_query("SET NAMES 'utf8'");	
+	
 	if(isset($_SESSION['id']))
 	{
-		//Connexion Base de donnée Reamld
-		$co = mysql_connect($host_site, $user_site, $pass_site);
-		mysql_select_db($site_database, $co);
-		mysql_query("SET NAMES 'utf8'");
-
 		//Recherche compte dans account_banned
 		$search_acc_bann = mysql_query("SELECT * FROM realmd.account_banned WHERE id=".$_SESSION['id'].' AND FROM_UNIXTIME(unbandate) > NOW()');
 
