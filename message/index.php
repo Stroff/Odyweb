@@ -15,7 +15,7 @@
 		mysql_query("SET NAMES 'utf8'");
 	
 		//Syntaxes de recherche SQL
-		$sql = "SELECT * FROM realmd.account_banned WHERE id=".$_SESSION['id'];   
+		$sql = "SELECT * FROM realmd.account_banned WHERE id=".$_SESSION['id'].' AND FROM_UNIXTIME(unbandate) > NOW()';   
 	
 		//Recherche
 		$recher = mysql_query($sql, $co);  
