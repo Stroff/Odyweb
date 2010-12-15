@@ -1,5 +1,5 @@
 <?php
-	include_once "../php/fonctions.php";
+	include_once "/var/www/odyssee/include/php/fonctions.php";
 
 	//Connexion Base de donnée Reamld
 	$co = mysql_connect($host_site, $user_site, $pass_site);
@@ -21,7 +21,7 @@
 				. $recher_fetch["banreason"].'</strong></center>';
 		}
 	}	
-/* A voir plus tard 	
+
 	//Recherche compte dans account_banned
 	$search_ip_bann = mysql_query("SELECT * FROM realmd.ip_banned WHERE ip=".get_ip().' AND FROM_UNIXTIME(unbandate) > NOW()')
 		or echo(mysql_error());
@@ -34,5 +34,5 @@
 			. date("d/m/Y à H:m",$recher_fetch["bandate"]).'</strong> jusqu\'au <strong>'
 			. date("d/m/Y à H:m",$recher_fetch["unbandate"]).'</strong> !<br/>Raison : <strong>'
 			. $recher_fetch["banreason"].'</strong></center>';
-	}	*/
+	}	
 ?>
