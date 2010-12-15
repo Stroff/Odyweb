@@ -1,5 +1,5 @@
 <?php
-	//include_once "include/php/fonctions.php";
+	include_once "../php/fonctions.php";
 
 	//Connexion Base de donnée Reamld
 	$co = mysql_connect($host_site, $user_site, $pass_site);
@@ -23,7 +23,8 @@
 	}	
 	
 	//Recherche compte dans account_banned
-	$search_ip_bann = mysql_query("SELECT * FROM realmd.ip_banned WHERE ip=".get_ip().' AND FROM_UNIXTIME(unbandate) > NOW()');
+	$search_ip_bann = mysql_query("SELECT * FROM realmd.ip_banned WHERE ip=".get_ip().' AND FROM_UNIXTIME(unbandate) > NOW()')
+		or echo(mysql_error());
 
 	//Si le nombre de compte banni est different de 0 alors il est banni donc redirigé vers msg.php avec le msg numéro 1
 	if(mysql_num_rows($search_ip_bann) != 0)
