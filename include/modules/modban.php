@@ -1,5 +1,5 @@
 <?php
-	include "include/php/fonctions.php";
+	include_once "include/php/fonctions.php";
 
 	if(isset($_SESSION['id']))
 	{
