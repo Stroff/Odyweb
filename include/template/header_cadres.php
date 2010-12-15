@@ -1,23 +1,6 @@
 <?php
 include_once 'secure.php';
 include_once 'config/config.php'; 
-
-if(isset($_SESSION['id']))
-{
-//Connexion Base de donnée Reamld
-	$co = mysql_connect($host_site, $user_site, $pass_site);
-	mysql_select_db($site_database, $co);
-	mysql_query("SET NAMES 'utf8'");
-
-//Recherche compte dans account_banned
-	$search_acc_bann = mysql_query("SELECT id FROM realmd.account_banned WHERE id=".$_SESSION['id'].' AND FROM_UNIXTIME(unbandate) > NOW()');
-
-//Si le nombre de compte banni est different de 0 alors il est banni donc redirigé vers msg.php avec le msg numéro 1
-	if(mysql_num_rows($search_acc_bann) != 0)
-	{
-		header("location: message/?msg=1");
-	}
-}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -126,4 +109,5 @@ if (isset($header_titre)) {
 				} ?>       	 	</div>
 		</div>
         	<div class="encadrepage">
-<div id="msgbox"></div>
+			
+<div id="msgbox"><?php include "include/modules/modban.php"; ?>	</div>

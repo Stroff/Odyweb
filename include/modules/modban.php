@@ -13,7 +13,10 @@
 		if(mysql_num_rows($search_acc_bann) != 0)
 		{
 			$recher_fetch = mysql_fetch_array($search_acc_bann);
-			echo '<center>'.$recher_fetch["bannedby"].' vous a banni(e) depuis le <strong>'.date("d/m/Y à H:m",$recher_fetch["bandate"]).'</strong> jusqu\'au <strong>'.date("d/m/Y à H:m",$recher_fetch["unbandate"]).'</strong> !<br/>Raison : <strong>'.$recher_fetch["banreason"].'</strong><br/><br/>Accès : <a href="'.$url_forum.'">Forum</a></center>';
+			echo '<center>'.$recher_fetch["bannedby"].' a banni votre compte depuis le <strong>'
+			    . date("d/m/Y à H:m",$recher_fetch["bandate"]).'</strong> jusqu\'au <strong>'
+				. date("d/m/Y à H:m",$recher_fetch["unbandate"]).'</strong> !<br/>Raison : <strong>'
+				. $recher_fetch["banreason"].'</strong></center>';
 		}
 	}	
 ?>
