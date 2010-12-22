@@ -107,7 +107,7 @@ require "../lib/phpmailer/class.phpmailer.php";
 				}
 				$mail = new PHPmailer();
 				$mail->IsSMTP();
-				$mail->Host='smtp.free.fr';
+				$mail->Host='127.0.0.1';
 				$mail->CharSet	=	"UTF-8";
 				$mail->IsHTML(true);
 				$mail->From=$email_mj;
@@ -121,24 +121,25 @@ require "../lib/phpmailer/class.phpmailer.php";
 				//remboursement ou pas du prix de la demande de recup.
 				$resultat_demande = mysql_query("SELECT * FROM demandes_recups WHERE id = '".$id_recup."'");
 				$recup_old = mysql_fetch_array($resultat_demande);
-				//si c'est prenium et qu'il recup un jeton psa prenium et que c'est validé
-				if($recup_old["type_recup"]=="Prenium" && $id_jeton!=250008 && $raison_fermeture==10){
-					//controle du nombre de rembousements fait.
-					$nbr_remboursements = mysql_query("SELECT * FROM accounts_remboursement_recups WHERE account_id = '".$id_compte."'");
-					if(mysql_num_rows($nbr_remboursements)==0){
-						//dans ce cas remboursement car jamais eu lieux avant
-						$remboursement_log = mysql_query("INSERT INTO accounts_remboursement_recups SET account_id = '".$id_compte."', recup_id = '".$id_recup."', date_remboursement = NOW() ");
-						$remboursement_account = mysql_query("UPDATE accounts SET points=points+2 WHERE id = '".$id_compte."'");
+				
+				if($raison_fermeture != 4 /* Pas de fake récup */)
+				{
+					/* Un seul remboursement autorisé par récup ! */
+					$nb_remb = mysql_query("SELECT * FROM accounts_remboursement_recups WHERE recup_id = '".$id_recup."'");
+					if( mysql_num_rows($nb_remb) > 0 ) break;
+				
+					switch( $recup_old["type_recup"] )
+					{
+						case "Prenium" : $remb = 3; if( $raison_fermeture == 10 && $id_jeton != 250008 ) $remb = 2; break;
+						case "Normal"  : $remb = 1; break;
+						default 	   : $remb = 0;
 					}
-				}
-				//remboursement si pas accepté
-				if($recup_old["type_recup"]=="Prenium" && $id_jeton==250008 && $raison_fermeture!=4 && $raison_fermeture!=10){
-					//controle du nombre de rembousements fait.
-					$nbr_remboursements = mysql_query("SELECT * FROM accounts_remboursement_recups WHERE account_id = '".$id_compte."'");
-					if(mysql_num_rows($nbr_remboursements)==0){
-						//dans ce cas remboursement car jamais eu lieux avant
-						$remboursement_log = mysql_query("INSERT INTO accounts_remboursement_recups SET account_id = '".$id_compte."', recup_id = '".$id_recup."', date_remboursement = NOW() ");
-						$remboursement_account = mysql_query("UPDATE accounts SET points=points+3 WHERE id = '".$id_compte."' ");
+					
+					if( ($remb > 0 && $raison_fermeture != 10 /* Validé */)
+					  || $remb == 2 /* Cas du downgrade de la récup en Normal */ )
+					{
+						mysql_query("INSERT INTO accounts_remboursement_recups VALUES('".$id_compte."', '".$id_recup."', NOW(), '".$remb."' )");
+						mysql_query("UPDATE accounts SET points = points + ".$remb." WHERE id = '".$id_compte."'");
 					}
 				}
 			}
@@ -157,16 +158,24 @@ require "../lib/phpmailer/class.phpmailer.php";
 					mysql_query("INSERT INTO accounts_blocage_recup SET id_compte = '".$id_compte."', id_recup='".$id_recup."', fin_blocage = DATE_ADD(NOW(),INTERVAL 7 DAY)");
 				}
 				if (isset($_POST['rembourse_compte'])) {
+					/* Un seul remboursement autorisé par récup ! */
+					$nb_remb = mysql_query("SELECT * FROM accounts_remboursement_recups WHERE recup_id = '".$id_recup."'");
+					if( mysql_num_rows($nb_remb) > 0 ) break;				
+				
 					$resultat_recup_prix = mysql_query("SELECT type_recup FROM demandes_recups WHERE id = '".$id_recup."'");
 					$resultat_recup_prix = mysql_fetch_array($resultat_recup_prix);
-					if($resultat_recup_prix['type_recup'] =="Normal"){
-						$cout = 1;
-					}else if($resultat_recup_prix['type_recup'] =="Prenium"){
-						$cout = 3;
-					}else {
-						$cout = 0;
+					switch($resultat_recup_prix['type_recup'])
+					{
+						case "Normal" : $cout = 1; break;
+						case "Prenium": $cout = 3; break;
+						default : $cout = 0;
 					}
-					mysql_query("UPDATE accounts SET points=points+$cout WHERE id = '".$id_compte."'");
+					if( $cout > 0 ) 
+					{
+						/* Si remboursement "manuel" on log le remboursement en négatif */
+						mysql_query("INSERT INTO accounts_remboursement_recups VALUES('".$id_compte."', '".$id_recup."', NOW(), '-".$cout."' )");
+						mysql_query("UPDATE accounts SET points = points + ".$cout." WHERE id = '".$id_compte."'");
+					}
 				}
 			} else {
 				echo '<p style="color:red;">Erreur dans la modification de la recup</p>';
