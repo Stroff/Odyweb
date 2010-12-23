@@ -43,7 +43,9 @@ if ($recu == false) {
         <?php
     } else {
         $perso = $_POST['perso'];
-        $mailnoel = mysql_query("INSERT INTO characters.mail_external (`sender`,`receiver`,`subject`,`message`, `money`) VALUES ('3', '". $perso ."', 'Pere Noël Odyssée', 'Chèr(e) joueur/joueuse, voici le cadeau de Noël Odyssée, en vous souhaitant de nombreux moments de plaisir IG et une excellente fin d\'année de la part de toute l\équipe. Que l'année qui suive soit pleine de promesses!.', '0')") or die("Erreur dans l'envoi du mail");
+        $sql = "INSERT INTO characters.mail_external (`sender`,`receiver`,`subject`,`message`, `money`) "
+              ."VALUES ('3', '". $perso ."', 'Pere Noël Odyssée', 'Chèr(e) joueur/joueuse, voici le cadeau de Noël Odyssée, en vous souhaitant de nombreux moments de plaisir IG et une excellente fin d\'année de la part de toute l\'équipe. Que l\'année qui suive soit pleine de promesses!.', '0')";
+        $mailnoel = mysql_query($sql) or die("Erreur dans l'envoi du mail");
         $id_mail = mysql_insert_id();
         $mailnoel2 = mysql_query("INSERT INTO characters.mail_external_items (`item`,`mail_id`) VALUES ('213100','" . $id_mail . "')");
         $recu = true;
