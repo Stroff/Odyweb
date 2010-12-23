@@ -5,7 +5,7 @@ if ($recu == false) {
         if (!isset($_SESSION['login'])) {
             echo "Vous devez être connecté pour acceder à cette page";
         } else {
-            $persos = mysql_query("SELECT name,guid,online,level FROM characters WHERE account = '" . $compte_id . "'");
+            $persos = mysql_query("SELECT name,guid,online,level FROM characters.characters WHERE account = '" . $compte_id . "'");
             $recu = false;
 ?>
 
@@ -41,4 +41,7 @@ else
 {
     echo "Un seul cadeau de noël par compte!";
 }
-        ?>
+
+require "include/template/footer_cadres.php";
+
+?>
