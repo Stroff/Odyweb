@@ -43,12 +43,12 @@ mysql_query("SET NAMES 'utf8'");
 $code = trim(mysql_real_escape_string($_GET['code']));
 if ($code <> '') {
 	//le serveur site			
-	$sql = "SELECT password,username,password_old FROM accounts2 WHERE key_activation = '".$code."'";
+	$sql = "SELECT password,username,password_old FROM accounts WHERE key_activation = '".$code."'";
 	$result = mysql_query($sql);
     if (mysql_num_rows($result)==1) {
 		$row= mysql_fetch_array($result);
 		$old_password =$row['password_old'];
-		$resReqSite = mysql_query("UPDATE accounts2 SET key_activation='',password_old='',activation=1 WHERE key_activation = '".$code."'");
+		$resReqSite = mysql_query("UPDATE accounts SET key_activation='',password_old='',activation=1 WHERE key_activation = '".$code."'");
 		
 		//serveur wow connexion ici
 		mysql_close();

@@ -29,7 +29,7 @@ if ($p->validate_ipn()) {
 		$nombredepointsenplus = 0; 
 		$nombredeppenplus = 0;
 	}
-	$resultat  = mysql_query("UPDATE accounts2 SET points=points+".$nombredepointsenplus.", pp=pp+".$nombredeppenplus." WHERE id='".$compte_id_paiement."' LIMIT 1") or die(mysql_error());
+	$resultat  = mysql_query("UPDATE accounts SET points=points+".$nombredepointsenplus.", pp=pp+".$nombredeppenplus." WHERE id='".$compte_id_paiement."' LIMIT 1") or die(mysql_error());
 	$log = mysql_query("INSERT INTO logs_achat_points (account_id, type,nombre_points,date) VALUES ($compte_id_paiement, 'paypal',$nombredepointsenplus,NOW())");
 } 
 ?>

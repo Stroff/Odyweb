@@ -86,7 +86,7 @@ require "/var/www/odyssee/lib/phpmailer/class.phpmailer.php";
  *         at https://developer.paypal.com/ as well as a great forum where you
  *         can ask all your paypal integration questions.  Make sure you follow
  *         all the directions in setting up a sandbox test environment, including
- *         the addition of fake bank accounts2 and credit cards.
+ *         the addition of fake bank accounts and credit cards.
  * 
  *******************************************************************************
 */

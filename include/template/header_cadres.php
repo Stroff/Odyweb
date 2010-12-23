@@ -20,6 +20,7 @@ if (isset($header_titre)) {
 <link href="1440/css/global.css" rel="stylesheet" type="text/css" title="1440" disabled/> 
 <link href="1680/css/global.css" rel="stylesheet" type="text/css" title="1680" disableb/> 
 <link href="1920/css/global.css" rel="stylesheet" type="text/css" title="1920" disabled/> 
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript" src="Scripts/dynamiclayout.js"></script>
 </head>
@@ -108,4 +109,5 @@ if (isset($header_titre)) {
 				} ?>       	 	</div>
 		</div>
         	<div class="encadrepage">
-<div id="msgbox"></div>
+			
+<div id="msgbox"><?php include "include/modules/modban.php"; ?>	</div>

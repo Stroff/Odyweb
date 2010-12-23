@@ -117,4 +117,6 @@ if (isset($header_titre)) {
        	 	</div>
 			
 	
-		<div id="msgbox"></div>
+		<div id="msgbox">
+		<?php include "include/modules/modban.php"; ?>	
+		</div>

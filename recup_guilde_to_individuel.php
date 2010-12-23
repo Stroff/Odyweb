@@ -19,7 +19,7 @@ if($id_recup=='') {
 
 		$suppression_demande_guilde = mysql_query("DELETE FROM demandes_recups_guildes WHERE id_demande='".$id_recup."'");
 		$changement_etat_demande_guilde = mysql_query("UPDATE demandes_recups SET etat_ouverture=1 WHERE id='".$id_recup."'");
-		$maj_pp = mysql_query("UPDATE accounts2 SET pp=pp-20 WHERE id =$compte_id");
+		$maj_pp = mysql_query("UPDATE accounts SET pp=pp-20 WHERE id =$compte_id");
 
 		if($maj_pp&&$suppression_demande_guilde&&$changement_etat_demande_guilde) {
 			$message = "Votre demande de récupération de guilde est bien passée en demande en demande de récupération individuele";
