@@ -14,8 +14,8 @@
                     	<div class="blocpage-texte">
 <?
 $recu = mysql_query(" SELECT gift FROM site.accounts WHERE id = '" . $_SESSION['id'] . "' ");
-$val = mysql_fetch_field($recu);
-if ($val == 0) {
+$val = mysql_fetch_row($recu);
+if ($val[0] == 0) {
     if (!isset($_POST['ok'])) {
         if (!isset($_SESSION['login'])) {
             echo "Vous devez être connecté pour acceder à cette page";
