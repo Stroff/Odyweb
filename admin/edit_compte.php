@@ -22,7 +22,7 @@ if($_SESSION['gm']==4 || $_SESSION['gm']==3){
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");	
 	$id_compte_edit = mysql_escape_string($_GET['id']);
-	$nbr_points = mysql_escape_string($_GET['points']);
+	$nbr_points = mysql_escape_string($_POST['points']);
 	if (isset($_POST['email'])) {
 		$email_edit_compte = mysql_escape_string ( $_POST ["email"]);
 		if ( $_POST ["password2"]=='' && $_POST ["password1"]=='') {
