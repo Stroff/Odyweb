@@ -126,20 +126,20 @@ require "../lib/phpmailer/class.phpmailer.php";
 				{
 					/* Un seul remboursement autorisé par récup ! */
 					$nb_remb = mysql_query("SELECT * FROM accounts_remboursement_recups WHERE recup_id = '".$id_recup."'");
-					if( mysql_num_rows($nb_remb) > 0 ) break;
-				
-					switch( $recup_old["type_recup"] )
-					{
-						case "Prenium" : $remb = 3; if( $raison_fermeture == 10 && $id_jeton != 250008 ) $remb = 2; break;
-						case "Normal"  : $remb = 1; break;
-						default 	   : $remb = 0;
-					}
-					
-					if( ($remb > 0 && $raison_fermeture != 10 /* Validé */)
-					  || $remb == 2 /* Cas du downgrade de la récup en Normal */ )
-					{
-						mysql_query("INSERT INTO accounts_remboursement_recups VALUES('".$id_compte."', '".$id_recup."', NOW(), '".$remb."' )");
-						mysql_query("UPDATE accounts SET points = points + ".$remb." WHERE id = '".$id_compte."'");
+					if( mysql_num_rows($nb_remb) == 0 ){
+						switch( $recup_old["type_recup"] )
+						{
+							case "Prenium" : $remb = 3; if( $raison_fermeture == 10 && $id_jeton != 250008 ) $remb = 2; break;
+							case "Normal"  : $remb = 1; break;
+							default 	   : $remb = 0;
+						}
+
+						if( ($remb > 0 && $raison_fermeture != 10 /* Validé */)
+						  || $remb == 2 /* Cas du downgrade de la récup en Normal */ )
+						{
+							mysql_query("INSERT INTO accounts_remboursement_recups VALUES('".$id_compte."', '".$id_recup."', NOW(), '".$remb."' )");
+							mysql_query("UPDATE accounts SET points = points + ".$remb." WHERE id = '".$id_compte."'");
+						}
 					}
 				}
 			}
