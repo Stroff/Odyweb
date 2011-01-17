@@ -18,7 +18,7 @@ require "include/template/header_light.php";
     </div>
  
     <div class="rightcolumn">
-      
+        <?php require "include/modules/modnoel.php"  ?>
     	<?php require "include/modules/modgoule.php"  ?>
  		<div class="modserv">
                 <div class="modrecup">

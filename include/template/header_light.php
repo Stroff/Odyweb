@@ -84,10 +84,8 @@ if (isset($header_titre)) {
 <div class="banniere">
 	<div class="hautban">	
     	<div class="logo" align="center">
-            <a href="index.php"><img src="medias/images/logo.gif" /></a> <br/>
-            <a href="http://dahlieka.deviantart.com" target="blank" ><img src="medias/images/dahli.gif" /></a>
+   	    	<a href="index.php"><img src="medias/images/logo.gif" /></a>
         </div>
-        
     </div>
 
 </div>
