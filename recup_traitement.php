@@ -12,6 +12,7 @@ $metier1 = mysql_escape_string ( $_POST ["metier1"]);
 $lvl_metier1 = mysql_escape_string ( $_POST ["lvl_metier1"]);
 $lvl_mount = mysql_escape_string ( $_POST ["lvl_mount"]);
 $type_recup = mysql_escape_string ( $_POST ["type_recup"]);
+$recup_dk = mysql_escape_string ( $_POST ["recupdk"]);
 
 if($lvl_metier1=='') {
 	$lvl_metier1= 0;
@@ -86,8 +87,12 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 			mysql_query("SET NAMES 'utf8'");
 			$perso_recup_info = mysql_fetch_array($persos);
 			$race = $perso_recup_info["race"];
-			$classe =$perso_recup_info["class"];
-
+			if($recup_dk=="non"){
+				$classe =$perso_recup_info["class"];
+			} else {
+				$classe = "6";
+			}
+			
 
 			$autre_recup_mm_perso_cible = mysql_query("SELECT id FROM demandes_recups WHERE id_perso_cible='".$id_perso_cible."'AND etat_ouverture='0'");
 			if (mysql_num_rows($autre_recup_mm_perso_cible) == 0) { 
@@ -103,7 +108,7 @@ if($pseudo==''||$id_perso_cible==""||$serveur==''||$level==''||$level>80||$level
 					$ajout_demande_guilde =true;
 				}
 				$maj_pp = mysql_query("UPDATE accounts SET points=points-$cout WHERE id =$compte_id");
-				$log_achats = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), ip='".get_ip()."', account_id = '".$id_compte."', objet_id='Récupération de type ".$type_recup."', perso_id ='" . $id_perso_cible . "',perso_nom='".$pseudo."'" ) or die ( mysql_error () );
+				$log_achats = mysql_query ( "INSERT INTO logs_achat_boutique SET date = NOW(), ip='".get_ip()."', account_id = '".$compte_id."', objet_id='Récupération de type ".$type_recup."', perso_id ='" . $id_perso_cible . "',perso_nom='".$pseudo."'" ) or die ( mysql_error () );
 
 				//creation des répertoires 
 				$repertoire = 'demandes/recups/' . md5($id_demande)  . '/';

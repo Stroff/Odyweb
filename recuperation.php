@@ -1,4 +1,6 @@
-<?php require "include/template/header_cadres.php"  ?>
+<?php
+$secure_lvl = 1;
+require "include/template/header_cadres.php"  ?>
 
         	
 
