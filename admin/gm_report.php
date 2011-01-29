@@ -33,8 +33,8 @@ if($_SESSION['gm'] > 5){
 <?php include "navbar.php"; include "config/config.php"; ?>
 <div id="dt_example">
 <?php 
-$date_debut = "2010-12-01";
-$date_fin = "2011-01-01";
+$date_debut = "2011-01-01";
+$date_fin = "2011-02-01";
 ?>
 
 <p>Rapport mensuel MJ</p>
