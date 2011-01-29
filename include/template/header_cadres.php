@@ -95,7 +95,6 @@ include_once 'config/config.php';
                                     $connexion = mysql_connect($host_site, $user_site, $pass_site);
                                     mysql_select_db($site_database, $connexion);
                                     mysql_query("SET NAMES 'utf8'");
-                                    $compte_pp = mysql_real_escape_string($_SESSION['pp']);
                                     $compte_next_vote_date = mysql_real_escape_string($_SESSION['next_vote_date']);
 
                                     $compte_points = mysql_real_escape_string($_SESSION['points']);

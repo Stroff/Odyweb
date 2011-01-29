@@ -67,6 +67,8 @@ Liens utiles : <a href="ajout_categorie.php">Ajout d'une cat&eacute;gorie</a> <a
 <p>Ancien syst&eacute;me de r&eacute;cup&eacute;ration -&gt;  <a href="old/list_recup.php?cat=0">Liste des recups ouvertes</a> <a href="old/list_recup_f.php?cat=0">Liste de toutes les recups</a> - <a href="old/list_demande_onisan.php?cat=0">Liste des demandes onisan</a></p>
 
 <p><a href="<?=$url?>">Connexion sur le syst&egrave;me de support</a></p>
+<p><a href="http://mail.odyssee-serveur.com">Connexion sur l'adresse email odyssée</a></p>
+
 <span style="color: #333; font-weight:bold;">Bloc-Note:</span> 
 
 <br/>
