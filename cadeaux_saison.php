@@ -40,8 +40,7 @@ else
         }
     }
 
-    if ($recu) {
-        $persos = mysql_query("SELECT name,guid,online,level FROM characters.characters WHERE account = " . $_SESSION['id'] );
+    if ($recu) {        
     ?>
         <br/>Choisissez le perso sur lequel vous recevrez vos cadeaux: <br/>
         <form method="post" action="#"><table>
@@ -49,6 +48,7 @@ else
     <?php
         while($i = mysql_fetch_assoc($recu))
         {
+            $persos = mysql_query("SELECT name,guid,online,level FROM characters.characters WHERE account = " . $_SESSION['id'] );
             echo "<tr>";
             if($i['id_account'] != $_SESSION['id'])
             {
