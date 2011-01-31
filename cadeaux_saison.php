@@ -32,7 +32,7 @@ else
             if(isset($select) && $select != 0)
             {
                 $mail = mysql_query("INSERT INTO characters.mail_external (`sender`,`receiver`,`subject`,`message`) "
-                ."VALUES ('3', '" . $select . "', 'Cadeau Odyssée', 'Chèr(e) joueur/joueuse, voici le cadeau de Noël Odyssée, en vous souhaitant de nombreux moments de plaisir IG et une excellente fin d\'année de la part de toute l\'équipe. Que l\'année qui suive soit pleine de promesses!', ") 
+                ."VALUES ('3', '" . $select . "', 'Cadeau Odyssée', 'Chèr(e) joueur/joueuse, voici le cadeau de Noël Odyssée, en vous souhaitant de nombreux moments de plaisir IG et une excellente fin d\'année de la part de toute l\'équipe. Que l\'année qui suive soit pleine de promesses!'") 
                 or die("Erreur dans l'envoi du mail");
                 $id_mail = mysql_insert_id();
                 for($foo = 0; $foo < $i['quantite']; $foo++)
