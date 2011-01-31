@@ -34,7 +34,7 @@ else
                 $id_mail = mysql_insert_id();
                 for($foo = 0; $foo < $i['quantite']; $foo++)
                     mysql_query("INSERT INTO characters.mail_external_items (`item`,`mail_id`) VALUES ('".$i['id_item']."', '" . $id_mail . "')") or die("Erreur dans l'envoi du mail à (-$select-)");
-                mysql_query("UPDATE site.account_cadeaux SET date_envoi = NOW() where id = '" . $_SESSION['id'] . "' ");
+                mysql_query("UPDATE site.account_cadeaux SET date_envoi = NOW() where id = " . $_SESSION['id']);
                 echo "<p>Votre courrier a été envoyé pour l'item ".$i['id_item']."</p>";    
             }        
         }
