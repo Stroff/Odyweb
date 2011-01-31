@@ -19,10 +19,7 @@ if(!isset($_SESSION['login']) || !isset($_SESSION['id']))
 }
 else
 {
-    $chardb = 
-
     $recu = mysql_query(" SELECT * FROM site.account_cadeaux WHERE id_account = '" . $_SESSION['id'] . "' AND date_envoi is NULL");
-
     if(isset($_POST['ok']) && isset($_SESSION['login']) && $recu)
     {
         /* reception _POST */
@@ -33,10 +30,10 @@ else
             {
                 $mail = mysql_query("INSERT INTO characters.mail_external (`sender`,`receiver`,`subject`,`message`) "
                 ."VALUES ('3', '" . $select . "', 'Cadeau Odyssée', 'Chèr(e) joueur/joueuse, voici le cadeau de Noël Odyssée, en vous souhaitant de nombreux moments de plaisir IG et une excellente fin d\'année de la part de toute l\'équipe. Que l\'année qui suive soit pleine de promesses!'") 
-                or die("Erreur dans l'envoi du mail");
+                or die("Erreur dans l'envoi du mail à ($select)");
                 $id_mail = mysql_insert_id();
                 for($foo = 0; $foo < $i['quantite']; $foo++)
-                    mysql_query("INSERT INTO characters.mail_external_items (`item`,`mail_id`) VALUES ('".$i['id_item']."', '" . $id_mail . "')") or die("Erreur dans l'envoi du mail");;
+                    mysql_query("INSERT INTO characters.mail_external_items (`item`,`mail_id`) VALUES ('".$i['id_item']."', '" . $id_mail . "')") or die("Erreur dans l'envoi du mail à (-$select-)");
                 mysql_query("UPDATE site.account_cadeaux SET date_envoi = NOW() where id = '" . $_SESSION['id'] . "' ");
                 echo "<p>Votre courrier a été envoyé pour l'item ".$i['id_item']."</p>";    
             }        
