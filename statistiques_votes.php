@@ -19,18 +19,26 @@ $i=$id_vote_saison - 1 > 0 ? $id_vote_saison - 1 : 1;
             $statscompte = mysql_query("SELECT * FROM site.accounts_vote_saison WHERE id_account = '" . $_SESSION['id'] . "' AND id_vote_saison = ". $id_vote_saison);
             $votecompte = mysql_fetch_row($statscompte);
             $placementcompte = mysql_query ("SELECT COUNT(*) FROM site.accounts_vote_saison WHERE nombre_votes > " . $votecompte[2] . " AND id_vote_saison = ". $id_vote_saison);
-            $placecompte = mysql_fetch_row($placementcompte);
-            $placecompte[0]++;
-
+            
             echo "<br/>";
-            $manquevotes = $palier - $votecompte[2];
-            echo "Vous êtes le ". $placecompte[0]. "eme du classement de la saison ".$nom_vote_saison[0]. " avec " . $votecompte[2]. " votes totalisés. <br/>" ;
+            
+            if( $placementcompte )
+            {
+                $placecompte = mysql_fetch_row($placementcompte);
+                $placecompte[0]++;
+                echo "Vous êtes le ". $placecompte[0]. "eme du classement de la saison ".$nom_vote_saison[0]. " avec " . $votecompte[2]. " votes totalisés. <br/>" ;
+            }
+            else {
+                echo "Vous n'avez effectué aucun vote la saison dernière, il n'est pas trop tard pour s'y mettre, bon courage !";
+            }                       
+            
             if ( $votecompte[2] >= $palier)
             {
                echo " Vos efforts ont été récompensés!<a href=\"cadeaux_saison.php\"> Cliquez ici!</a> <br/>";
             }
             else
             {
+                $manquevotes = $palier - $votecompte[2];
                 echo " Vous etiez à " .$manquevotes . " votes de la récompense (cela peut changer pour les saisons futures). Courage pour la prochaine saison! ";
             }
         }
