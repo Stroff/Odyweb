@@ -1,5 +1,5 @@
 <?php
-	include_once "/var/www/odyssee/include/php/fonctions.php";
+	include_once "include/php/fonctions.php";
 
 	//Connexion Base de donnée Reamld
 	$co = mysql_connect($host_site, $user_site, $pass_site);

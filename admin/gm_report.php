@@ -2,7 +2,7 @@
 $secure_lvl=2;
 require_once '../secure.php';
 
-if($_SESSION['gm'] > 5){
+if($_SESSION['gm'] < 5){
  echo "<h1>juste pour les admins et resp, dsl</h1>";
  exit();
  }
@@ -33,8 +33,8 @@ if($_SESSION['gm'] > 5){
 <?php include "navbar.php"; include "config/config.php"; ?>
 <div id="dt_example">
 <?php 
-$date_debut = "2010-12-01";
-$date_fin = "2011-01-01";
+$date_debut = "2011-01-01";
+$date_fin = "2011-02-01";
 ?>
 
 <p>Rapport mensuel MJ</p>

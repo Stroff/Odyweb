@@ -1,5 +1,4 @@
 <?php
-require "/var/www/odyssee/lib/phpmailer/class.phpmailer.php";
 /*******************************************************************************
  *                      PHP Paypal IPN Integration Class
  *******************************************************************************
@@ -249,19 +248,6 @@ class paypal_class {
       fwrite($fp, $text . "\n\n"); 
 
       fclose($fp);  // close file
-	  
-			$mail = new PHPmailer();
-			$mail->IsSMTP();
-			$mail->Host='127.0.0.1';
-			$mail->CharSet = "UTF-8";
-			$mail->IsHTML(true);
-			$mail->From='site@odyssee-serveur.com';
-			$mail->FromName="Odyssée Serveur";
-			$mail->AddAddress("ludovicthomas1@hotmail.fr");
-			$mail->AddReplyTo('site@odyssee-serveur.com');	
-			$mail->Subject="Achat paypal";
-			$mail->Body=$text;
-			$mail->Send();
    }
 
    function dump_fields() {

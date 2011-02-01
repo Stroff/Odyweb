@@ -84,8 +84,10 @@ if (isset($header_titre)) {
 <div class="banniere">
 	<div class="hautban">	
     	<div class="logo" align="center">
-   	    	<a href="index.php"><img src="medias/images/logo.gif" /></a>
+            <a href="index.php"><img src="medias/images/logo.gif" /></a> <br/>
+            <a href="http://dahlieka.deviantart.com" target="blank" ><img src="medias/images/dahli.gif" /></a>
         </div>
+        
     </div>
 
 </div>
@@ -100,7 +102,6 @@ if (isset($header_titre)) {
 					$connexion = mysql_connect($host_site, $user_site , $pass_site);
 					mysql_select_db($site_database ,$connexion);
 					mysql_query("SET NAMES 'utf8'");
-					$compte_pp = mysql_real_escape_string($_SESSION['pp']);
 					$compte_next_vote_date = mysql_real_escape_string($_SESSION['next_vote_date']);
 
 					$compte_points = mysql_real_escape_string($_SESSION['points']);
