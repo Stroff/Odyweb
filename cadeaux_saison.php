@@ -28,14 +28,18 @@ else
             $select = $_POST['perso_'.$i['id']];
             if(isset($select) && $select != 0)
             {
-                $mail = mysql_query("INSERT INTO characters.mail_external (`sender`,`receiver`,`subject`,`message`) "
-                ."VALUES ('3', '" . $select . "', 'Cadeau Odyssée', 'Veuillez recevoir votre cadeau.')") 
-                or die("Erreur dans l'envoi du mail à ($select)");
-                $id_mail = mysql_insert_id();
-                for($foo = 0; $foo < $i['quantite']; $foo++)
-                    mysql_query("INSERT INTO characters.mail_external_items (`item`,`mail_id`) VALUES ('".$i['id_item']."', '" . $id_mail . "')") or die("Erreur dans l'envoi du mail à (-$select-)");
-                mysql_query("UPDATE site.account_cadeaux SET date_envoi = NOW() where id = " . $i['id']);
-                echo "<p>Votre courrier a été envoyé pour l'item ".$i['id_item']."</p>";    
+                /* Attention on ne peut pas envoyer plus de 12 items / courrier, sinon on découpe en plusieurs courriers. */
+                $foo = 0;
+                do {
+                    $mail = mysql_query("INSERT INTO characters.mail_external (`sender`,`receiver`,`subject`,`message`) "
+                    ."VALUES ('3', '" . $select . "', 'Cadeau Odyssée', 'Veuillez recevoir votre cadeau.')") 
+                    or die("Erreur dans l'envoi du mail à ($select)");
+                    $id_mail = mysql_insert_id();
+                    for($qt = 0; $foo < $i['quantite'] && $qt < 12; $foo++, $qt++)
+                        mysql_query("INSERT INTO characters.mail_external_items (`item`,`mail_id`) VALUES ('".$i['id_item']."', '" . $id_mail . "')") or die("Erreur dans l'envoi du mail à (-$select-)");
+                    mysql_query("UPDATE site.account_cadeaux SET date_envoi = NOW() where id = " . $i['id']);
+                    echo "<p>Votre courrier a été envoyé pour l'item ".$i['id_item']."</p>";    
+                } while($foo < $i['quantite']);
             }        
         }
     }
