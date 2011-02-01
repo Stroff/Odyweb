@@ -7,7 +7,8 @@ $resultat  = mysql_query("SELECT valeur FROM configuration WHERE nom = 'id_vote_
 $id_vote_saison = mysql_fetch_array($resultat);
 $id_vote_saison = $id_vote_saison[0];
 $palier = 250;
-for($i=1;$i<=$id_vote_saison;$i++){
+//for($i=1;$i<=$id_vote_saison;$i++){
+$i=$id_vote_saison - 1 > 0 ? $id_vote_saison - 1 : 1;
 	$nom_saison  = mysql_query("SELECT Nom FROM vote_saison WHERE id = '".$i."'");
 	$nom_vote_saison = mysql_fetch_array($nom_saison);
 	echo "<h3>$nom_vote_saison[0]</h3>";
@@ -20,8 +21,7 @@ for($i=1;$i<=$id_vote_saison;$i++){
             $placementcompte = mysql_query ("SELECT COUNT(*) FROM site.accounts_vote_saison WHERE nombre_votes > " . $votecompte[2] . " AND id_vote_saison = ". $id_vote_saison);
             $placecompte = mysql_fetch_row($placementcompte);
             $placecompte[0]++;
-            print_r ($votecompte). "bla";
-            echo $placecompte[0] ;
+
             echo "<br/>";
             $manquevotes = $palier - $votecompte[2];
             echo "Vous êtes le ". $placecompte[0]. "eme du classement de la saison ".$nom_vote_saison[0]. " avec " . $votecompte[2]. " votes totalisés. <br/>" ;
@@ -51,5 +51,5 @@ for($i=1;$i<=$id_vote_saison;$i++){
 	}
 	echo '</table>';
 	echo '<br/>';
-}
+//}
 ?>
