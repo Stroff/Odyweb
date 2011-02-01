@@ -60,7 +60,7 @@ else
                 exit();
             }
     ?>       
-            <td><?php echo $i['id_item'];?></td>
+            <td><?php if($i['id_item'] == 250009) echo "Jeton event"; else "<a href=\"http://fr.wowhead.com/item=".$i['id_item']."\">".$i['id_item']."</a>"; ?></td>
             <td><?php echo $i['quantite'];?></td>
             <td>
                 <select name="<?php echo "perso_".$i['id'];?>" id="perso" class="">

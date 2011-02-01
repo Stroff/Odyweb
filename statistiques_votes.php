@@ -16,9 +16,9 @@ $i=$id_vote_saison - 1 > 0 ? $id_vote_saison - 1 : 1;
          if (!isset($_SESSION['login'])) {
             echo "Vous devez être connecté pour acceder à vos propres statistiques <br/>";
         } else {
-            $statscompte = mysql_query("SELECT * FROM site.accounts_vote_saison WHERE id_account = '" . $_SESSION['id'] . "' AND id_vote_saison = ". $id_vote_saison);
+            $statscompte = mysql_query("SELECT * FROM site.accounts_vote_saison WHERE id_account = '" . $_SESSION['id'] . "' AND id_vote_saison = ". $i);
             $votecompte = mysql_fetch_row($statscompte);
-            $placementcompte = mysql_query ("SELECT COUNT(*) FROM site.accounts_vote_saison WHERE nombre_votes > " . $votecompte[2] . " AND id_vote_saison = ". $id_vote_saison);
+            $placementcompte = mysql_query ("SELECT COUNT(*) FROM site.accounts_vote_saison WHERE nombre_votes > " . $votecompte[2] . " AND id_vote_saison = ". $i);
             
             echo "<br/>";
             
