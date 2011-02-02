@@ -28,14 +28,18 @@ else
             $select = $_POST['perso_'.$i['id']];
             if(isset($select) && $select != 0)
             {
-                $mail = mysql_query("INSERT INTO characters.mail_external (`sender`,`receiver`,`subject`,`message`) "
-                ."VALUES ('3', '" . $select . "', 'Cadeau Odyssée', 'Veuillez recevoir votre cadeau.')") 
-                or die("Erreur dans l'envoi du mail à ($select)");
-                $id_mail = mysql_insert_id();
-                for($foo = 0; $foo < $i['quantite']; $foo++)
-                    mysql_query("INSERT INTO characters.mail_external_items (`item`,`mail_id`) VALUES ('".$i['id_item']."', '" . $id_mail . "')") or die("Erreur dans l'envoi du mail à (-$select-)");
-                mysql_query("UPDATE site.account_cadeaux SET date_envoi = NOW() where id = " . $i['id']);
-                echo "<p>Votre courrier a été envoyé pour l'item ".$i['id_item']."</p>";    
+                /* Attention on ne peut pas envoyer plus de 12 items / courrier, sinon on découpe en plusieurs courriers. */
+                $foo = 0;
+                do {
+                    $mail = mysql_query("INSERT INTO characters.mail_external (`sender`,`receiver`,`subject`,`message`) "
+                    ."VALUES ('3', '" . $select . "', 'Cadeau Odyssée', 'Veuillez recevoir votre cadeau.')") 
+                    or die("Erreur dans l'envoi du mail à ($select)");
+                    $id_mail = mysql_insert_id();
+                    for($qt = 0; $foo < $i['quantite'] && $qt < 12; $foo++, $qt++)
+                        mysql_query("INSERT INTO characters.mail_external_items (`item`,`mail_id`) VALUES ('".$i['id_item']."', '" . $id_mail . "')") or die("Erreur dans l'envoi du mail à (-$select-)");
+                } while($foo < $i['quantite']);
+                mysql_query("UPDATE site.account_cadeaux SET date_envoi = NOW(), id_characters = $select where id = " . $i['id']);
+                echo "<p>Votre courrier a été envoyé pour l'item ".$i['id_item']."</p>";                    
             }        
         }
     }
@@ -56,7 +60,7 @@ else
                 exit();
             }
     ?>       
-            <td><?php echo $i['id_item'];?></td>
+            <td><?php if($i['id_item'] == 250009) echo "Jeton event"; else "<a href=\"http://fr.wowhead.com/item=".$i['id_item']."\">".$i['id_item']."</a>"; ?></td>
             <td><?php echo $i['quantite'];?></td>
             <td>
                 <select name="<?php echo "perso_".$i['id'];?>" id="perso" class="">
@@ -78,7 +82,35 @@ else
     <input type="submit" name="ok" value="Valider"/>
 
     </form>
-<?php } ?>    
+<?php } ?>  
+<div>
+<?php $connexion = mysql_connect($host_site, $user_site , $pass_site);
+mysql_select_db($forum_database ,$connexion);
+mysql_query("SET NAMES 'utf8'");
+$timestamp_actuel = time();
+//DEFINE('IN_IPB',true);
+define('IPS_AREA',"other");
+define('board_url',"http://forum.odyssee-serveur.com");
+require_once( '/var/www/board/upload/initdata.php' );
+require_once( '/var/www/board/upload/admin/sources/base/ipsRegistry.php' );
+require_once( '/var/www/board/upload/admin/sources/base/ipsController.php' );
+require_once( '/var/www/board/upload/admin/sources/handlers/han_parse_bbcode.php' );
+$ipbRegistry = ipsRegistry::instance();
+$ipbRegistry->init();
+$parser = new parseBbcode( $ipbRegistry );
+$parser->parse_html             = 1;
+$parser->parse_nl2br            = 1;
+$parser->parse_bbcode           = 1;
+$parser->parse_smilies          = 1;
+
+$messagesParPage=1; //Nous allons afficher 1 message par page.
+//Une connexion SQL doit être ouverte avant cette ligne...
+$post=mysql_query("SELECT * FROM forum.ibf_posts WHERE `pid` LIKE '193505';"); //Nous récupérons le contenu de la requête dans $post
+$donnees=mysql_fetch_array($post);
+	$post = $parser->preDisplayParse($donnees['post'] );
+	$post = str_replace("style_emoticons/<#EMO_DIR#>", "style_emoticons/default", $post);
+	echo $post;?>
+</div>   
                 	<br/> 	<br/> 	<br/>
 					   </div>
                     </div>
