@@ -33,7 +33,7 @@ $parser->parse_smilies          = 1;
 
 $messagesParPage=1; //Nous allons afficher 1 message par page.
 //Une connexion SQL doit être ouverte avant cette ligne...
-$post=mysql_query("SELECT * FROM forum.ibf_posts WHERE `pid` LIKE '75140';"); //Nous récupérons le contenu de la requête dans $post
+$post=mysql_query("SELECT * FROM forum.ibf_posts WHERE `pid` LIKE '192673';"); //Nous récupérons le contenu de la requête dans $post
 $donnees=mysql_fetch_array($post);
 	$post = $parser->preDisplayParse($donnees['post'] );
 	$post = str_replace("style_emoticons/<#EMO_DIR#>", "style_emoticons/default", $post);
