@@ -33,7 +33,7 @@ if($_SESSION['gm']==4 || $_SESSION['gm']==3){
 <?php include "navbar.php"; include "config/config.php"; ?>
 <div id="dt_example">
 <?php 
-$sql="Select * from realmd.gmlogs WHERE ";
+$sql="Select * from characters.gmlogs WHERE ";
 if (isset ($_POST["filtres"]))
 {
 	// variable qui permet d'ajouter "and" dans la requete
