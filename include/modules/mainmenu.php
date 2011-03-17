@@ -14,13 +14,13 @@
         <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="http://forum.odyssee-serveur.com" target="_parent">Forum</a></div>
 	    <div class="onglet1"> &nbsp;  &nbsp;  &nbsp; <a href="serveur.php">Serveur</a></div>
 	    <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="boutique.php">Boutique</a></div>
+            <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="partenaires.php">Partenaires</a></div>
 	    <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="statistiques.php">Statistiques </a></div>
 	    <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="bugtracker.php">Reporter un bug</a></div>
 	    <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="teamspeak.php">TS / mumble</a></div>
         <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="http://armurerie.odyssee-serveur.com" target="_blank">Armurerie</a></div>
         </div>
        <div class="spacer">
-       </div>
-           
+       </div>          
         <div class="mainmenub">
     	</div>
