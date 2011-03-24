@@ -1,11 +1,5 @@
 <?php
-$secure_lvl=2;
-require_once 'secure.php';
-
-if($_SESSION['gm'] < 5){
- echo "<h1>juste pour les admins et resp, dsl</h1>";
- exit();
- }
+$secure_lvl=1;
 ?>
 
 <?php 
