@@ -30,7 +30,7 @@ switch ($_POST['type']) {
 		if (mysql_num_rows($persos) == 1) {
 				$perso = mysql_fetch_array($persos);
 				if ($compte_points >=$prix_points) {
-					$resReqWow =mysql_query("UPDATE characters SET at_login=64 WHERE guid = '".$guid_perso."'");
+					$resReqWow =mysql_query("UPDATE characters SET at_login=128 WHERE guid = '".$guid_perso."'");
 					mysql_close();
 					$connexion = mysql_connect($host_site, $user_site , $pass_site);
 					mysql_select_db($site_database ,$connexion);

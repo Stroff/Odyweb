@@ -70,7 +70,7 @@ require "include/template/header_cadres.php";
 		$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 		mysql_select_db($wow_characters ,$connexion);
 		mysql_query("SET NAMES 'utf8'");
-		$persos = mysql_query("SELECT name,guid,online,level,at_login FROM characters WHERE account = '".$compte_id."'");
+		$persos = mysql_query("SELECT name,guid,online,level,at_login FROM characters.characters WHERE account = '".$compte_id."'");
 		while ($perso = mysql_fetch_array($persos)) {
 			if($perso['online']==0 && $perso['at_login']==0) {
 				echo '<option value="'.$perso['guid'].'">'.$perso['name'].' ( '.$perso['level'].' )</option>';
@@ -85,7 +85,7 @@ require "include/template/header_cadres.php";
 	$connexion = mysql_connect($host_site, $user_site , $pass_site);
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");
-	$renames = mysql_query("SELECT id FROM logs_achat_boutique WHERE objet_id='Changement de race' AND  account_id = '".$_SESSION['id']."'");
+	$renames = mysql_query("SELECT id FROM site.logs_achat_boutique WHERE objet_id='Changement de race' AND  account_id = '".$_SESSION['id']."'");
 	$prix = 4+mysql_num_rows($renames)*2;
 	echo $prix;
 	?> points
