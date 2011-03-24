@@ -65,7 +65,7 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
 				$top_vote  = mysql_query("UPDATE accounts_vote_saison SET nombre_votes=nombre_votes+1 WHERE id_account='".$compte_id."' AND id_vote_saison='".$id_vote_saison."' LIMIT 1") or die(mysql_error());
 			}
 			
-			echo "<p>Vous allez être redirigé vers la page de <a href=\"http://www.rpg-paradize.com/?page=vote&vote=5683\">Rpg Paradize</a> pour finir votre vote. Vous avez maintenant ".$nouveau_nbr_points." points</p>
+			echo "<p>Vous allez être redirigé vers la page de <a href=\"http://www.rpg-paradize.com/?page=vote&vote=5683\">Rpg Paradize</a> pour finir votre vote. Remplissez le CAPTCHA! <br/>
 			<META http-equiv='refresh' content='0; URL=http://www.rpg-paradize.com/?page=vote&vote=5683'>";
 		} else {
 			echo 'Vous ne semblez pas avoir cliqué sur le bouton. Peut être un vote automatique?';
