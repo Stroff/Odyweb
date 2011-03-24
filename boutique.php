@@ -38,10 +38,9 @@ require "include/template/header_cadres.php";
 						</tr>							                          
 						<tr>
 							<td><a href="boutique_skin.php"><img style = "border: 0px none ;" src="medias/images/boutique/skin.jpg" /></a></td>
-<?php
-if($_SESSION['gm'] >= 5){ ?>  							
+				
 							<td><a href="boutique_race.php"><img style = "border: 0px none ;" src="medias/images/boutique/race.jpg" /></a></td>
-<?php } ?>													
+												
 						</tr>
 
 
