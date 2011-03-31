@@ -46,7 +46,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre tickets</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where date >= "'.$date_debut.'" and date < "'.$date_fin.'" and cmd1 like ".tic%" and cmd2 like "cl%"  GROUP BY account_id ORDER BY count(*) DESC';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -61,7 +61,7 @@ $date_fin = "2011-04-01";
 
 <h2>Moyennes</h2>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT avg(UNIX_TIMESTAMP(gc.date) - UNIX_TIMESTAMP(g.date)) / 60 FROM gmlogs g left join gmlogs gc USING (cmd3, account_id) where g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and g.cmd1 like ".tic%" and g.cmd2 like "viewid" and gc.cmd2 like "cl%" and UNIX_TIMESTAMP(gc.date ) - UNIX_TIMESTAMP(g.date) < 7200 and UNIX_TIMESTAMP(gc.date ) - UNIX_TIMESTAMP(g.date) > 0';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	$val = mysql_fetch_array($res)
@@ -109,7 +109,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Temps(min)</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT avg(UNIX_TIMESTAMP(gc.date) - UNIX_TIMESTAMP(g.date))/60, g.player_name FROM gmlogs g left join gmlogs gc USING (cmd3, account_id) where g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and g.cmd1 like ".tic%" and g.cmd2 like "viewid" and gc.cmd2 like "cl%" and UNIX_TIMESTAMP(gc.date ) - UNIX_TIMESTAMP(g.date) < 7200 and UNIX_TIMESTAMP(gc.date ) - UNIX_TIMESTAMP(g.date) > 0 GROUP BY account_id ORDER BY avg(UNIX_TIMESTAMP(gc.date) - UNIX_TIMESTAMP(g.date)) DESC';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -127,7 +127,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where  g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and cmd1 like ".addi%" group by account_id order by count(*) desc';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -145,7 +145,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where  g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and cmd1 like ".lev%" group by account_id order by count(*) desc';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -163,7 +163,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where  g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and cmd1 like ".ban%" group by account_id order by count(*) desc';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -181,7 +181,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where  g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and cmd1 like ".mut%" group by account_id order by count(*) desc';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -217,7 +217,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where  g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and cmd1 like ".gob%" group by account_id order by count(*) desc';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -235,7 +235,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where  g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and cmd1 like ".npc%" group by account_id order by count(*) desc';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -253,7 +253,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where  g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and cmd1 like ".q%" group by account_id order by count(*) desc';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
@@ -271,7 +271,7 @@ $date_fin = "2011-04-01";
  <thead><tr><th>Nombre</th><th>MJ</th></tr></thead>
  <tbody>
  <?php
-    mysql_select_db("realmd");
+    mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM gmlogs g where  g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and cmd1 like ".mod%" and cmd2 like "sc%" and cmd3 > 1 group by account_id order by count(*) desc';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
