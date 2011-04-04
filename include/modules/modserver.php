@@ -22,7 +22,7 @@
 				// connexion pour faire les mysql_escape_string
 				$joug_txt = "";
 				$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
-				mysql_select_db($wow_world ,$connexion);
+				mysql_select_db($wow_characters ,$connexion);
 				mysql_query("SET NAMES 'utf8'");
 				$resultat_joug  = mysql_query("SELECT * FROM worldstates where entry in (3781, 3801)");
 				while($joug_result = mysql_fetch_array($resultat_joug)) {
