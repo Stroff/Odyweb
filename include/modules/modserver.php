@@ -31,7 +31,7 @@
 							$joug_txt .= "Joug en cours, encore ";
 					}
 					if($joug_result['entry']==3781){
-						$joug_txt .= timestamp_to_h_m_s_relative($joug_result['value']);
+						$joug_txt .= timestamp_to_h_m_s_relative($joug_result['value']/1014);
 					}
 				}
 
