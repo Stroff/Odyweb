@@ -25,6 +25,10 @@
 			<div id="textefaq2">
 				<p><?php require "statistiques_votes.php"  ?></p>
   		 	</div>
+                        <a href=# id="titrefaq2">  <h2 class="hache1">Statistiques Arène:</h2></a>
+			<div id="textefaq2">
+				<p><?php require "statistiques_arene.php"  ?></p>
+  		 	</div>
                           <p>&nbsp;</p>
                           <p>&nbsp;</p> 
                     	</div>
