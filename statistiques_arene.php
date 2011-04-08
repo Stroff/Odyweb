@@ -26,7 +26,6 @@ echo '
                 <th>Nom</th>
 		<th>Team</th>
 		<th>Côte</th>
-		<th>Côte MMR Personnelle</th>
 		<th>Côte MMR de la team</th>
 		</tr>
 </thead>
@@ -41,7 +40,7 @@ echo '
 		echo '<td>'.$arene[1].'</td>';
 		echo '<td>'.$arene[2].'</td>';
 		echo '<td>'.$arene[3].'</td>';
-		echo '<td>'.$arene[4].'</td>';
+	
 		
 	
 		
