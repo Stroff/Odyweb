@@ -17,7 +17,7 @@ t.arenateamid=m.arenateamid and
 a.guid = c.guid and
 t.arenateamid= s.arenateamid and rating> 1800
 and a.slot=0
-order by personal_rating desc");
+order by rating desc");
 echo '
 <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 <thead>
