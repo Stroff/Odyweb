@@ -31,7 +31,7 @@ require "include/template/header_cadres.php"  ?>
 								$check_blocage_compte=mysql_query("SELECT fin_blocage FROM accounts_blocage_recup WHERE id_compte='".$compte_id."' AND fin_blocage > NOW() ORDER BY fin_blocage DESC LIMIT 1");
 								if(mysql_num_rows($check_blocage_compte)>0) {
 									$date_fin_blocage_compte = mysql_fetch_array($check_blocage_compte);
-									echo '<p>Votre compte est bloqué a cause d\'un trop grande nombre de demandes de récupérations refusée. Il serra débloqué automatiquement le '.$date_fin_blocage_compte["fin_blocage"].'</p>';
+									echo '<p>Votre compte est bloqué a cause d\'un trop grande nombre de demandes de récupérations refusées. Il sera débloqué automatiquement le '.$date_fin_blocage_compte["fin_blocage"].'</p>';
 								} else {
 									 require "recup_formulaire.php";
 								} ?>
