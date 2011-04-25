@@ -31,6 +31,12 @@ switch ($_POST['type']) {
 		$metiers_ig["186"]["nom"] = "Minage";
 		$metiers_ig["165"]["id"] = 165;
 		$metiers_ig["165"]["nom"] = "Travail du cuir";
+                $metiers_ig["356"]["id"] = 356;
+		$metiers_ig["356"]["nom"] = "Pêche";
+                $metiers_ig["185"]["id"] = 185;
+		$metiers_ig["185"]["nom"] = "Cuisine";
+                $metiers_ig["129"]["id"] = 129;
+		$metiers_ig["129"]["nom"] = "Secourisme";
 		
 		while($metier = mysql_fetch_array($metiers)){
 			// recherche d'un metier
