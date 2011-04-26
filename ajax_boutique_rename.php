@@ -17,7 +17,7 @@ switch ($_POST['type']) {
 	$connexion = mysql_connect($host_site, $user_site , $pass_site);
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");
-	$nbrenames = mysql_query("SELECT COUNT(*) FROM log_rename WHERE guid = ".$guid_perso) or die "Erreur";
+	$nbrenames = mysql_query("SELECT COUNT(*) FROM log_rename WHERE guid = $guid_perso");
 	$countrenames = (int)mysql_result($nbrenames, 0);
 	if ($countrenames < 4)
 		{$prix_points = 2+$countrenames*2;}
