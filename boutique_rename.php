@@ -66,8 +66,17 @@ require "include/template/header_cadres.php";
 		mysql_query("SET NAMES 'utf8'");
 		$persos = mysql_query("SELECT name,guid,online,level,at_login FROM characters WHERE account = '".$compte_id."'");
 		while ($perso = mysql_fetch_array($persos)) {
+
+			mysql_select_db($site_database ,$connexion);
+			$nbrenames = mysql_query("SELECT COUNT(*) FROM log_rename WHERE guid = '".$guid_perso."'");
+			$countrenames = mysql_fetch_row($nbrenames);
+			if ( $countrenames [0] < 4)
+				{$prix_points = 2+mysql_num_rows($renames)*2;}
+			else
+				  {$prix_points = 8;}
+
 			if($perso['online']==0 && $perso['at_login']==0) {
-				echo '<option value="'.$perso['guid'].'">'.$perso['name'].' ( '.$perso['level'].' )</option>';
+				echo '<option value="'.$perso['guid'].'">'.$perso['name'].' ( '.$perso['level'].' ) '.$prix_points.' points </option>';
 			}else if ($perso['at_login']<>0){
 				echo '<option value="">'.$perso['name'].' ( '.$perso['level'].' ) changement en attente</option>';
 			} else {
@@ -75,18 +84,7 @@ require "include/template/header_cadres.php";
 			}
 		}
 		?>
-	</select> contre <?php
-	$connexion = mysql_connect($host_site, $user_site , $pass_site);
-	mysql_select_db($site_database ,$connexion);
-	mysql_query("SET NAMES 'utf8'");
-	$nbrenames = mysql_query("SELECT COUNT(*) FROM log_rename WHERE guid = '".$guid_perso."'");
-        $countrenames = mysql_fetch_row($nbrenames);
-	if ( $countrenames [0] < 4)
-        {$prix_points = 2+mysql_num_rows($renames)*2;}
-	else
-          {$prix_points = 8;}
-	echo $prix_points;
-	?> points
+	</select>
 <input type="submit" class="submit" id="submit" value="Acheter"/>
 </p>
 <p><input type="checkbox" id="checkBox"/>Cochez cette case pour que vous soyez supprimé des listes d'amis des autres joueurs</p>
