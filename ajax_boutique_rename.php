@@ -17,8 +17,8 @@ switch ($_POST['type']) {
 	$connexion = mysql_connect($host_site, $user_site , $pass_site);
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");
-	$renames = mysql_query("SELECT guid FROM log_rename WHERE accountid = '".$id_compte."'");
-	if (mysql_num_rows($renames) < 8)
+	$renames = mysql_query("SELECT guid FROM log_rename WHERE guid = '".$guid_perso."'");
+	if (mysql_num_rows($renames) < 4)
         {$prix_points = 2+mysql_num_rows($renames)*2;}
 	
 	if ($guid_perso =='') {
