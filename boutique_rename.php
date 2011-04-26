@@ -68,7 +68,7 @@ require "include/template/header_cadres.php";
 		while ($perso = mysql_fetch_array($persos)) {
 
 			mysql_select_db($site_database ,$connexion);
-			$nbrenames = mysql_query("SELECT COUNT(*) FROM log_rename WHERE guid = $guid_perso");
+			$nbrenames = mysql_query("SELECT COUNT(*) FROM log_rename WHERE guid = ".$perso['guid']);
 			$countrenames = (int)mysql_result($nbrenames, 0);
 			if ($countrenames < 4)
 				{$prix_points = 2+$countrenames*2;}
