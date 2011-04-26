@@ -20,7 +20,8 @@ switch ($_POST['type']) {
 	$renames = mysql_query("SELECT guid FROM log_rename WHERE guid = '".$guid_perso."'");
 	if (mysql_num_rows($renames) < 4)
         {$prix_points = 2+mysql_num_rows($renames)*2;}
-	
+	else
+          {$prix_points = 8;}
 	if ($guid_perso =='') {
 		echo '<div class="error_message">Vous devez choisir un personnage hors ligne et sans demandes de modifications en attente dessus.</div>';
 	} else {

@@ -79,9 +79,13 @@ require "include/template/header_cadres.php";
 	$connexion = mysql_connect($host_site, $user_site , $pass_site);
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");
-	$renames = mysql_query("SELECT guid FROM log_rename WHERE accountid = '".$compte_id."'");
-	$prix = 2+mysql_num_rows($renames)*2;
-	echo $prix;
+	$nbrenames = mysql_query("SELECT COUNT(*) FROM log_rename WHERE guid = '".$guid_perso."'");
+        $countrenames = mysql_fetch_row($nbrenames);
+	if ( $countrenames [0] < 4)
+        {$prix_points = 2+mysql_num_rows($renames)*2;}
+	else
+          {$prix_points = 8;}
+	echo $prix_points;
 	?> points
 <input type="submit" class="submit" id="submit" value="Acheter"/>
 </p>
