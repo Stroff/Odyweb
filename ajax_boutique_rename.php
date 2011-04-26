@@ -18,7 +18,8 @@ switch ($_POST['type']) {
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");
 	$renames = mysql_query("SELECT guid FROM log_rename WHERE accountid = '".$id_compte."'");
-	$prix_points = 2+mysql_num_rows($renames)*2;
+	if (mysql_num_rows($renames) < 8)
+        {$prix_points = 2+mysql_num_rows($renames)*2;}
 	
 	if ($guid_perso =='') {
 		echo '<div class="error_message">Vous devez choisir un personnage hors ligne et sans demandes de modifications en attente dessus.</div>';
