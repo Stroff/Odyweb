@@ -17,11 +17,12 @@ switch ($_POST['type']) {
 	$connexion = mysql_connect($host_site, $user_site , $pass_site);
 	mysql_select_db($site_database ,$connexion);
 	mysql_query("SET NAMES 'utf8'");
-	$renames = mysql_query("SELECT guid FROM log_rename WHERE guid = '".$guid_perso."'");
-	if (mysql_num_rows($renames) < 4)
-        {$prix_points = 2+mysql_num_rows($renames)*2;}
+	$nbrenames = mysql_query("SELECT COUNT(*) FROM log_rename WHERE guid = ".$guid_perso) or die "Erreur";
+	$countrenames = (int)mysql_result($nbrenames, 0);
+	if ($countrenames < 4)
+		{$prix_points = 2+$countrenames*2;}
 	else
-          {$prix_points = 8;}
+		  {$prix_points = 8;}
 	if ($guid_perso =='') {
 		echo '<div class="error_message">Vous devez choisir un personnage hors ligne et sans demandes de modifications en attente dessus.</div>';
 	} else {
