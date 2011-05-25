@@ -75,7 +75,7 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
 		if ($timestamp_actuel>=$timestamp_db) {
 		$token = md5(uniqid(rand(), true));
 		mysql_query("UPDATE accounts SET key_activation= '".$token."-4PGkOkg' WHERE id='".$compte_id."' LIMIT 1");
-		echo '<p>Vous pouvez voter, mais pour cela vous devez juste cliquer sur le bouton pour éviter les programmes de votes automatique</p>'.'<form style="padding-left:15px;" action = "vote.php" method="post"><input type="hidden" name="token" value="'.$token.'"/><input  type="submit" value="Je suis humain !" /></form>';
+		echo '<form></form><p>Vous pouvez voter, mais pour cela vous devez juste cliquer sur le bouton pour éviter les programmes de votes automatique</p>'.'<form style="padding-left:15px;" action = "vote.php" method="post"><input type="hidden" name="token" value="'.$token.'"/><input  type="submit" value="Je suis humain !" /></form>';
 		
 		} else {
 			//pas de vote
