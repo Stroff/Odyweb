@@ -114,7 +114,7 @@
 <br>
 <strong class="bbc"><span style="color: rgb(255, 140, 0);">= </span><span class="bbc_underline"><span style="font-size: 21px;">Membres Inactifs</span></span><span style="color: rgb(255, 140, 0);"> = </span></strong><br>
 
-<strong class="bbc"><span style="color: rgb(255, 140, 0);"><br>
+<strong class="bbc"><span style="color: rgb(255, 140, 0);"></span></strong><br>
 <br>
 <br>
 <br>

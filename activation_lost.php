@@ -72,7 +72,7 @@ if ($_POST ["username_perdu"]) {
 ?>
 
 <?php echo '<p style="color:red;">'.@$message.'</p>'; ?>
-<p>Nous pouvez vous renvoyer le lien d'activation par email pour votre compte. Il suffit de remplir le formulaire</p>
+<p>Vous pouvez vous renvoyer le lien d'activation par email pour votre compte. Il suffit de remplir le formulaire</p>
 	<form action="activation_lost.php" method="post" name="form" id="form">
 	<div style="margin-left:20px;">
 		<br />

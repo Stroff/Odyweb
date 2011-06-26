@@ -3,7 +3,7 @@
  <a href="#" id="titrefaq1">
                <h4> J'ai perdu mon mot de passe </h4></a> 	
                               <div class="texte-faq" id="textefaq1">
-                           			Faîtes-le renvoyer avec ce lien: <a href="password_lost.php">mot de passe perdu</a>
+                           			faites-le renvoyer avec ce lien: <a href="password_lost.php">mot de passe perdu</a>
                             <br/> <br/> <br/> 
                           </div>  
   <a href="#" id="titrefaq2">
