@@ -12,7 +12,7 @@
      <div class="texte-faq" id="textefaq2">
      			Assurez-vous d'être connecté au forum.
                 Si vous l'êtes, peut-être que vous n'avez pas les 4 messages necessaires sur le forum pour poster sur la shoutbox, allez poster dans présentation! <br/>
-                Sinon, peut-être avez-vous été interdit de shoutbox pour abus dans vos prosos?
+                Sinon, peut-être avez-vous été interdit de shoutbox pour abus dans vos propos?
                 
                  <br/>  <br/> 
                 </div>           

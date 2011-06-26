@@ -5,7 +5,7 @@
  </a>
 <div class="texte-faq" id="textefaq1">
      			<p>Assurez-vous de ne pas vous être trompé de compte, ou perso. Consultez <a href="account_boutique_logs.php" title="historique de vos achats" target="_parent">l'historique de vos achats</a>. <br/>
-                Le courier met environ 1 heure à arriver, voire plus si le serveur a crashé. Si vous êtes toujours coincé cliquez plus bas sur "mon problème n'est pas résolu" en renseignant correctement: </p>
+                Le courrier met environ 1 heure à arriver, voire plus si le serveur a crashé. Si vous êtes toujours coincé cliquez plus bas sur "mon problème n'est pas résolu" en renseignant correctement: </p>
      			<ul>
      			  <li>votre compte</li>
      			  <li> votre achat avec son lien wowhead</li>
@@ -26,7 +26,7 @@
               <li>votre compte</li>
               <li>la raison de votre ticket</li>
               <li> votre achat avec son lien wowhead</li>
-              <li> la date aproximative de celui-ci            </li>
+              <li> la date approximative de celui-ci</li>
               <li> le cas écheant en cas de problème sur l'objet en lui-même, si vous désirez être remboursé, ou l'objet de valeur équivalente que vous souhaitez en échange. </li>
   </ul>
 <p><br/>  
