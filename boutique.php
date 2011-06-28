@@ -22,7 +22,8 @@ require "include/template/header_cadres.php";
                     <p align="center">   <?php echo $compte_username.'</i>, vous avez <b>'.$compte_points.'</b> points Odyss&eacute;e' ?> &nbsp; &nbsp; &nbsp;    <a href="ajout_points.php"> <span style="font-weight:bold; color:red">Acheter des points</span> </a> </p>
                        	<br/>
                         <table cellpadding="0" cellspacing="0" width="80%" align="center">
-                        <tr>
+						<tr><td colspan="3">La boutique est actuellement fermée suite à la mise à jour de notre serveur, nous la réactiverons aussi vite que possible.</td></tr>
+<!--                        <tr>
                         
 							<td><a href="boutique_level.php"><img style = "border: 0px none ;" src="medias/images/boutique/level.jpg" /></a></td>
 							<td><a href="boutique_po.php"><img style = "border: 0px none ;" src="medias/images/boutique/po.jpg" /></a></td>
@@ -41,7 +42,7 @@ require "include/template/header_cadres.php";
 				
 							<td><a href="boutique_race.php"><img style = "border: 0px none ;" src="medias/images/boutique/race.jpg" /></a></td>
 												
-						</tr>
+						</tr> -->
 
 
 						</table>
