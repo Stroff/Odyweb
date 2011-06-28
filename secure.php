@@ -15,7 +15,7 @@ mysql_query("SET NAMES 'utf8'");
 $resultat  = mysql_query("SELECT valeur FROM configuration WHERE nom='mode_maintenance'");
 $maintenance = mysql_fetch_array($resultat);
 $maintenance = $maintenance[0];
-if (strtoupper($maintenance)=='OUI') {
+if (strtoupper($maintenance)=='OUI' && $_SESSION['gm'] > 1) {
 	if($secure_lvl <> -1) {
 		header("Location:".$url_site."/maintenance.php");
 		exit();
