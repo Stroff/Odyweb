@@ -47,7 +47,7 @@ $date_fin = "2011-07-01";
  <tbody>
  <?php
     mysql_select_db("characters");
-    $sql = 'SELECT count(*), player_name FROM characters.gmlogs where date >= "'.$date_debut.'" and date < "'.$date_fin.'" and cmd1 like ".tic%" and cmd2 like "cl%"  GROUP BY account_id ORDER BY count(*) DESC';
+    $sql = 'SELECT count(*), player_name FROM characters.gmlogs where date >= "'.$date_debut.'" and date < "'.$date_fin.'" and cmd1 like '.tic%' and cmd2 like 'cl% GROUP BY account_id ORDER BY count(*) DESC';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
 	{ ?>
@@ -62,8 +62,8 @@ $date_fin = "2011-07-01";
 <h2>Moyennes</h2>
  <?php
     mysql_select_db("characters");
-    $sql = 'SELECT avg(UNIX_TIMESTAMP(gc.date) - UNIX_TIMESTAMP(g.date)) / 60 FROM gmlogs g left join gmlogs gc USING (cmd3, account_id) where g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and g.cmd1 like ".tic%" and g.cmd2 like "viewid" and gc.cmd2 like "cl%" and UNIX_TIMESTAMP(gc.date ) - UNIX_TIMESTAMP(g.date) < 7200 and UNIX_TIMESTAMP(gc.date ) - UNIX_TIMESTAMP(g.date) > 0';
-	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
+    $sql = 'SELECT avg(UNIX_TIMESTAMP(gc.date) - UNIX_TIMESTAMP(g.date)) / 60 FROM characters.gmlogs g left join characters.gmlogs gc USING (cmd3, account_id) where g.date >= "'.$date_debut.'" and g.date < "'.$date_fin.'" and g.cmd1 like ".tic%" and g.cmd2 like "viewid" and gc.cmd2 like "cl%" and UNIX_TIMESTAMP(gc.date ) - UNIX_TIMESTAMP(g.date) < 7200 and UNIX_TIMESTAMP(gc.date ) - UNIX_TIMESTAMP(g.date) > 0';
+	$res = mysql_query($sql) or die("Anti-Jparsensucettelol:moyennes");
 	$val = mysql_fetch_array($res)
 ?>
 <p>Le temps moyen passé sur les requêtes, i.e. temps entre le viewid et le closed : <?php echo $val[0];?> min.</p>    
