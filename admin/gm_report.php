@@ -48,7 +48,7 @@ $date_fin = "2011-07-01";
  <?php
     mysql_select_db("characters");
     $sql = 'SELECT count(*), player_name FROM characters.gmlogs where date >= "'.$date_debut.'" and date < "'.$date_fin.'" and cmd1 like ".tic%" and cmd2 like "cl%" GROUP BY account_id ORDER BY count(*) DESC';
-	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
+	$res = mysql_query($sql) or die(mysql_error());
 	while($val = mysql_fetch_array($res))
 	{ ?>
 	<tr class="gradeA">
@@ -69,35 +69,35 @@ $date_fin = "2011-07-01";
 <p>Le temps moyen passé sur les requêtes, i.e. temps entre le viewid et le closed : <?php echo $val[0];?> min.</p>    
  <?php
     mysql_select_db("characters");
-    $sql = 'select count(*) from characters.gm_tickets where closed = 0';
-	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
+    $sql = 'select count(*) from characters.gm_tickets where completed = 0';
+	$res = mysql_query($sql) or die(mysql_error());
 	$val = mysql_fetch_array($res)
 ?>
 <p>Nombres de requêtes ouvertes : <?php echo $val[0];?></p>
  <?php
     mysql_select_db("characters");
-    $sql = 'select from_unixtime(createtime) from characters.gm_tickets where closed = 0 order by createtime asc limit 1';
+    $sql = 'select from_unixtime(createtime) from characters.gm_tickets where completed = 0 order by createtime asc limit 1';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	$val = mysql_fetch_array($res)
 ?>
 <p>Requête ouverte la plus vieille : <?php echo $val[0];?></p>
  <?php
     mysql_select_db("characters");
-    $sql = 'SELECT count(*) FROM characters.gm_tickets g where from_unixtime(g.timestamp) >= "'.$date_debut.'" and from_unixtime(g.timestamp) < "'.$date_fin.'" and g.closed = playerGuid';
-	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
+    $sql = 'SELECT count(*) FROM characters.gm_tickets g where from_unixtime(g.lastModifiedTime) >= "'.$date_debut.'" and from_unixtime(g.createtime) < "'.$date_fin.'" and g.closedBy = guid';
+	$res = mysql_query($sql) or die(mysql_error());
 	$val = mysql_fetch_array($res)
 ?>
 <p>Nombre de tickets abandonnés par les joueurs sur le période : <?php echo $val[0];?></p>
  <?php
     mysql_select_db("characters");
-    $sql = 'SELECT avg(g.timestamp - g.createtime) / 3600 FROM characters.gm_tickets g where from_unixtime(g.timestamp) >= "'.$date_debut.'" and from_unixtime(g.timestamp) < "'.$date_fin.'" and g.closed = playerGuid';
+    $sql = 'SELECT avg(g.lastModifiedTime - g.createTime) / 3600 FROM characters.gm_tickets g where from_unixtime(g.lastModifiedTime) >= "'.$date_debut.'" and from_unixtime(g.lastModifiedTime) < "'.$date_fin.'" and g.closedBy = guid';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	$val = mysql_fetch_array($res)
 ?>
 <p>Temps moyens avant l'abandon : <?php echo $val[0];?> heures.</p>
  <?php
     mysql_select_db("characters");
-    $sql = 'SELECT avg(g.timestamp - g.createtime) / 3600 FROM characters.gm_tickets g where from_unixtime(g.timestamp) >= "'.$date_debut.'" and from_unixtime(g.timestamp) < "'.$date_fin.'" and g.closed !=0';
+    $sql = 'SELECT avg(g.lastModifiedTime - g.createTime) / 3600 FROM characters.gm_tickets g where from_unixtime(g.lastModifiedTime) >= "'.$date_debut.'" and from_unixtime(g.lastModifiedTime) < "'.$date_fin.'" and g.closedBy !=0';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	$val = mysql_fetch_array($res)
 ?>
@@ -308,7 +308,7 @@ $date_fin = "2011-07-01";
  <tbody>
  <?php
     mysql_select_db("characters");
-    $sql = 'SELECT count(*), a.username FROM characters.gm_tickets g left join characters.characters c on c.guid = g.playerguid left join realmd.account a on c.account = a.id where from_unixtime(g.createtime) >= "'.$date_debut.'" and from_unixtime(g.createtime) < "'.$date_fin.'" group by g.playerguid order by count(*) desc limit 20';
+    $sql = 'SELECT count(*), a.username FROM characters.gm_tickets g left join characters.characters c on c.guid = g.guid left join realmd.account a on c.account = a.id where from_unixtime(g.createtime) >= "'.$date_debut.'" and from_unixtime(g.createtime) < "'.$date_fin.'" group by g.guid order by count(*) desc limit 20';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
 	{ ?>
