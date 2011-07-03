@@ -9,7 +9,7 @@
 	    <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="recuperation.php">Récupération</a></div>
 	    <div class="onglet1"> &nbsp;  &nbsp;  &nbsp; <a href="communaute.php">Communauté</a></div>
         <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="assist.php">Assistance</a></div>
-		<div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="vox_populi.php">Vox Populi</a></div>
+		<div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="vox-populi.php">Vox Populi</a></div>
         <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="news.php">News</a></div>
         <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="events.php">Events</a></div>
         <div class="onglet2"> &nbsp;  &nbsp;  &nbsp;  &nbsp; <a href="http://forum.odyssee-serveur.com" target="_parent">Forum</a></div>
