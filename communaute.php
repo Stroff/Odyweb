@@ -56,15 +56,13 @@
 <strong class="bbc"><span style="color: rgb(255, 140, 0);"> - </span><span style="font-size: 13px;"><span style="color: rgb(0, 255, 255);">Maîtres de Jeu</span> </span><span style="color: rgb(255, 140, 0);"> - </span></strong><br>
 <br>
 <strong class="bbc">Evangeline</strong><br>
-<strong class="bbc">Siewin</strong><br>
-<br>
-<strong class="bbc"><span style="color: rgb(255, 140, 0);"> - </span><span style="font-size: 13px;"><span style="color: rgb(0, 0, 255);">Maîtres de Jeu en test</span> </span><span style="color: rgb(255, 140, 0);"> - </span></strong><br>
-<br>
 <strong class="bbc">Aedha</strong><br>
 <strong class="bbc">Zwiffy</strong><br>
 <strong class="bbc">Siewin</strong><br>
-<strong class="bbc">Evangeline</strong><br>
 <strong class="bbc">wayve</strong><br>
+<br>
+<strong class="bbc"><span style="color: rgb(255, 140, 0);"> - </span><span style="font-size: 13px;"><span style="color: rgb(0, 0, 255);">Maîtres de Jeu en test</span> </span><span style="color: rgb(255, 140, 0);"> - </span></strong><br>
+<br>
 <strong class="bbc"><span style="color: rgb(255, 140, 0);"> - </span><span style="font-size: 13px;"><span style="color: rgb(65, 105, 225);">Animateurs</span> </span><span style="color: rgb(255, 140, 0);"> - </span></strong><br>
 
 <br>
