@@ -136,7 +136,7 @@ if($time_min_vote_bug<$time){
 ?>
 <h2>Vote pour les débugs</h2>
 <form method="post" action="ajax_vox-populi.php" name="form" id="form">
-<p>Vous pouvez voter pour les bug les plus génants ici</p>
+<p>Vous pouvez voter pour les bugs qui vous semblent les plus génants ici (2 jours de played minimum par compte)</p>
 <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 <thead>
 	<tr>
