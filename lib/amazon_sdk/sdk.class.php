@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,20 +12,6 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */
-
-/**
- * File: CFRuntime
- * 	Core functionality and default settings shared across all SDK classes. All methods and properties in this class are inherited by the service-specific classes.
- *
- * Version:
- * 	2010.11.09
- *
- * License and Copyright:
- * 	See the included NOTICE.md file for more information.
- *
- * See Also:
- * 	[PHP Developer Center](http://aws.amazon.com/php/)
  */
 
 
@@ -48,8 +34,7 @@ elseif (getenv('HOME') && file_exists(getenv('HOME') . DIRECTORY_SEPARATOR . '.a
 // EXCEPTIONS
 
 /**
- * Exception: CFRuntime_Exception
- * 	Default CFRuntime Exception.
+ * Default CFRuntime Exception.
  */
 class CFRuntime_Exception extends Exception {}
 
@@ -117,9 +102,9 @@ function __aws_sdk_ua_callback()
 // INTERMEDIARY CONSTANTS
 
 define('CFRUNTIME_NAME', 'aws-sdk-php');
-define('CFRUNTIME_VERSION', '1.1');
+define('CFRUNTIME_VERSION', '1.3.5');
 // define('CFRUNTIME_BUILD', gmdate('YmdHis', filemtime(__FILE__))); // @todo: Hardcode for release.
-define('CFRUNTIME_BUILD', '20101110062756');
+define('CFRUNTIME_BUILD', '20110621180731');
 define('CFRUNTIME_USERAGENT', CFRUNTIME_NAME . '/' . CFRUNTIME_VERSION . ' PHP/' . PHP_VERSION . ' ' . php_uname('s') . '/' . php_uname('r') . ' Arch/' . php_uname('m') . ' SAPI/' . php_sapi_name() . ' Integer/' . PHP_INT_MAX . ' Build/' . CFRUNTIME_BUILD . __aws_sdk_ua_callback());
 
 
@@ -127,8 +112,13 @@ define('CFRUNTIME_USERAGENT', CFRUNTIME_NAME . '/' . CFRUNTIME_VERSION . ' PHP/'
 // CLASS
 
 /**
- * Class: CFRuntime
- * 	Container for all shared methods. This is not intended to be instantiated directly, but is extended by the service-specific classes.
+ * Core functionality and default settings shared across all SDK classes. All methods and properties in this
+ * class are inherited by the service-specific classes.
+ *
+ * @version 2011.06.07
+ * @license See the included NOTICE.md file for more information.
+ * @copyright See the included NOTICE.md file for more information.
+ * @link http://aws.amazon.com/php/ PHP Developer Center
  */
 class CFRuntime
 {
@@ -136,27 +126,22 @@ class CFRuntime
 	// CONSTANTS
 
 	/**
-	 * Constant: NAME
-	 * 	Name of the software.
+	 * Name of the software.
 	 */
 	const NAME = CFRUNTIME_NAME;
 
 	/**
-	 * Constant: VERSION
-	 * 	Version of the software.
+	 * Version of the software.
 	 */
 	const VERSION = CFRUNTIME_VERSION;
 
 	/**
-	 * Constant: BUILD
-	 * 	Build ID of the software.
+	 * Build ID of the software.
 	 */
 	const BUILD = CFRUNTIME_BUILD;
 
 	/**
-	 * Constant: USERAGENT
-	 * 	User agent string used to identify the software.
-	 * 	> aws-sdk-php/1.0 PHP/5.3.3 Darwin/10.4.0 Arch/i386 SAPI/apache2handler Build/20100915173336 [environmental information]
+	 * User agent string used to identify the software.
 	 */
 	const USERAGENT = CFRUNTIME_USERAGENT;
 
@@ -165,210 +150,198 @@ class CFRuntime
 	// PROPERTIES
 
 	/**
-	 * Property: key
-	 * 	The Amazon API Key.
+	 * The Amazon API Key.
 	 */
 	public $key;
 
 	/**
-	 * Property: secret_key
-	 * 	The Amazon API Secret Key.
+	 * The Amazon API Secret Key.
 	 */
 	public $secret_key;
 
 	/**
-	 * Property: account_id
-	 * 	The Amazon Account ID, without hyphens.
+	 * The Amazon Authentication Token.
+	 */
+	public $auth_token;
+
+	/**
+	 * The Amazon Account ID, without hyphens.
 	 */
 	public $account_id;
 
 	/**
-	 * Property: assoc_id
-	 * 	The Amazon Associates ID.
+	 * The Amazon Associates ID.
 	 */
 	public $assoc_id;
 
 	/**
-	 * Property: util
-	 * 	Handle for the utility functions.
+	 * Handle for the utility functions.
 	 */
 	public $util;
 
 	/**
-	 * Property: service
-	 * 	An identifier for the current AWS service.
+	 * An identifier for the current AWS service.
 	 */
 	public $service = null;
 
 	/**
-	 * Property: api_version
-	 * 	The supported API version.
+	 * The supported API version.
 	 */
 	public $api_version = null;
 
 	/**
-	 * Property: utilities_class
-	 * 	The default class to use for utilities (defaults to <CFUtilities>).
+	 * The state of whether auth should be handled as AWS Query.
+	 */
+	public $use_aws_query = true;
+
+	/**
+	 * The default class to use for utilities (defaults to <CFUtilities>).
 	 */
 	public $utilities_class = 'CFUtilities';
 
 	/**
-	 * Property: request_class
-	 * 	The default class to use for HTTP requests (defaults to <CFRequest>).
+	 * The default class to use for HTTP requests (defaults to <CFRequest>).
 	 */
 	public $request_class = 'CFRequest';
 
 	/**
-	 * Property: response_class
-	 * 	The default class to use for HTTP responses (defaults to <CFResponse>).
+	 * The default class to use for HTTP responses (defaults to <CFResponse>).
 	 */
 	public $response_class = 'CFResponse';
 
 	/**
-	 * Property: parser_class
-	 * 	The default class to use for parsing XML (defaults to <CFSimpleXML>).
+	 * The default class to use for parsing XML (defaults to <CFSimpleXML>).
 	 */
 	public $parser_class = 'CFSimpleXML';
 
 	/**
-	 * Property: batch_class
-	 * 	The default class to use for handling batch requests (defaults to <CFBatchRequest>).
+	 * The default class to use for handling batch requests (defaults to <CFBatchRequest>).
 	 */
 	public $batch_class = 'CFBatchRequest';
 
 	/**
-	 * Property: adjust_offset
-	 * 	The number of seconds to adjust the request timestamp by (defaults to 0).
+	 * The number of seconds to adjust the request timestamp by (defaults to 0).
 	 */
 	public $adjust_offset = 0;
 
 	/**
-	 * Property: use_ssl
-	 * 	The state of SSL/HTTPS use.
+	 * The state of SSL/HTTPS use.
 	 */
 	public $use_ssl = true;
 
 	/**
-	 * Property: proxy
-	 * 	The proxy to use for connecting.
+	 * The state of SSL certificate verification.
+	 */
+	public $ssl_verification = true;
+
+	/**
+	 * The proxy to use for connecting.
 	 */
 	public $proxy = null;
 
 	/**
-	 * Property: hostname
-	 * 	The alternate hostname to use, if any.
+	 * The alternate hostname to use, if any.
 	 */
 	public $hostname = null;
 
 	/**
-	 * Property: override_hostname
-	 * 	The state of the capability to override the hostname with <set_hostname()>.
+	 * The state of the capability to override the hostname with <set_hostname()>.
 	 */
 	public $override_hostname = true;
 
 	/**
-	 * Property: port_number
-	 * 	The alternate port number to use, if any.
+	 * The alternate port number to use, if any.
 	 */
 	public $port_number = null;
 
 	/**
-	 * Property: resource_prefix
-	 * 	The alternate resource prefix to use, if any.
+	 * The alternate resource prefix to use, if any.
 	 */
 	public $resource_prefix = null;
 
 	/**
-	 * Property: use_cache_flow
-	 * 	The state of cache flow usage.
+	 * The state of cache flow usage.
 	 */
 	public $use_cache_flow = false;
 
 	/**
-	 * Property: cache_class
-	 * 	The caching class to use.
+	 * The caching class to use.
 	 */
 	public $cache_class = null;
 
 	/**
-	 * Property: cache_location
-	 * 	The caching location to use.
+	 * The caching location to use.
 	 */
 	public $cache_location = null;
 
 	/**
-	 * Property: cache_expires
-	 * 	When the cache should be considered stale.
+	 * When the cache should be considered stale.
 	 */
 	public $cache_expires = null;
 
 	/**
-	 * Property: cache_compress
-	 * 	The state of cache compression.
+	 * The state of cache compression.
 	 */
 	public $cache_compress = null;
 
 	/**
-	 * Property: cache_object
-	 * 	The current instantiated cache object.
+	 * The current instantiated cache object.
 	 */
 	public $cache_object = null;
 
 	/**
-	 * Property: batch_object
-	 * 	The current instantiated batch request object.
+	 * The current instantiated batch request object.
 	 */
 	public $batch_object = null;
 
 	/**
-	 * Property: internal_batch_object
-	 * 	The internally instantiated batch request object.
+	 * The internally instantiated batch request object.
 	 */
 	public $internal_batch_object = null;
 
 	/**
-	 * Property: use_batch_flow
-	 * 	The state of batch flow usage.
+	 * The state of batch flow usage.
 	 */
 	public $use_batch_flow = false;
 
 	/**
-	 * Property: delete_cache
-	 * 	The state of the cache deletion setting.
+	 * The state of the cache deletion setting.
 	 */
 	public $delete_cache = false;
 
 	/**
-	 * Property: debug_mode
-	 * 	The state of the debug mode setting.
+	 * The state of the debug mode setting.
 	 */
 	public $debug_mode = false;
 
 	/**
-	 * Property: max_retries
-	 * 	The number of times to retry failed requests.
+	 * The number of times to retry failed requests.
 	 */
 	public $max_retries = 3;
+
+	/**
+	 * The user-defined callback function to call when a stream is read from.
+	 */
+	public $registered_streaming_read_callback = null;
+
+	/**
+	 * The user-defined callback function to call when a stream is written to.
+	 */
+	public $registered_streaming_write_callback = null;
 
 
 	/*%******************************************************************************************%*/
 	// CONSTRUCTOR
 
 	/**
-	 * Method: __construct()
-	 * 	The constructor. You would not normally instantiate this class directly. Rather, you would instantiate a service-specific class.
+	 * The constructor. You would not normally instantiate this class directly. Rather, you would instantiate
+	 * a service-specific class.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$key - _string_ (Optional) Your Amazon API Key. If blank, it will look for the <AWS_KEY> constant.
-	 * 	$secret_key - _string_ (Optional) Your Amazon API Secret Key. If blank, it will look for the <AWS_SECRET_KEY> constant.
-	 * 	$account_id - _string_ (Optional) Your Amazon account ID without the hyphens. Required for EC2. If blank, it will look for the <AWS_ACCOUNT_ID> constant.
-	 * 	$assoc_id - _string_ (Optional) Your Amazon Associates ID. Required for AAWS. If blank, it will look for the <AWS_ASSOC_ID> constant.
-	 *
-	 * Returns:
-	 * 	_boolean_ A value of `false` if no valid values are set, otherwise `true`.
+	 * @param string $key (Optional) Your Amazon API Key. If blank, it will look for the <AWS_KEY> constant.
+	 * @param string $secret_key (Optional) Your Amazon API Secret Key. If blank, it will look for the <AWS_SECRET_KEY> constant.
+	 * @param string $account_id (Optional) Your Amazon account ID without the hyphens. Required for EC2. If blank, it will look for the <AWS_ACCOUNT_ID> constant.
+	 * @param string $assoc_id (Optional) Your Amazon Associates ID. Required for PAS. If blank, it will look for the <AWS_ASSOC_ID> constant.
+	 * @return boolean A value of `false` if no valid values are set, otherwise `true`.
 	 */
 	public function __construct($key = null, $secret_key = null, $account_id = null, $assoc_id = null)
 	{
@@ -426,23 +399,36 @@ class CFRuntime
 		}
 	}
 
+	/**
+	 * Alternate approach to constructing a new instance. Supports chaining.
+	 *
+	 * @param string $key (Optional) Your Amazon API Key. If blank, it will look for the <AWS_KEY> constant.
+	 * @param string $secret_key (Optional) Your Amazon API Secret Key. If blank, it will look for the <AWS_SECRET_KEY> constant.
+	 * @param string $account_id (Optional) Your Amazon account ID without the hyphens. Required for EC2. If blank, it will look for the <AWS_ACCOUNT_ID> constant.
+	 * @param string $assoc_id (Optional) Your Amazon Associates ID. Required for AAWS. If blank, it will look for the <AWS_ASSOC_ID> constant.
+	 * @return boolean A value of `false` if no valid values are set, otherwise `true`.
+	 */
+	public static function init($key = null, $secret_key = null, $account_id = null, $assoc_id = null)
+	{
+		if (version_compare(PHP_VERSION, '5.3.0', '<'))
+		{
+			throw new Exception('PHP 5.3 or newer is required to instantiate a new class with CLASS::init().');
+		}
+
+		$self = get_called_class();
+		return new $self($key, $secret_key, $account_id, $assoc_id);
+	}
+
 
 	/*%******************************************************************************************%*/
 	// MAGIC METHODS
 
 	/**
-	 * Method: __call()
-	 * 	A magic method that allows `camelCase` method names to be translated into `snake_case` names.
+	 * A magic method that allows `camelCase` method names to be translated into `snake_case` names.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$name - _string_ (Required) The name of the method.
-	 * 	$arguments - _array_ (Required) The arguments passed to the method.
-	 *
-	 * Returns:
-	 * 	_mixed_ The results of the intended method.
+	 * @param string $name (Required) The name of the method.
+	 * @param array $arguments (Required) The arguments passed to the method.
+	 * @return mixed The results of the intended method.
 	 */
 	public function  __call($name, $arguments)
 	{
@@ -462,17 +448,11 @@ class CFRuntime
 	// SET CUSTOM SETTINGS
 
 	/**
-	 * Method: adjust_offset()
-	 * 	Adjusts the current time. Use this method for occasions when a server is out of sync with Amazon S3 servers.
+	 * Adjusts the current time. Use this method for occasions when a server is out of sync with Amazon
+	 * servers.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$seconds - _integer_ (Required) The number of seconds to adjust the sent timestamp by.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param integer $seconds (Required) The number of seconds to adjust the sent timestamp by.
+	 * @return $this A reference to the current instance.
 	 */
 	public function adjust_offset($seconds)
 	{
@@ -481,17 +461,10 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_proxy()
-	 * 	Set the proxy settings to use.
+	 * Set the proxy settings to use.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$proxy - _string_ (Required) Accepts proxy credentials in the following format: `proxy://user:pass@hostname:port`
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $proxy (Required) Accepts proxy credentials in the following format: `proxy://user:pass@hostname:port`
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_proxy($proxy)
 	{
@@ -500,18 +473,12 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_hostname()
-	 * 	Set the hostname to connect to. This is useful for alternate services that are API-compatible with AWS, but run from a different hostname.
+	 * Set the hostname to connect to. This is useful for alternate services that are API-compatible with
+	 * AWS, but run from a different hostname.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$hostname - _string_ (Required) The alternate hostname to use in place of the default one. Useful for API-compatible applications living on different hostnames.
-	 * 	$port_number - _integer_ (Optional) The alternate port number to use in place of the default one. Useful for API-compatible applications living on different port numbers.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $hostname (Required) The alternate hostname to use in place of the default one. Useful for mock or test applications living on different hostnames.
+	 * @param integer $port_number (Optional) The alternate port number to use in place of the default one. Useful for mock or test applications living on different port numbers.
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_hostname($hostname, $port_number = null)
 	{
@@ -530,18 +497,11 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_resource_prefix()
-	 * 	Set the resource prefix to use. This method is useful for alternate services that are API-compatible
-	 * 	with AWS.
+	 * Set the resource prefix to use. This method is useful for alternate services that are API-compatible
+	 * with AWS.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$prefix - _string_ (Required) An alternate prefix to prepend to the resource path. Useful for API-compatible applications.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $prefix (Required) An alternate prefix to prepend to the resource path. Useful for mock or test applications.
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_resource_prefix($prefix)
 	{
@@ -550,17 +510,10 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: allow_hostname_override()
-	 * 	Disables any subsequent use of the <set_hostname()> method. Use this method when using third-party, Amazon API-compatible services.
+	 * Disables any subsequent use of the <set_hostname()> method.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$override - _boolean_ (Optional) Whether or not subsequent calls to <set_hostname()> should be obeyed. A `false` value disables the further effectiveness of <set_hostname()>. Defaults to `true`.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param boolean $override (Optional) Whether or not subsequent calls to <set_hostname()> should be obeyed. A `false` value disables the further effectiveness of <set_hostname()>. Defaults to `true`.
+	 * @return $this A reference to the current instance.
 	 */
 	public function allow_hostname_override($override = true)
 	{
@@ -569,33 +522,44 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: disable_ssl()
-	 * 	Disables SSL/HTTPS connections for hosts that don't support them. Some services, however, still require SSL support.
+	 * Disables SSL/HTTPS connections for hosts that don't support them. Some services, however, still
+	 * require SSL support.
 	 *
-	 * Access:
-	 * 	public
+	 * This method will throw a user warning when invoked, which can be hidden by changing your
+	 * <php:error_reporting()> settings.
 	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @return $this A reference to the current instance.
 	 */
 	public function disable_ssl()
 	{
+		trigger_error('Disabling SSL connections is potentially unsafe and highly discouraged.', E_USER_WARNING);
 		$this->use_ssl = false;
 		return $this;
 	}
 
 	/**
-	 * Method: enable_debug_mode()
-	 * 	Enables HTTP request/response header logging to `STDERR`.
+	 * Disables the verification of the SSL Certificate Authority. Doing so can enable an attacker to carry
+	 * out a man-in-the-middle attack.
 	 *
-	 * Access:
-	 * 	public
+	 * https://secure.wikimedia.org/wikipedia/en/wiki/Man-in-the-middle_attack
 	 *
-	 * Parameters:
-	 * 	$enabled - _boolean_ (Optional) Whether or not to enable debug mode. Defaults to `true`.
+	 * This method will throw a user warning when invoked, which can be hidden by changing your
+	 * <php:error_reporting()> settings.
 	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @return $this A reference to the current instance.
+	 */
+	public function disable_ssl_verification($ssl_verification = false)
+	{
+		trigger_error('Disabling the verification of SSL certificates can lead to man-in-the-middle attacks. It is potentially unsafe and highly discouraged.', E_USER_WARNING);
+		$this->ssl_verification = $ssl_verification;
+		return $this;
+	}
+
+	/**
+	 * Enables HTTP request/response header logging to `STDERR`.
+	 *
+	 * @param boolean $enabled (Optional) Whether or not to enable debug mode. Defaults to `true`.
+	 * @return $this A reference to the current instance.
 	 */
 	public function enable_debug_mode($enabled = true)
 	{
@@ -604,17 +568,10 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_max_retries()
-	 * 	Sets the maximum number of times to retry failed requests.
+	 * Sets the maximum number of times to retry failed requests.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$retries - _integer_ (Optional) The maximum number of times to retry failed requests. Defaults to `3`.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param integer $retries (Optional) The maximum number of times to retry failed requests. Defaults to `3`.
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_max_retries($retries = 3)
 	{
@@ -623,25 +580,11 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_cache_config()
-	 * 	Set the caching configuration to use for response caching.
+	 * Set the caching configuration to use for response caching.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	$location - _string_ (Required) The location to store the cache object in. This may vary by cache method. See below.
-	 * 	$gzip - _boolean_ (Optional) Whether or not data should be gzipped before being stored. A value of `true` will compress the contents before caching them. A value of `false` will leave the contents uncompressed. Defaults to `true`.
-	 *
-	 * Example values for $location:
-	 * 	File - The local file system paths such as `./cache` (relative) or `/tmp/cache/` (absolute). The location must be server-writable.
-	 * 	APC - Pass in `apc` to use this lightweight cache. You must have the APC extension installed (see [php.net/apc](http://php.net/apc)).
-	 * 	XCache - Pass in `xcache` to use this lightweight cache. You must have the XCache extension installed (see [xcache.lighttpd.net](http://xcache.lighttpd.net)).
-	 * 	Memcached - Pass in an indexed array of associative arrays. Each associative array should have a `host` and a `port` value representing a Memcached server to connect to.
-	 * 	PDO - A URL-style string (e.g. `pdo.mysql://user:pass@localhost/cache`) or a standard DSN-style string (e.g. `pdo.sqlite:/sqlite/cache.db`). MUST be prefixed with `pdo.`. See <CachePDO> and [php.net/pdo](http://php.net/pdo) for more details.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $location (Required) <p>The location to store the cache object in. This may vary by cache method.</p><ul><li>File - The local file system paths such as <code>./cache</code> (relative) or <code>/tmp/cache/</code> (absolute). The location must be server-writable.</li><li>APC - Pass in <code>apc</code> to use this lightweight cache. You must have the <a href="http://php.net/apc">APC extension</a> installed.</li><li>XCache - Pass in <code>xcache</code> to use this lightweight cache. You must have the <a href="http://xcache.lighttpd.net">XCache</a> extension installed.</li><li>Memcached - Pass in an indexed array of associative arrays. Each associative array should have a <code>host</code> and a <code>port</code> value representing a <a href="http://php.net/memcached">Memcached</a> server to connect to.</li><li>PDO - A URL-style string (e.g. <code>pdo.mysql://user:pass@localhost/cache</code>) or a standard DSN-style string (e.g. <code>pdo.sqlite:/sqlite/cache.db</code>). MUST be prefixed with <code>pdo.</code>. See <code>CachePDO</code> and <a href="http://php.net/pdo">PDO</a> for more details.</li></ul>
+	 * @param boolean $gzip (Optional) Whether or not data should be gzipped before being stored. A value of `true` will compress the contents before caching them. A value of `false` will leave the contents uncompressed. Defaults to `true`.
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_cache_config($location, $gzip = true)
 	{
@@ -682,24 +625,65 @@ class CFRuntime
 		return $this;
 	}
 
+	/**
+	 * Register a callback function to execute whenever a data stream is read from using
+	 * <CFRequest::streaming_read_callback()>.
+	 *
+	 * The user-defined callback function should accept three arguments:
+	 *
+	 * <ul>
+	 * 	<li><code>$curl_handle</code> - <code>resource</code> - Required - The cURL handle resource that represents the in-progress transfer.</li>
+	 * 	<li><code>$file_handle</code> - <code>resource</code> - Required - The file handle resource that represents the file on the local file system.</li>
+	 * 	<li><code>$length</code> - <code>integer</code> - Required - The length in kilobytes of the data chunk that was transferred.</li>
+	 * </ul>
+	 *
+	 * @param string|array|function $callback (Required) The callback function is called by <php:call_user_func()>, so you can pass the following values: <ul>
+	 * 	<li>The name of a global function to execute, passed as a string.</li>
+	 * 	<li>A method to execute, passed as <code>array('ClassName', 'MethodName')</code>.</li>
+	 * 	<li>An anonymous function (PHP 5.3+).</li></ul>
+	 * @return $this A reference to the current instance.
+	 */
+	public function register_streaming_read_callback($callback)
+	{
+		$this->registered_streaming_read_callback = $callback;
+		return $this;
+	}
+
+	/**
+	 * Register a callback function to execute whenever a data stream is written to using
+	 * <CFRequest::streaming_write_callback()>.
+	 *
+	 * The user-defined callback function should accept two arguments:
+	 *
+	 * <ul>
+	 * 	<li><code>$curl_handle</code> - <code>resource</code> - Required - The cURL handle resource that represents the in-progress transfer.</li>
+	 * 	<li><code>$length</code> - <code>integer</code> - Required - The length in kilobytes of the data chunk that was transferred.</li>
+	 * </ul>
+	 *
+	 * @param string|array|function $callback (Required) The callback function is called by <php:call_user_func()>, so you can pass the following values: <ul>
+	 * 	<li>The name of a global function to execute, passed as a string.</li>
+	 * 	<li>A method to execute, passed as <code>array('ClassName', 'MethodName')</code>.</li>
+	 * 	<li>An anonymous function (PHP 5.3+).</li></ul>
+	 * @return $this A reference to the current instance.
+	 */
+	public function register_streaming_write_callback($callback)
+	{
+		$this->registered_streaming_write_callback = $callback;
+		return $this;
+	}
+
 
 	/*%******************************************************************************************%*/
 	// SET CUSTOM CLASSES
 
 	/**
-	 * Method: set_utilities_class()
-	 * 	Set a custom class for this functionality. Use this method when extending/overriding existing classes with new functionality.
+	 * Set a custom class for this functionality. Use this method when extending/overriding existing classes
+	 * with new functionality.
 	 *
-	 * 	The replacement class must extend from <CFUtilities>.
+	 * The replacement class must extend from <CFUtilities>.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	class - _string_ (Optional) The name of the new class to use for this functionality.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $class (Optional) The name of the new class to use for this functionality.
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_utilities_class($class = 'CFUtilities')
 	{
@@ -709,19 +693,13 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_request_class()
-	 * 	Set a custom class for this functionality. Use this method when extending/overriding existing classes with new functionality.
+	 * Set a custom class for this functionality. Use this method when extending/overriding existing classes
+	 * with new functionality.
 	 *
-	 * 	The replacement class must extend from <CFRequest>.
+	 * The replacement class must extend from <CFRequest>.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	class - _string_ (Optional) The name of the new class to use for this functionality.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $class (Optional) The name of the new class to use for this functionality.
+	 * @param $this A reference to the current instance.
 	 */
 	public function set_request_class($class = 'CFRequest')
 	{
@@ -730,19 +708,13 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_response_class()
-	 * 	Set a custom class for this functionality. Use this method when extending/overriding existing classes with new functionality.
+	 * Set a custom class for this functionality. Use this method when extending/overriding existing classes
+	 * with new functionality.
 	 *
-	 * 	The replacement class must extend from <CFResponse>.
+	 * The replacement class must extend from <CFResponse>.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	class - _string_ (Optional) The name of the new class to use for this functionality.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $class (Optional) The name of the new class to use for this functionality.
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_response_class($class = 'CFResponse')
 	{
@@ -751,19 +723,13 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_parser_class()
-	 * 	Set a custom class for this functionality. Use this method when extending/overriding existing classes with new functionality.
+	 * Set a custom class for this functionality. Use this method when extending/overriding existing classes
+	 * with new functionality.
 	 *
-	 * 	The replacement class must extend from <CFSimpleXML>.
+	 * The replacement class must extend from <CFSimpleXML>.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	class - _string_ (Optional) The name of the new class to use for this functionality.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $class (Optional) The name of the new class to use for this functionality.
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_parser_class($class = 'CFSimpleXML')
 	{
@@ -772,19 +738,13 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: set_batch_class()
-	 * 	Set a custom class for this functionality. Use this method when extending/overriding existing classes with new functionality.
+	 * Set a custom class for this functionality. Use this method when extending/overriding existing classes
+	 * with new functionality.
 	 *
-	 * 	The replacement class must extend from <CFBatchRequest>.
+	 * The replacement class must extend from <CFBatchRequest>.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Parameters:
-	 * 	class - _string_ (Optional) The name of the new class to use for this functionality.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string $class (Optional) The name of the new class to use for this functionality.
+	 * @return $this A reference to the current instance.
 	 */
 	public function set_batch_class($class = 'CFBatchRequest')
 	{
@@ -797,21 +757,15 @@ class CFRuntime
 	// AUTHENTICATION
 
 	/**
-	 * Method: authenticate()
-	 * 	Default, shared method for authenticating a connection to AWS. Overridden on a class-by-class basis as necessary.
+	 * Default, shared method for authenticating a connection to AWS. Overridden on a class-by-class basis
+	 * as necessary.
 	 *
-	 * Access:
-	 * 	public
- 	 *
-	 * Parameters:
-	 * 	$action - _string_ (Required) Indicates the action to perform.
-	 * 	$opt - _array_ (Optional) An associative array of parameters for authenticating. See the individual methods for allowed keys.
-	 * 	$domain - _string_ (Optional) The URL of the queue to perform the action on.
-	 * 	$signature_version - _string_ (Optional) The signature version to use. Defaults to 2.
-	 * 	$redirects - _integer_ (Do Not Use) Used internally by this function on occasions when Amazon S3 returns a redirect code and it needs to call itself recursively.
-	 *
-	 * Returns:
-	 * 	<CFResponse> Object containing a parsed HTTP response.
+	 * @param string $action (Required) Indicates the action to perform.
+	 * @param array $opt (Optional) An associative array of parameters for authenticating. See the individual methods for allowed keys.
+	 * @param string $domain (Optional) The URL of the queue to perform the action on.
+	 * @param integer $signature_version (Optional) The signature version to use. Defaults to 2.
+	 * @param integer $redirects (Do Not Use) Used internally by this function on occasions when Amazon S3 returns a redirect code and it needs to call itself recursively.
+	 * @return CFResponse Object containing a parsed HTTP response.
 	 */
 	public function authenticate($action, $opt = null, $domain = null, $signature_version = 2, $redirects = 0)
 	{
@@ -822,6 +776,8 @@ class CFRuntime
 		}
 
 		$method_arguments = func_get_args();
+		$headers = array();
+		$signed_headers = array();
 
 		// Use the caching flow to determine if we need to do a round-trip to the server.
 		if ($this->use_cache_flow)
@@ -850,6 +806,7 @@ class CFRuntime
 		}
 
 		$return_curl_handle = false;
+		$x_amz_target = null;
 
 		// Do we have a custom resource prefix?
 		if ($this->resource_prefix)
@@ -859,12 +816,19 @@ class CFRuntime
 
 		// Determine signing values
 		$current_time = time() + $this->adjust_offset;
-		$date = gmdate($this->util->konst($this->util, 'DATE_FORMAT_RFC2616'), $current_time);
-		$timestamp = gmdate($this->util->konst($this->util, 'DATE_FORMAT_ISO8601'), $current_time);
+		$date = gmdate(CFUtilities::DATE_FORMAT_RFC2616, $current_time);
+		$timestamp = gmdate(CFUtilities::DATE_FORMAT_ISO8601, $current_time);
 		$nonce = $this->util->generate_guid();
 
 		// Manage the key-value pairs that are used in the query.
-		$query['Action'] = $action;
+		if (stripos($action, 'x-amz-target') !== false)
+		{
+			$x_amz_target = trim(str_ireplace('x-amz-target:', '', $action));
+		}
+		else
+		{
+			$query['Action'] = $action;
+		}
 		$query['Version'] = $this->api_version;
 
 		// Only Signature v2
@@ -888,8 +852,22 @@ class CFRuntime
 		// Do a case-sensitive, natural order sort on the array keys.
 		uksort($query, 'strcmp');
 
-		// Create the string that needs to be hashed.
-		$canonical_query_string = $this->util->to_signable_string($query);
+		// Normalize JSON input
+		if (isset($query['body']) && $query['body'] === '[]')
+		{
+			$query['body'] = '{}';
+		}
+
+		if ($this->use_aws_query)
+		{
+			// Create the string that needs to be hashed.
+			$canonical_query_string = $this->util->to_signable_string($query);
+		}
+		else
+		{
+			// Create the string that needs to be hashed.
+			$canonical_query_string = $this->util->encode_signature2($query['body']);
+		}
 
 		// Remove the default scheme from the domain.
 		$domain = str_replace(array('http://', 'https://'), '', $domain);
@@ -910,16 +888,7 @@ class CFRuntime
 		// Set the proper request URI.
 		$request_uri = isset($parsed_url['path']) ? $parsed_url['path'] : '/';
 
-		// Handle signing differently between v2 and v3
-		if ($signature_version === 3)
-		{
-			// Prepare the string to sign
-			$string_to_sign = $date . $nonce;
-
-			// Hash the AWS secret key and generate a signature for the request.
-			$signature = base64_encode(hash_hmac('sha256', $string_to_sign, $this->secret_key, true));
-		}
-		elseif ($signature_version === 2)
+		if ($signature_version === 2)
 		{
 			// Prepare the string to sign
 			$string_to_sign = "POST\n$host_header\n$request_uri\n$canonical_query_string";
@@ -939,42 +908,147 @@ class CFRuntime
 		);
 
 		// Compose the request.
-		$request_url = (($this->use_ssl) ? 'https://' : 'http://') . $domain;
+		$request_url = ($this->use_ssl ? 'https://' : 'http://') . $domain;
 		$request_url .= !isset($parsed_url['path']) ? '/' : '';
 
 		// Instantiate the request class
 		$request = new $this->request_class($request_url, $this->proxy, $helpers);
 		$request->set_method('POST');
-		$request->add_header('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
 		$request->set_body($querystring);
+		$headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+
+		// Do we have an authentication token?
+		if ($this->auth_token)
+		{
+			$headers['X-Amz-Security-Token'] = $this->auth_token;
+		}
+
+		// Signing using X-Amz-Target is handled differently.
+		if ($signature_version === 3 && $x_amz_target)
+		{
+			$headers['X-Amz-Target'] = $x_amz_target;
+			$headers['Content-Type'] = 'application/json; amzn-1.0';
+			$headers['Content-Encoding'] = 'amz-1.0';
+
+			$request->set_body($query['body']);
+			$querystring = $query['body'];
+		}
+
+		// Pass along registered stream callbacks
+		if ($this->registered_streaming_read_callback)
+		{
+			$request->register_streaming_read_callback($this->registered_streaming_read_callback);
+		}
+
+		if ($this->registered_streaming_write_callback)
+		{
+			$request->register_streaming_write_callback($this->registered_streaming_write_callback);
+		}
 
 		// Add authentication headers
 		if ($signature_version === 3)
 		{
-			$request->add_header('Date', $date);
-			$request->add_header('Content-Length', strlen($querystring));
-			$request->add_header('Content-MD5', $this->util->hex_to_base64(md5($querystring)));
-			$request->add_header('x-amz-nonce', $nonce);
-			$request->add_header('X-Amzn-Authorization', 'AWS3-HTTPS AWSAccessKeyId=' . $this->key . ',Algorithm=HmacSHA256,Signature=' . $signature);
+			$headers['X-Amz-Nonce'] = $nonce;
+			$headers['Date'] = $date;
+			$headers['Content-Length'] = strlen($querystring);
+			$headers['Content-MD5'] = $this->util->hex_to_base64(md5($querystring));
+			$headers['Host'] = $host_header;
+		}
+
+		// Sort headers
+		uksort($headers, 'strnatcasecmp');
+
+		if ($signature_version === 3 && $this->use_ssl)
+		{
+			// Prepare the string to sign (HTTPS)
+			$string_to_sign = $date . $nonce;
+		}
+		elseif ($signature_version === 3 && !$this->use_ssl)
+		{
+			// Prepare the string to sign (HTTP)
+			$string_to_sign = "POST\n$request_uri\n\n";
+		}
+
+		// Add headers to request and compute the string to sign
+		foreach ($headers as $header_key => $header_value)
+		{
+			// Strip linebreaks from header values as they're illegal and can allow for security issues
+			$header_value = str_replace(array("\r", "\n"), '', $header_value);
+
+			// Add the header if it has a value
+			if ($header_value !== '')
+			{
+				$request->add_header($header_key, $header_value);
+			}
+
+			// Signature v3 over HTTP
+			if ($signature_version === 3 && !$this->use_ssl)
+			{
+				// Generate the string to sign
+				if (
+					substr(strtolower($header_key), 0, 8) === 'content-' ||
+					strtolower($header_key) === 'date' ||
+					strtolower($header_key) === 'expires' ||
+					strtolower($header_key) === 'host' ||
+					substr(strtolower($header_key), 0, 6) === 'x-amz-'
+				)
+				{
+					$string_to_sign .= strtolower($header_key) . ':' . $header_value . "\n";
+					$signed_headers[] = $header_key;
+				}
+			}
+		}
+
+		if ($signature_version === 3)
+		{
+			if (!$this->use_ssl)
+			{
+				$string_to_sign .= "\n";
+
+				if (isset($query['body']) && $query['body'] !== '')
+				{
+					$string_to_sign .= $query['body'];
+				}
+
+				// Convert from string-to-sign to bytes-to-sign
+				$bytes_to_sign = hash('sha256', $string_to_sign, true);
+
+				// Hash the AWS secret key and generate a signature for the request.
+				$signature = base64_encode(hash_hmac('sha256', $bytes_to_sign, $this->secret_key, true));
+			}
+			else
+			{
+				// Hash the AWS secret key and generate a signature for the request.
+				$signature = base64_encode(hash_hmac('sha256', $string_to_sign, $this->secret_key, true));
+			}
+
+			$headers['X-Amzn-Authorization'] = 'AWS3' . ($this->use_ssl ? '-HTTPS' : '')
+				. ' AWSAccessKeyId=' . $this->key
+				. ',Algorithm=HmacSHA256'
+				. ',SignedHeaders=' . implode(';', $signed_headers)
+				. ',Signature=' . $signature;
+
+			$request->add_header('X-Amzn-Authorization', $headers['X-Amzn-Authorization']);
 		}
 
 		// Update RequestCore settings
 		$request->request_class = $this->request_class;
 		$request->response_class = $this->response_class;
+		$request->ssl_verification = $this->ssl_verification;
 
 		$curlopts = array();
+
+		// Set custom CURLOPT settings
+		if (is_array($opt) && isset($opt['curlopts']))
+		{
+			$curlopts = $opt['curlopts'];
+			unset($opt['curlopts']);
+		}
 
 		// Debug mode
 		if ($this->debug_mode)
 		{
-			$curlopts = array_merge($curlopts, array(CURLOPT_VERBOSE => true));
-		}
-
-		// Set custom CURLOPT settings
-		if (isset($opt['curlopts']))
-		{
-			$curlopts = array_merge($curlopts, $opt['curlopts']);
-			unset($opt['curlopts']);
+			$request->debug_mode = $this->debug_mode;
 		}
 
 		if (count($curlopts))
@@ -999,12 +1073,15 @@ class CFRuntime
 		// Send!
 		$request->send_request();
 
+		$request_headers = $headers;
+
 		// Prepare the response.
 		$headers = $request->get_response_header();
 		$headers['x-aws-stringtosign'] = $string_to_sign;
+		$headers['x-aws-request-headers'] = $request_headers;
 		$headers['x-aws-body'] = $querystring;
 
-		$data = new $this->response_class($headers, $this->parse_callback($request->get_response_body()), $request->get_response_code());
+		$data = new $this->response_class($headers, $this->parse_callback($request->get_response_body(), $headers), $request->get_response_code());
 
 		// Was it Amazon's fault the request failed? Retry the request until we reach $max_retries.
 		if ((integer) $request->get_response_code() === 500 || (integer) $request->get_response_code() === 503)
@@ -1026,17 +1103,10 @@ class CFRuntime
 	// BATCH REQUEST LAYER
 
 	/**
-	 * Method: batch()
-	 * 	Specifies that the intended request should be queued for a later batch request.
+	 * Specifies that the intended request should be queued for a later batch request.
 	 *
-	 * Access:
-	 * 	public
- 	 *
-	 * Parameters:
-	 * 	$queue - _CFBatchRequest_ (Optional) The <CFBatchRequest> instance to use for managing batch requests. If not available, it generates a new instance of <CFBatchRequest>.
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param CFBatchRequest $queue (Optional) The <CFBatchRequest> instance to use for managing batch requests. If not available, it generates a new instance of <CFBatchRequest>.
+	 * @return $this A reference to the current instance.
 	 */
 	public function batch(CFBatchRequest &$queue = null)
 	{
@@ -1060,17 +1130,10 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: send()
-	 * 	Executes the batch request queue by sending all queued requests.
+	 * Executes the batch request queue by sending all queued requests.
 	 *
-	 * Access:
-	 * 	public
- 	 *
-	 * Parameters:
-	 * 	$clear_after_send - _boolean_ (Optional) Whether or not to clear the batch queue after sending a request. Defaults to `true`. Set this to `false` if you are caching batch responses and want to retrieve results later.
-	 *
-	 * Returns:
-	 * 	_array_ An array of <CFResponse> objects.
+	 * @param boolean $clear_after_send (Optional) Whether or not to clear the batch queue after sending a request. Defaults to `true`. Set this to `false` if you are caching batch responses and want to retrieve results later.
+	 * @return array An array of <CFResponse> objects.
 	 */
 	public function send($clear_after_send = true)
 	{
@@ -1131,19 +1194,13 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: parse_callback()
-	 * 	Parses a response body into a PHP object if appropriate.
+	 * Parses a response body into a PHP object if appropriate.
 	 *
-	 * Access:
-	 * 	public
- 	 *
-	 * Parameters:
-	 * 	$response - _CFResponse_|_string_ (Required) The <CFResponse> object to parse, or an XML string that would otherwise be a response body.
-	 *
-	 * Returns:
-	 * 	_CFResponse_|_string_ A parsed <CFResponse> object, or parsed XML.
+	 * @param CFResponse|string $response (Required) The <CFResponse> object to parse, or an XML string that would otherwise be a response body.
+	 * @param string $content_type (Optional) The content-type to use when determining how to parse the content.
+	 * @return CFResponse|string A parsed <CFResponse> object, or parsed XML.
 	 */
-	public function parse_callback($response)
+	public function parse_callback($response, $headers = null)
 	{
 		// Shorten this so we have a (mostly) single code path
 		if (isset($response->body))
@@ -1166,10 +1223,63 @@ class CFRuntime
 			return $response;
 		}
 
+		// Decompress gzipped content
+		if (isset($headers['content-encoding']))
+		{
+			switch (strtolower(trim($headers['content-encoding'], "\x09\x0A\x0D\x20")))
+			{
+				case 'gzip':
+				case 'x-gzip':
+					if (strpos($headers['_info']['url'], 'monitoring.') !== false)
+					{
+						// CloudWatch incorrectly uses the deflate algorithm when they say gzip.
+						if (($uncompressed = gzuncompress($body)) !== false)
+						{
+							$body = $uncompressed;
+						}
+						elseif (($uncompressed = gzinflate($body)) !== false)
+						{
+							$body = $uncompressed;
+						}
+						break;
+					}
+					else
+					{
+						// Everyone else uses gzip correctly.
+						$decoder = new CFGzipDecode($body);
+						if ($decoder->parse())
+						{
+							$body = $decoder->data;
+						}
+						break;
+					}
+
+				case 'deflate':
+					if (strpos($headers['_info']['url'], 'monitoring.') !== false)
+					{
+						// CloudWatch incorrectly does nothing when they say deflate.
+						continue;
+					}
+					else
+					{
+						// Everyone else uses deflate correctly.
+						if (($uncompressed = gzuncompress($body)) !== false)
+						{
+							$body = $uncompressed;
+						}
+						elseif (($uncompressed = gzinflate($body)) !== false)
+						{
+							$body = $uncompressed;
+						}
+					}
+					break;
+			}
+		}
+
 		// Look for XML cues
 		if (
-			(stripos($body, '<?xml') === 0 || strpos($body, '<Error>') === 0) ||
-			preg_match('/^<(\w*) xmlns="http(s?):\/\/(\w*).amazonaws.com/im', $body)
+			(isset($headers['content-type']) && ($headers['content-type'] === 'text/xml' || $headers['content-type'] === 'application/xml')) || // We know it's XML
+			(!isset($headers['content-type']) && (stripos($body, '<?xml') === 0 || strpos($body, '<Error>') === 0) || preg_match('/^<(\w*) xmlns="http(s?):\/\/(\w*).amazon(aws)?.com/im', $body)) // Sniff for XML
 		)
 		{
 			// Strip the default XML namespace to simplify XPath expressions
@@ -1177,6 +1287,15 @@ class CFRuntime
 
 			// Parse the XML body
 			$body = new $this->parser_class($body);
+		}
+		// Look for JSON cues
+		elseif (
+			(isset($headers['content-type']) && $headers['content-type'] === 'application/json') || // We know it's JSON
+			(!isset($headers['content-type']) && $this->util->is_json($body)) // Sniff for JSON
+		)
+		{
+			// Normalize JSON to a CFSimpleXML object
+			$body = CFJSON::to_xml($body);
 		}
 
 		// Put the parsed data back where it goes
@@ -1197,17 +1316,12 @@ class CFRuntime
 	// CACHING LAYER
 
 	/**
-	 * Method: cache()
-	 * 	Specifies that the resulting <CFResponse> object should be cached according to the settings from <set_cache_config()>.
+	 * Specifies that the resulting <CFResponse> object should be cached according to the settings from
+	 * <set_cache_config()>.
 	 *
-	 * Access:
-	 * 	public
- 	 *
-	 * Parameters:
-	 * 	$expires - _string_|_integer_ (Required) The time the cache is to expire. Accepts a number of seconds as an integer, or an amount of time, as a string, that is understood by `strtotime()` (e.g. "1 hour").
-	 *
-	 * Returns:
-	 * 	`$this` A reference to the current instance.
+	 * @param string|integer $expires (Required) The time the cache is to expire. Accepts a number of seconds as an integer, or an amount of time, as a string, that is understood by <php:strtotime()> (e.g. "1 hour").
+	 * @param $this A reference to the current instance.
+	 * @return $this
 	 */
 	public function cache($expires)
 	{
@@ -1233,20 +1347,15 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: cache_callback()
-	 * 	The callback function that is executed when the cache doesn't exist or has expired. The response of this method is cached. Accepts identical parameters as the <authenticate()> method. Never call this method directly -- it is used internally by the caching system.
+	 * The callback function that is executed when the cache doesn't exist or has expired. The response of
+	 * this method is cached. Accepts identical parameters as the <authenticate()> method. Never call this
+	 * method directly -- it is used internally by the caching system.
 	 *
-	 * Access:
-	 * 	public
- 	 *
-	 * Parameters:
-	 * 	$action - _string_ (Required) Indicates the action to perform.
-	 * 	$opt - _array_ (Optional) An associative array of parameters for authenticating. See the individual methods for allowed keys.
-	 * 	$domain - _string_ (Optional) The URL of the queue to perform the action on.
-	 * 	$signature_version - _string_ (Optional) The signature version to use. Defaults to 2.
-	 *
-	 * Returns:
-	 * 	<CFResponse> object
+	 * @param string $action (Required) Indicates the action to perform.
+	 * @param array $opt (Optional) An associative array of parameters for authenticating. See the individual methods for allowed keys.
+	 * @param string $domain (Optional) The URL of the queue to perform the action on.
+	 * @param integer $signature_version (Optional) The signature version to use. Defaults to 2.
+	 * @return CFResponse A parsed HTTP response.
 	 */
 	public function cache_callback($action, $opt = null, $domain = null, $signature_version = 2)
 	{
@@ -1266,17 +1375,11 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: cache_callback_batch()
-	 * 	Used for caching the results of a batch request. Never call this method directly; it is used internally by the caching system.
+	 * Used for caching the results of a batch request. Never call this method directly; it is used
+	 * internally by the caching system.
 	 *
-	 * Access:
-	 * 	public
- 	 *
-	 * Parameters:
-	 * 	$batch - _CFBatchRequest_ (Required) The batch request object to send.
-	 *
-	 * Returns:
-	 * 	<CFResponse> object
+	 * @param CFBatchRequest $batch (Required) The batch request object to send.
+	 * @return CFResponse A parsed HTTP response.
 	 */
 	public function cache_callback_batch(CFBatchRequest $batch)
 	{
@@ -1284,14 +1387,9 @@ class CFRuntime
 	}
 
 	/**
-	 * Method: delete_cache()
-	 * 	Deletes a cached <CFResponse> object using the specified cache storage type.
+	 * Deletes a cached <CFResponse> object using the specified cache storage type.
 	 *
-	 * Access:
-	 * 	public
-	 *
-	 * Returns:
-	 * 	_boolean_ A value of `true` if cached object exists and is successfully deleted, otherwise `false`.
+	 * @return boolean A value of `true` if cached object exists and is successfully deleted, otherwise `false`.
 	 */
 	public function delete_cache()
 	{
@@ -1304,8 +1402,7 @@ class CFRuntime
 
 
 /**
- * Class: CFLoader
- * 	Contains the functionality for auto-loading service classes.
+ * Contains the functionality for auto-loading service classes.
  */
 class CFLoader
 {
@@ -1314,17 +1411,10 @@ class CFLoader
 	// AUTO-LOADER
 
 	/**
-	 * Method: autoloader()
-	 * 	Automatically load classes that aren't included.
+	 * Automatically load classes that aren't included.
 	 *
-	 * Access:
-	 * 	public static
-	 *
-	 * Parameters:
-	 * 	$class - _string_ (Required) The classname to load.
-	 *
-	 * Returns:
-	 * 	void
+	 * @param string $class (Required) The classname to load.
+	 * @return void
 	 */
 	public static function autoloader($class)
 	{
