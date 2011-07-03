@@ -19,8 +19,9 @@ require "include/template/header_cadres.php";
 		var aData = oTable.fnSettings().aoData[iIndex]._aData;
 
 		var sOut = '<form style="padding-left:20px;" name="'+aData[5]+'" method="post" action=""><div id="message'+aData[5]+'"></div><br />';
+		sOut += ''+aData[4]+'<br />';
 		sOut += '<br />';
-		sOut += '<a href="http://bug.odyssee-serveur.com/issues/'+aData[5]+'">Pour en savoir plus</a><br />';
+		sOut += '<a href="http://bug.odyssee-serveur.com/issues/'+aData[5]+'" target="_BLANK">Pour en savoir plus</a><br />';
 		
 		sOut += '<br /><label style="width: 90px;"></label><input id="form_achat'+aData[5]+'" type="button" value="Je vote +1"/><br /><br />';
 		sOut += '</form>';
