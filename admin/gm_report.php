@@ -47,7 +47,7 @@ $date_fin = "2011-07-01";
  <tbody>
  <?php
     mysql_select_db("characters");
-    $sql = 'SELECT count(*), player_name FROM gmlogs g where date >= "'.$date_debut.'" and date < "'.$date_fin.'" and cmd1 like ".tic%" and cmd2 like "cl%"  GROUP BY account_id ORDER BY count(*) DESC';
+    $sql = 'SELECT count(*), player_name FROM characters.gmlogs where date >= "'.$date_debut.'" and date < "'.$date_fin.'" and cmd1 like ".tic%" and cmd2 like "cl%"  GROUP BY account_id ORDER BY count(*) DESC';
 	$res = mysql_query($sql) or die("Anti-Jparsensucettelol");
 	while($val = mysql_fetch_array($res))
 	{ ?>
