@@ -50,11 +50,11 @@ if($type_recup !="Normal" && $type_recup != "Prenium"){
 	$message .="Vous devez mettre un type de demande";
 } else {
 	if($type_recup =="Normal"){
-		$cout = 1;
-		$jeton_id = 250007;
+		$cout = 0;
+		$jeton_id = 250008;
 	} else {
 		$cout = 3;
-		$jeton_id = 250008;
+		$jeton_id = 250010;
 	}
 }
 if(	$compte_points < $cout){

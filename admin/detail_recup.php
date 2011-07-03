@@ -211,6 +211,7 @@ require "../lib/phpmailer/class.phpmailer.php";
 	$jeton["250004"] = "Jeton S2";
 	$jeton["250007"] = "Jeton Stuff 78";
 	$jeton["250008"] = "Jeton Stuff Haineux/T7";
+	$jeton["250010"] = "Jeton Stuff Fatal/T8";
 	
 	
 	if (mysql_num_rows($resultat)==0) {
