@@ -45,31 +45,39 @@ Rate.Reputation.Gain = 2 (Gain de réputation x 2)</strong><br />
 
 <a href=# id="titrefaq2"><h2 class="hache1">Le PVP (Player Versus Player)</h2></a>
 <div id="textefaq2">
-                    	  <p>Le PvP :   -  Les arènes de WOTLK scriptées et disponibles : <strong>Les égouts de Dalaran</strong><br />
-                            <br />
-- Les champs de batailles scriptés et disponibles : <strong>Le Goulet des Chanteguerres<br />
-Le bassin d'Arathi<br />
-L'Oeil du Cyclone<br />
-Le Rivage des anciens (en réparation)</strong><br />
-<br />
-- La bataille pour<strong> le Joug d'hiver</strong> est entièrement fonctionnelle.</p>
-                    	  <p><br />
-                  	    </p>
+                    	  <?php $connexion = mysql_connect($host_site, $user_site , $pass_site);
+						mysql_select_db($forum_database ,$connexion);
+						mysql_query("SET NAMES 'utf8'");
+						$timestamp_actuel = time();
+						//DEFINE('IN_IPB',true);
+						define('IPS_AREA',"other");
+						define('board_url',"http://forum.odyssee-serveur.com");
+						require_once( '/var/www/board/upload/initdata.php' );
+						require_once( '/var/www/board/upload/admin/sources/base/ipsRegistry.php' );
+						require_once( '/var/www/board/upload/admin/sources/base/ipsController.php' );
+						require_once( '/var/www/board/upload/admin/sources/handlers/han_parse_bbcode.php' );
+
+
+						$ipbRegistry = ipsRegistry::instance();
+						$ipbRegistry->init();
+						$parser = new parseBbcode( $ipbRegistry );
+						$parser->parse_html             = 1;
+						$parser->parse_nl2br            = 1;
+						$parser->parse_bbcode           = 1;
+						$parser->parse_smilies          = 1;
+
+						$messagesParPage=1; //Nous allons afficher 1 message par page.
+						//Une connexion SQL doit être ouverte avant cette ligne...
+						$post=mysql_query("SELECT * FROM forum.ibf_posts WHERE `pid` LIKE '212009';"); //Nous récupérons le contenu de la requête dans $post
+						$donnees=mysql_fetch_array($post);
+							$post = $parser->preDisplayParse($donnees['post'] );
+							$post = str_replace("style_emoticons/<#EMO_DIR#>", "style_emoticons/default", $post);
+							echo $post;?>
 </div>
 
 <a href=# id="titrefaq3"> <h2 class="hache1">Le PVE (Player Versus Environment)</h2></a>
 <div id="textefaq3" align="center">
- 	<?php $connexion = mysql_connect($host_site, $user_site , $pass_site);
-	mysql_select_db($forum_database ,$connexion);
-	mysql_query("SET NAMES 'utf8'");
-	$timestamp_actuel = time();
-	//DEFINE('IN_IPB',true);
-	define('IPS_AREA',"other");
-	define('board_url',"http://forum.odyssee-serveur.com");
-	require_once( '/var/www/board/upload/initdata.php' );
-	require_once( '/var/www/board/upload/admin/sources/base/ipsRegistry.php' );
-	require_once( '/var/www/board/upload/admin/sources/base/ipsController.php' );
-	require_once( '/var/www/board/upload/admin/sources/handlers/han_parse_bbcode.php' );
+ 	<?php
 	$ipbRegistry = ipsRegistry::instance();
 	$ipbRegistry->init();
 	$parser = new parseBbcode( $ipbRegistry );
