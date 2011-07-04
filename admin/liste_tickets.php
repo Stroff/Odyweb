@@ -33,13 +33,14 @@ include '../secure.php';
 	include 'config/config.php';
 		
 		$sql = "SELECT DISTINCT t.guid, t.name, t.createtime, c.online 
-			FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.playerGuid) 
-			WHERE t.closed = 0 ORDER BY c.online DESC, t.guid ASC";
+			FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.guid) 
+			WHERE t.closedBy = 0 ORDER BY c.online DESC, t.guid ASC";
 		$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 		mysql_select_db($wow_characters ,$connexion);
 		mysql_query("SET NAMES 'utf8'");
 		$resultats = mysql_query($sql);
-		$enligne = "SELECT DISTINCT t.guid, c.online FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.playerGuid)   WHERE t.closed = 0 AND c.online=1";
+		echo mysql_error();
+		$enligne = "SELECT DISTINCT t.guid, c.online FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.guid)   WHERE t.closedBy = 0 AND c.online=1";
 		$nb =  mysql_query($enligne);
 		echo '<p> Nombre de tickets : '.mysql_num_rows($resultats).'<br/>';
          echo 'Tickets en ligne: '.mysql_num_rows($nb).' </p>'; ?>
