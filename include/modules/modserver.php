@@ -24,13 +24,13 @@
 				$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 				mysql_select_db($wow_characters ,$connexion);
 				mysql_query("SET NAMES 'utf8'");
-				$resultat_joug  = mysql_query("SELECT * FROM worldstates where entry in (3781, 3801)");
+				$resultat_joug  = mysql_query("SELECT * FROM worldstates where entry in (31002, 31001)");
 				while($joug_result = mysql_fetch_array($resultat_joug)) {
-					if($joug_result['entry']==3801){
+					if($joug_result['entry']==31001){
 						if($joug_result['value'] == 1)
 							$joug_txt .= "Joug en cours, encore ";
 					}
-					if($joug_result['entry']==3781){
+					if($joug_result['entry']==31002){
 						$joug_txt .= timestamp_to_h_m_s_relative($joug_result['value']/1014);
 					}
 				}
