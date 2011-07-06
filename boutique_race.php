@@ -1,4 +1,3 @@
-
 <?php 
 $secure_lvl = 1;
 $header_titre = "Changement de race - Boutique";

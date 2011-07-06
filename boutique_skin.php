@@ -1,8 +1,4 @@
 <?php
-$secure_lvl=1;
-?>
-
-<?php 
 $secure_lvl = 1;
 $header_titre = "Changement d'apparence - Boutique";
 require "include/template/header_cadres.php"; 
