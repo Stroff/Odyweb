@@ -68,7 +68,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 
 		$connexion = mysql_connect($host_wow, $user_wow , $pass_wow);
 		mysql_select_db($wow_characters ,$connexion);
-		$enligne = "SELECT DISTINCT t.guid, c.online FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.playerGuid)   WHERE t.closed = 0 AND c.online=1";
+		$enligne = "SELECT DISTINCT t.guid, c.online FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.guid)   WHERE t.closedBy = 0 AND c.online=1";
 		$nb =  mysql_query($enligne);
          echo '<div class="infos"><a href="liste_tickets.php">Tickets en ligne: '.mysql_num_rows($nb).'</a></div> ';
 		 ?>
