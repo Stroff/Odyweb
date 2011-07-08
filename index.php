@@ -27,7 +27,7 @@ require "include/template/header_light.php";
     
 
      <div class="uptimemod">
-			<?php require "include/modules/modserver.php"  ?>
+		
 			<!--contient  uptime, realm goule et vote -->        
         </div>
 
