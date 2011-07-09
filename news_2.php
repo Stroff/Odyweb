@@ -1,4 +1,4 @@
-<?php require "include/template/header_cadres.php" ?>
+﻿<?php require "include/template/header_cadres.php" ?>
 
 <div class="encadrepage-haut">
     <div class="encadrepage-titre">
