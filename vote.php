@@ -103,9 +103,10 @@ $prochain_vote = timestamp2mysql(time()+ $temp_entre_votes);
 			echo "<p>Vous ne pouvez plus voter pour l'instant. Vous pourrez revoter dans <span id='textLayout2'></span></p>";
 		}
 	}
-
+$req_votes_perso = mysql_query("SELECT nombre_votes FROM accounts_vote_saison WHERE id_account='".$compte_id."' AND id_vote_saison='".$id_vote_saison."' LIMIT 1");
+$req_votes_perso = mysql_fetch_array($req_votes_perso);
 ?>
-
+<p>Vous avez actuellement <?=$req_votes_perso["nombre_votes"]?> votes pour la saison en cours</p>
 <p>Classement des meilleurs voteurs :</p>
 <table>
 	<tr>
