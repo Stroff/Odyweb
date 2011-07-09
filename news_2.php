@@ -41,6 +41,7 @@ img
 	border:0px;
 }
 </style>
+<div style="width: 1280px; height: 720px; padding: 20px;">
            <h1>Newsletter Odyssée – Il y a de la houle !</h1>
 
 
@@ -93,4 +94,4 @@ Voilà un bref résumé des dernières news : vous pouvez consulter le détail d
 Avec amour, le staff Odyssée
 
             <br/> 	<br/> 	<br/>
-    
+    <div>
