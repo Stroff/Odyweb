@@ -48,7 +48,7 @@ include '../secure.php';
 	$id_tick = mysql_escape_string($_GET['id']);
 	
 	$sql = "SELECT t.*, c.online
-		FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.playerGuid)
+		FROM gm_tickets AS t LEFT JOIN characters AS c ON (c.guid = t.guid)
                 WHERE t.guid = $id_tick";
 
 	$resultat = mysql_query($sql);
