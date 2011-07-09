@@ -1,8 +1,8 @@
-﻿<div style="background: url(http://www.odywow.com/medias/images/fondnewsletter.jpg) center no-repeat #000; ">
+﻿<div style=" ">
 <style type="text/css">body, html
 {
 
-	background:#312920;
+	background: url(http://www.odywow.com/medias/images/fondnewsletter.jpg) center no-repeat #000 fixed;
 	overflow-x:hidden;
 	font-family:Verdana, Geneva, sans-serif;
 	color:#FFF;
@@ -14,11 +14,11 @@
 }
 h1
 {
-	color:#2ac2e1;
+	color:#c07c23;
 }
 h2
 {
-	color:#82dbed;
+	color:#e9bd48;
 	text-align:center;
 	
 
@@ -41,7 +41,7 @@ img
 	border:0px;
 }
 </style>
-<div style="width: 1280px; height: 720px; padding: 20px;">
+<div style="width: 1000px; height: 600px; padding: 20px; margin-left: auto; margin-right: auto;">
            <h1>Newsletter Odyssée – Il y a de la houle !</h1>
 
 
