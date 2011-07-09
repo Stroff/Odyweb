@@ -1,17 +1,44 @@
-﻿<?php require "include/template/header_cadres.php" ?>
+﻿<div style="background: url(http://www.odywow.com/medias/images/fondnewsletter.jpg) center no-repeat #000; ">
+<style type="text/css">body, html
+{
 
-<div class="encadrepage-haut">
-    <div class="encadrepage-titre">
-        <br/>
-        <br/>
-        <img src="medias/images/titre/serveur.gif" >
-    </div>
-</div>
-<div class="blocpage">
-    <div class="blocpage-haut">
-    </div>
-    <div class="blocpage-bas">
-        <div class="blocpage-texte">
+	background:#312920;
+	overflow-x:hidden;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+	margin-left:auto;
+	margin-right:auto;
+	list-style-image: url(../medias/images/puce.gif);
+}
+h1
+{
+	color:#2ac2e1;
+}
+h2
+{
+	color:#82dbed;
+	text-align:center;
+	
+
+}
+h3
+{
+	color:#c8eff7;
+}
+h4
+{
+	color:#009ccf;
+	background: url(../medias/images/faqs-titre.jpg) no-repeat;
+	font-size:100%;
+	line-height:30px;
+	padding-left:60px;
+	
+}
+img
+{
+	border:0px;
+}
+</style>
            <h1>Newsletter Odyssée – Il y a de la houle !</h1>
 
 
@@ -64,10 +91,4 @@ Voilà un bref résumé des dernières news : vous pouvez consulter le détail d
 Avec amour, le staff Odyssée
 
             <br/> 	<br/> 	<br/>
-        </div>
-    </div>
-</div>
-<div class="encadrepage-bas">
-</div> 
-
-<?php require "include/template/footer_cadres.php" ?>
+    
