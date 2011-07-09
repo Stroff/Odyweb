@@ -12,7 +12,7 @@
         font-size: 90%;
         color: #fff;
 }
-h1
+h1, a
 {
 	color:#c07c23;
 }
@@ -57,16 +57,16 @@ La où les bots votes pour Odyssée (largement combattus par notre équipe) ne t
 Nous espérons que ce redressement continuera avec les autres sites coupables, et que cela n'est pas dû uniquement à la perte de la première place qu'avait perdue un certain serveur, ce qui aurait poussé la direction de RPG P à agir par amitié... Nous espérons que le leader en question, qui ne se prive pas de ces manœuvres non plus, subira en toute justice le même sort que ses collègues, comme ceux dont on trouve facilement les bots sur internet qui contournent le captcha RPG P.
 <br/> <br/> 
 Notre team a toujours souhaité rester honnête, pour nous aider, que faire?
-Renouveler d'attention et voter sur prg paradize pour que nous remontions à la place que nous méritons! En espérant que la solidarité et l’honnêteté dont nous avons fait preuve paiera enfin.
+<a href="http://www.odyssee-serveur.com/vote.php">Renouveler d'attention et voter sur prg paradize</a> pour que nous remontions à la place que nous méritons! En espérant que la solidarité et l’honnêteté dont nous avons fait preuve paiera enfin.
 <br/> <br/> 
 <h2>2/ Technique :</h2><br/> 
 <h3>Nouvelle saison </h3><br/> 
 Avec l’ouverture d’ICC et la mise à disposition du couroucé, voici une page de tournée pour repartir de plus belle ! <br/> <br/> 
 <h3>changement de core</h3><br/> 
 Notre core odyssée présentait tant de différences avec le core trinity d’origine qu’il devenait affreusement déséquilibré et difficile à mettre à jour, aussi sommes-nous repartis avec un core tout propre.
-Celui-ci est déjà bien plus performant et facile à corriger, nous avons déjà fait de nombreux patchs dessus (voir cette liste)<br/> <br/> 
+Celui-ci est déjà bien plus performant et facile à corriger, nous avons déjà fait de nombreux patchs dessus <a href="http://forum.odyssee-serveur.com/topic/14201-debug-de-classe">(voir cette liste) </a> <br/> <br/> 
 <h3>Priorité des debugs</h3><br/> 
-Maintenant, les joueurs eux-mêmes votent pour les debugs à passer en priorité. Votez grâce à cette page !<br/> <br/> 
+Maintenant, les joueurs eux-mêmes votent pour les debugs à passer en priorité. <a href="http://forum.odyssee-serveur.com/vox-populi.php">Votez grâce à cette page !</a> <br/> <br/> 
 <h3>Soucis de comptes !</h3><br/> 
 Si vous avez le message « compte fermé » et qu’aucun message n’apparait sur l’accueil du site, contactez l’équipe, cela est dû à un bug auquel nous pouvons aisément remédier.
 <br/> <br/> 
@@ -86,7 +86,7 @@ Nous recherchons activement des testeurs, animateurs, développeurs SQL et C++�
 
 <br/> <br/> <br/> 
 <h2>Pour conclure:</h2><br/> 
-Voilà un bref résumé des dernières news : vous pouvez consulter le détail de ces news sur notre site et notre forum, saurez-vous faire évoluer votre regard comme nous nous sommes battus pour regagner votre cœur ?
+Voilà un bref résumé des dernières news : vous pouvez consulter le détail de ces news <a href="http://forum.odyssee-serveur.com/news.php">sur notre site et notre forum </a> , saurez-vous faire évoluer votre regard comme nous nous sommes battus pour regagner votre cœur ?
 
 <br/> <br/> 
 <strong>Rappelez-vous que pour le meilleur et pour le pire, notre motivation, c'est vous ! </strong>
