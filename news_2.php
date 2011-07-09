@@ -1,4 +1,4 @@
-﻿<div style="background: url(http://www.odywow.com/medias/images/fondnewsletter.jpg) center no-repeat #000; ">
+<div style="background: url(http://www.odywow.com/medias/images/fondnewsletter.jpg) center no-repeat #000; ">
 <style type="text/css">body, html
 {
 
@@ -9,6 +9,8 @@
 	margin-left:auto;
 	margin-right:auto;
 	list-style-image: url(../medias/images/puce.gif);
+        font-size: 90%;
+        clor: #
 }
 h1
 {

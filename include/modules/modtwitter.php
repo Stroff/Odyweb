@@ -50,7 +50,7 @@ function twitter($text)
 $search = array('|(http://[^ ]+)|', '/(^|[^a-z0-9_])@([a-z0-9_]+)/i','/(^|[^a-z0-9_])#([a-z0-9_]+)/i');
 $replace = array('<a href="$1" class="lienvrai">$1</a>', '$1@<a href="http://bug.odyssee-serveur.com/issues/$2">$2</a>','$1<a href="http://bug.odyssee-serveur.com/issues/$2">#$2</a>');
 $text = preg_replace($search, $replace, $text);
-$txt1 = str_replace( array("nonox","agmagor", "stroff"), array("<font color=red>Nonox</font>","<font color=red>Agmagor</font>", "<font color=red>Stroff</font>"), $text );
+$txt1 = str_replace( array("nonox","agmagor", "stroff", "Elyotna"), array("<font color=red>Nonox</font>","<font color=red>Agmagor</font>", "<font color=red>Stroff</font>"),"<font color=red>Elyotna</font>", $text );
 return($txt1);
 }
 init();
