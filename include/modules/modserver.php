@@ -56,8 +56,8 @@
                  
                 </div>
                 <span style="	font-size:80%;">
-               <!-- <font style="font-weight:bold;">Uptime:</font> <?php // echo $uptime; ?>
-                <br/>-->
+                <font style="font-weight:bold;">Uptime:</font> <?php  echo $uptime; ?>
+                <br/>
                 <font style="font-weight:bold;">Rates: </font>  XP = X4, Loot = X1, GOLD = X3
                 <br/>
                 <font style="font-weight:bold;">Version: </font>  3.3.5a

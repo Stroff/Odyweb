@@ -29,7 +29,7 @@ while($un_perso = mysql_fetch_array($sql)) {
 }
 $total_online= $faction['Horde']+$faction['Alliance'];
 mysql_select_db('realmd' ,$connexion);
-$uptime_query = mysql_query("SELECT * FROM realmd.`uptime` ORDER BY `starttime` DESC LIMIT 1", $connexion)or die(mysql_error()); 
+$uptime_query = mysql_query("SELECT * FROM realmd.`uptime` WHERE  realmid = 1 ORDER BY `starttime` DESC LIMIT 1", $connexion)or die(mysql_error()); 
 $uptime_db= mysql_fetch_array($uptime_query); 
 mysql_close();
 $s = $uptime_db['starttime']-time();
