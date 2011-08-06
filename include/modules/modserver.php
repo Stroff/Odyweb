@@ -42,7 +42,7 @@
             <div class="uptimemod-infos" id="<?php echo 'infopop_'.$bar_id;?>">
             
             	<div class="nbjoueurs">
-                <?php echo $joueurs_online; ?>/1500
+                <?php echo $joueurs_online; ?>/700
                 </div>
                 <div class="nballyh2">
                 <font color="#CC0000"><?php echo $joueurs_online_horde; ?> </font>
