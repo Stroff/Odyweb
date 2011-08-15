@@ -60,7 +60,7 @@ foreach($categories as $categorie){
 	if ($i % 3 == 0) 
 		echo '</tr><tr>';
 	//je fait l'affichage de mon image
-	echo'<td><a href="boutique_objet.php?section='. $_GET ["section"].'&categorie='.$categorie['nom'].'"><img style = "border: 0px none ;" src="medias/images/boutique/'.$categorie['image'].'" /></a></td>';
+	echo'<td><a href="boutique_objets.php?section='. $_GET ["section"].'&categorie='.$categorie['nom'].'"><img style = "border: 0px none ;" src="medias/images/boutique/'.$categorie['image'].'" /></a></td>';
 	$i++;
 }
 ?>
