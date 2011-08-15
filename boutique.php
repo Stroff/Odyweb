@@ -28,7 +28,7 @@ require "include/template/header_cadres.php";
 							<td><a href="boutique_po.php"><img style = "border: 0px none ;" src="medias/images/boutique/po.jpg" /></a></td>
 							<td><a href="boutique_objets.php?section=Armes"><img style = "border: 0px none ;" src="medias/images/boutique/arme.jpg" /></a></td> </tr>
                          <tr>
-							<td><a href="boutique_objets.php?section=Armures"><img style = "border: 0px none ;" src="medias/images/boutique/armor.jpg" /></a></td>
+							<td><a href="boutique_categories_objets.php?section=Armures"><img style = "border: 0px none ;" src="medias/images/boutique/armor.jpg" /></a></td>
 							<td><a href="boutique_objets.php?section=Compagnons"><img style = "border: 0px none ;" src="medias/images/boutique/compagnons.jpg" /></a></td>
 							<td><a href="boutique_objets.php?section=Montures"><img style = "border: 0px none ;" src="medias/images/boutique/mont.jpg" /></a></td> </tr>
 						<tr>						

@@ -13,25 +13,55 @@ if (isset($_GET ["section"])) {
 	$section_nom= 'Armes';
 }
 
-// recherche items
-if ($section_nom<>'Compagnons' && $section_nom<>'Fun') {
-	$items_req = mysql_query("SELECT categorie_boutique.nom AS categorie_nom, 
-		type_boutique.nom AS type_nom, 
-		items_boutique.prix AS prix, 
-		items_boutique.nom AS nom, 
-		items_boutique.id_objet AS id_objet, 
-		items_boutique.id AS id, 
-		section_boutique.nom AS section_nom
-	FROM items_boutique INNER JOIN categorie_boutique ON items_boutique.categorie_id = categorie_boutique.id
-		 INNER JOIN type_boutique ON items_boutique.type_id = type_boutique.id
-		 INNER JOIN section_boutique ON section_boutique.id = items_boutique.section_id WHERE section_boutique.nom = '$section_nom' AND items_boutique.disponible=1");
-}else {
-	$items_req = mysql_query("SELECT 
-		items_boutique.prix AS prix, 
-		items_boutique.nom AS nom, 
-		items_boutique.id_objet AS id_objet, 
-		items_boutique.id AS id
-	FROM items_boutique INNER JOIN section_boutique ON section_boutique.id = items_boutique.section_id  WHERE section_boutique.nom = '$section_nom' AND items_boutique.disponible=1");
+// je recup le nom de la categorie
+if (isset($_GET ["categorie"])) {
+	$categorie_nom= mysql_escape_string ( $_GET ["categorie"]);
+} else {
+	$categorie_nom= '';
+}
+
+if($categorie_nom == NULL){
+	// recherche items
+	if ($section_nom<>'Compagnons' && $section_nom<>'Fun') {
+		$items_req = mysql_query("SELECT categorie_boutique.nom AS categorie_nom, 
+			type_boutique.nom AS type_nom, 
+			items_boutique.prix AS prix, 
+			items_boutique.nom AS nom, 
+			items_boutique.id_objet AS id_objet, 
+			items_boutique.id AS id, 
+			section_boutique.nom AS section_nom
+		FROM items_boutique INNER JOIN categorie_boutique ON items_boutique.categorie_id = categorie_boutique.id
+			 INNER JOIN type_boutique ON items_boutique.type_id = type_boutique.id
+			 INNER JOIN section_boutique ON section_boutique.id = items_boutique.section_id WHERE section_boutique.nom = '$section_nom' AND items_boutique.disponible=1");
+	}else {
+		$items_req = mysql_query("SELECT 
+			items_boutique.prix AS prix, 
+			items_boutique.nom AS nom, 
+			items_boutique.id_objet AS id_objet, 
+			items_boutique.id AS id
+		FROM items_boutique INNER JOIN section_boutique ON section_boutique.id = items_boutique.section_id  WHERE section_boutique.nom = '$section_nom' AND items_boutique.disponible=1");
+	}
+} else{
+	// recherche items
+	if ($section_nom<>'Compagnons' && $section_nom<>'Fun') {
+		$items_req = mysql_query("SELECT categorie_boutique.nom AS categorie_nom, 
+			type_boutique.nom AS type_nom, 
+			items_boutique.prix AS prix, 
+			items_boutique.nom AS nom, 
+			items_boutique.id_objet AS id_objet, 
+			items_boutique.id AS id, 
+			section_boutique.nom AS section_nom
+		FROM items_boutique INNER JOIN categorie_boutique ON items_boutique.categorie_id = categorie_boutique.id
+			 INNER JOIN type_boutique ON items_boutique.type_id = type_boutique.id
+			 INNER JOIN section_boutique ON section_boutique.id = items_boutique.section_id WHERE section_boutique.nom = '$section_nom' AND items_boutique.disponible=1 AND categorie_boutique.nom = '$categorie_nom'");
+	}else {
+		$items_req = mysql_query("SELECT 
+			items_boutique.prix AS prix, 
+			items_boutique.nom AS nom, 
+			items_boutique.id_objet AS id_objet, 
+			items_boutique.id AS id
+		FROM items_boutique INNER JOIN section_boutique ON section_boutique.id = items_boutique.section_id  WHERE section_boutique.nom = '$section_nom' AND items_boutique.disponible=1");
+	}
 }
 
 ?>
