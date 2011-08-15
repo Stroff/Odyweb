@@ -14,13 +14,16 @@ include '../secure.php';
 <?php
 include 'config/config.php';
 	if (isset($_POST['id_item'])) {
+		setcookie('select_categorie', $_POST['categorie_item'], (time() + 3600));
+		setcookie('select_type', $_POST['type_item'], (time() + 3600));
+		setcookie('select_section', $_POST['section_item'], (time() + 3600));
+		setcookie('select_prix', $_POST['prix_item'], (time() + 3600));
 		$nom_objet = mysql_escape_string($_POST['nom_item']);
 		$sql = "INSERT INTO items_boutique SET id_objet = '".$_POST['id_item']."',id_objet_ig = '".$_POST['id_item_ig']."',prix = '".$_POST['prix_item']."',categorie_id = '".$_POST['categorie_item']."',type_id = '".$_POST['type_item']."',section_id = '".$_POST['section_item']."'
 		,disponible = '1',nom = '".$nom_objet."'";
 		$connexion = mysql_connect($host_site, $user_site , $pass_site);
 		mysql_select_db($site_database ,$connexion);
 		mysql_query("SET NAMES 'utf8'");
-		echo $sql;
 		mysql_query($sql);
 		if($sql) {
 			echo "Ajout de l'item Ok";
@@ -47,7 +50,13 @@ include 'config/config.php';
   </p>
   <p>
     <label>Prix :
-      <input type="text" name="prix_item" id="prix_item" />
+<?php
+if(isset($_COOKIE['prix_item'])){ 
+	echo '<input type="text" name="prix_item" id="prix_item" value="'.$_COOKIE['prix_item'].'"/>';
+}else{
+	echo '<input type="text" name="prix_item" id="prix_item" />';
+}
+?>
     </label>
   </p>
   <p>
@@ -62,7 +71,11 @@ include 'config/config.php';
 		mysql_query("SET NAMES 'utf8'");
 		$resultats = mysql_query($sql);
 		while($type = mysql_fetch_array($resultats)) {
-			echo '<option value="'.$type['id'].'">'.$type['nom'].'</option>';
+			if(isset($_COOKIE['select_type']) && $_COOKIE['select_type'] == $type['id']){
+				echo '<option value="'.$type['id'].'" selected=selected>'.$type['nom'].'</option>';	
+			}else {
+				echo '<option value="'.$type['id'].'">'.$type['nom'].'</option>';
+			}
 		}
 	?>
       </select>
@@ -79,7 +92,11 @@ include 'config/config.php';
 			mysql_query("SET NAMES 'utf8'");
 			$resultats = mysql_query($sql);
 			while($categorie = mysql_fetch_array($resultats)) {
-				echo '<option value="'.$categorie['id'].'">'.$categorie['nom'].'</option>';
+				if(isset($_COOKIE['select_categorie']) && $_COOKIE['select_categorie'] == $categorie['id']){
+					echo '<option value="'.$categorie['id'].'" selected=selected>'.$categorie['nom'].'</option>';
+				}else{
+					echo '<option value="'.$categorie['id'].'">'.$categorie['nom'].'</option>';
+				}
 			}
 		?>
       </select>
@@ -95,7 +112,11 @@ include 'config/config.php';
 			mysql_query("SET NAMES 'utf8'");
 			$resultats = mysql_query($sql);
 			while($section = mysql_fetch_array($resultats)) {
-				echo '<option value="'.$section['id'].'">'.$section['nom'].'</option>';
+				if(isset($_COOKIE['select_section']) && $_COOKIE['select_section'] == $section['id']){
+					echo '<option value="'.$section['id'].'" selected=selected>'.$section['nom'].'</option>';
+				}else{
+					echo '<option value="'.$section['id'].'">'.$section['nom'].'</option>';
+				}
 			}
 		?>
       </select>
