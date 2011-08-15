@@ -16,6 +16,7 @@ if (isset($_GET ["section"])) {
 // recherche des catefories
 if ($section_nom<>'Compagnons' && $section_nom<>'Fun') {
 	$items_req = mysql_query("SELECT categorie_boutique.nom AS categorie_nom, 
+		categorie_boutique.image AS categorie_image, 
 		type_boutique.nom AS type_nom, 
 		items_boutique.prix AS prix, 
 		items_boutique.nom AS nom, 
@@ -44,27 +45,25 @@ if ($section_nom<>'Compagnons' && $section_nom<>'Fun') {
         <div class="blocpage-bas">
         	<div class="blocpage-texte">
 <h2>Boutique <?php echo $section_nom; ?></h2>
-<form method="post" action="ajax_boutique_objets.php" name="form" id="form">
 <p>Vous pouvez acheter des objets pour vos personnages ici</p>
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
-<thead>
-	<tr>
-		<th>Nom de l'objet</th>
-		<th>Catégorie</th>
-		<th>Type</th>
-		<th>Prix</th>
-		<th style = "display:none;">id</th>
-		</tr>
-</thead>
-	<tbody>
 <?php
 $categories = array(); 
-foreach($items_req as $item){
-//	if(isset($categories[$item]))
-print_r($item);
+while( $item = mysql_fetch_array($items_req)){
+	if(!isset($categories[$item['categorie_nom']])){
+		$categories[$item['categorie_nom']]["image"] = $item['categorie_image'];
+		$categories[$item['categorie_nom']]["nom"] = $item['categorie_nom'];
+	}
+}
+echo '<table cellpadding="0" cellspacing="0" width="80%" align="center"><tr>';
+$i=0;
+foreach($categories as $categorie){
+	if ($i % 3 == 0) 
+		echo '</tr><tr>';
+	//je fait l'affichage de mon image
+	echo'<td><a href="boutique_objet.php?section='. $_GET ["section"].'&categorie='.$categorie['nom'].'"><img style = "border: 0px none ;" src="medias/images/boutique/'.$categorie['image'].'" /></a></td>';
+	$i++;
 }
 ?>
-	</tbody>
 </table>
 					</div>
                 </div>
