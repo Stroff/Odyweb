@@ -39,13 +39,9 @@ if ($section_nom<>'Compagnons' && $section_nom<>'Fun') {
         
 	</div>
 </div>
-	<div class="blocpage">
-    	<div class="blocpage-haut">
-        </div>
-        <div class="blocpage-bas">
-        	<div class="blocpage-texte">
+
 <h2>Boutique <?php echo $section_nom; ?></h2>
-<p>Vous pouvez acheter des objets pour vos personnages ici</p>
+<p align="center"> Vous pouvez choisir la catégorie des objets ici</p>
 <?php
 $categories = array(); 
 while( $item = mysql_fetch_array($items_req)){
@@ -65,9 +61,7 @@ foreach($categories as $categorie){
 }
 ?>
 </table>
-					</div>
-                </div>
-            </div>
+
         <div class="encadrepage-bas">
         </div> 
 
