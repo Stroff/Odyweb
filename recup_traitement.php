@@ -53,7 +53,7 @@ if($type_recup !="Normal" && $type_recup != "Prenium"){
 		$cout = 0;
 		$jeton_id = 250008;
 	} else {
-		$cout = 3;
+		$cout = 2;
 		$jeton_id = 250010;
 	}
 }
