@@ -190,7 +190,7 @@ $resultat  = mysql_query("SELECT issues.id,
 	issues.vote_joueurs,
 	issues.created_on,
 	trackers.name AS categorie
-FROM trackers INNER JOIN issues ON trackers.id = issues.tracker_id
+FROM redmine.trackers INNER JOIN redmine.issues ON trackers.id = issues.tracker_id
 WHERE status_id != 6 AND status_id != 5 AND status_id != 3 AND status_id != 4 AND project_id = 2 ORDER BY issues.vote_joueurs DESC LIMIT 10");
 while($bug = mysql_fetch_array($resultat)) {
 	echo '<tr>';
