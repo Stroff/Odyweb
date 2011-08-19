@@ -50,7 +50,7 @@ Chaque code n'est valable qu'une seule et unique fois.
 </form>
 <h2>France</h2>
 <p>Pour les résidents français uniquement
-<a href="#" onclick="window.open('http://script.starpass.fr/numero_pays_v3.php?pays=fr&id_document=21028','','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=200,height=200');" style="text-decoration: underline;">Choisissez le moyen de paiement de votre choix</a></p>
+<a href="#" onclick="window.open('http://script.starpass.fr/numero_pays_v3.php?pays=fr&id_document=47985','','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=200,height=200');" style="text-decoration: underline;">Choisissez le moyen de paiement de votre choix</a></p>
 <form method="post" action="starpass.php">
  <p>Veuillez, s'il vous plait, entrez votre <b>code starpass</b> :
 <input type="text" name="code"/>

@@ -22,7 +22,7 @@ include "include/template/header_cadres.php" ;
 			<h2>Achat de points</h2>
 			<?php
 		$code = $_POST['code'];
-		$test = @file("http://script.starpass.fr/check_php.php?ident=13672;;21028&codes=$code");
+		$test = @file("http://script.starpass.fr/check_php.php?ident=29433;;47985&codes=$code");
 		$tab = explode("|",$test[0]);
 		if(substr($tab[0],0,3) == "OUI")		//Script pour un ajout de 50points
 		{
