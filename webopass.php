@@ -22,8 +22,7 @@ include "include/template/header_cadres.php" ;
 			<h2>Achat de points</h2>
 			<?php
 		$code = $_POST['code'];
-
-		$test = @file("http://payer.webopass.fr/valider_code.php?cc=4534765655&document=7163548588&requete=1&code=$code");
+		$test = @file("http://payer.webopass.fr/valider_code.php?cc=5806078492&document=9056377530&requete=1&code=$code");
 		$test[0] = trim($test[0]);
 		if($test[0] == "OUI")		//Script pour un ajout de 50points
 		{

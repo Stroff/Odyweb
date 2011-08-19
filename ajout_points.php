@@ -41,7 +41,7 @@ $pp_par_achat = $pp_par_achat[0];
 <h2>Magred, DOM-TOM</h2>
 <p>Comme vous devez sûrement le savoir, il faut appeler le numéro indiqué, ou envoyer un SMS au numéro indiqué pour obtenir le code.
 Chaque code n'est valable qu'une seule et unique fois.
-<a href="#" onclick="window.open('http://payer.webopass.fr/affiche_drapeaux.php?cc=4534765655&document=7163548588&no_saisie_code=1','','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=650,height=550');" style="text-decoration: underline;">Choisissez le moyen de paiement de votre choix</a>
+<a href="#" onclick="window.open('http://payer.webopass.fr/affiche_drapeaux.php?cc=5806078492&document=9056377530&no_saisie_code=1','','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=650,height=550');" style="text-decoration: underline;">Choisissez le moyen de paiement de votre choix</a>
 </p>
 <form method="post" action="webopass.php">
  <p>Veuillez, s'il vous plait, entrez votre <b>code webopass</b> :
