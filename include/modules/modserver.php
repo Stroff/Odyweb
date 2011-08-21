@@ -42,12 +42,12 @@
             <div class="uptimemod-infos" id="<?php echo 'infopop_'.$bar_id;?>">
             
             	<div class="nbjoueurs">
-                <?php echo $joueurs_online; ?>/700
+                <?php echo $joueurs_online / 600 * 100; ?>%
                 </div>
                 <div class="nballyh2">
-                <font color="#CC0000"><?php echo $joueurs_online_horde; ?> </font>
+                <font color="#CC0000"><?php echo $joueurs_online_horde / $joueurs_online * 100; ?>%</font>
                 &nbsp; &nbsp; &nbsp; &nbsp; 
-                <font color="#68d0e5"> <?php echo $joueurs_online_alliance; ?></font>
+                <font color="#68d0e5"> <?php echo $joueurs_online_alliance / $joueurs_online * 100; ?>%</font>
                 </div>
                 <div class="uptimemod-realm">
                <br/>
