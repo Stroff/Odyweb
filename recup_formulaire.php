@@ -23,7 +23,7 @@ $(document).ready(function(){
 <br/>
 	<label class="form-fill"> Type de récupération :</label>
 	<div class="form-fill2">  <SELECT name="type_recup" id="type_recup"> 
-		<option value="Normal">Normal, stuff Haineux/T7 - Gratuit</option>
+		<option value="Normal">Normal, stuff Haineux/T7 - 1 point Odyssée</option>
 		<option value="Prenium">Prenium, stuff Fatal/T8 - 2 points Odyssée</option>
 	</select></div>
 <br/>
