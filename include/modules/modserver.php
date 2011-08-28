@@ -39,7 +39,8 @@
 				//$bar_id = ceil($joueurs_online/600*10)*10;
 				?>
 <br/>  <br/>
-            <div class="uptimemod-infos" id="<?php echo 'infopop_'.$bar_id;?>">
+<div>
+            <!--<div class="uptimemod-infos" id="<?php echo 'infopop_'.$bar_id;?>"> -->
             <!--
             	<div class="nbjoueurs">
                 <?php echo round($joueurs_online / 600 * 100); ?>%
