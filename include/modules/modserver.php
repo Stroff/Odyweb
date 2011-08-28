@@ -3,7 +3,7 @@
                   
            
             	<?php
-				$connexion = mysql_connect($host_site, $user_site , $pass_site);
+/*				$connexion = mysql_connect($host_site, $user_site , $pass_site);
 				mysql_select_db($site_database ,$connexion);
 				mysql_query("SET NAMES 'utf8'");
 				$resultat  = mysql_query("SELECT valeur FROM statistiques WHERE nom='uptime' OR nom='joueurs_online' OR nom='joueurs_online_horde' OR nom='joueurs_online_alliance'");
@@ -17,7 +17,7 @@
 				$joueurs_online_horde = $joueurs_online_horde[0];
 
 				$joueurs_online_alliance = mysql_fetch_array($resultat);
-				$joueurs_online_alliance = $joueurs_online_alliance[0];
+				$joueurs_online_alliance = $joueurs_online_alliance[0]; */
 
 				// connexion pour faire les mysql_escape_string
 				$joug_txt = "";
@@ -36,11 +36,11 @@
 				}
 
 
-				$bar_id = ceil($joueurs_online/1500*10)*10;
+				//$bar_id = ceil($joueurs_online/600*10)*10;
 				?>
 <br/>  <br/>
             <div class="uptimemod-infos" id="<?php echo 'infopop_'.$bar_id;?>">
-            
+            <!--
             	<div class="nbjoueurs">
                 <?php echo round($joueurs_online / 600 * 100); ?>%
                 </div>
@@ -48,7 +48,7 @@
                 <font color="#CC0000"><?php echo round($joueurs_online_horde / $joueurs_online * 100); ?>%</font>
                 &nbsp; &nbsp; &nbsp; &nbsp; 
                 <font color="#68d0e5"> <?php echo round($joueurs_online_alliance / $joueurs_online * 100); ?>%</font>
-                </div>
+                </div> -->
                 <div class="uptimemod-realm">
                <br/>
                 	set realmlist serveur.odywow.com <br/>
@@ -56,8 +56,8 @@
                  
                 </div>
                 <span style="	font-size:80%;">
-                <font style="font-weight:bold;">Uptime:</font> <?php  echo $uptime; ?>
-                <br/>
+<!--                <font style="font-weight:bold;">Uptime:</font> <?php  echo $uptime; ?>
+                <br/> -->
                 <font style="font-weight:bold;">Rates: </font>  XP = X4, Loot = X1, GOLD = X3
                 <br/>
                 <font style="font-weight:bold;">Version: </font>  3.3.5a
