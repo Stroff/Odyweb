@@ -46,5 +46,6 @@ $(\'#textLayout\').countdown({until: austDay, layout: \'{hn}h, {mn}m et {sn}s\'}
 	
 	}
 }
-?>
+?> <br/>
+    <a href="http://www.facebook.com/odyssee.serveur"><img src="medias/images/facebook.jpg" alt="facebook Odyssee serveur"/></img></a>
 </div>
