@@ -1,4 +1,5 @@
 <?php 
+exit();
 $secure_lvl = 1;
 $header_titre = "Achats de niveaux - Boutique";
 require "include/template/header_cadres.php"; 
