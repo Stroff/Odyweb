@@ -23,10 +23,10 @@ require "include/template/header_cadres.php";
                        	<br/>
                         <table cellpadding="0" cellspacing="0" width="80%" align="center">
 						<tr>                       <tr>
-                        
+                        <!--
 							<td><a href="boutique_level.php"><img style = "border: 0px none ;" src="medias/images/boutique/level.jpg" /></a></td>
 							<td><a href="boutique_po.php"><img style = "border: 0px none ;" src="medias/images/boutique/po.jpg" /></a></td>
-							<td><a href="boutique_objets.php?section=Armes"><img style = "border: 0px none ;" src="medias/images/boutique/arme.jpg" /></a></td> </tr>
+			-->				<td><a href="boutique_objets.php?section=Armes"><img style = "border: 0px none ;" src="medias/images/boutique/arme.jpg" /></a></td> </tr>
                          <tr>
 							<td><a href="boutique_categories_objets.php?section=Armures"><img style = "border: 0px none ;" src="medias/images/boutique/armor.jpg" /></a></td>
 							<td><a href="boutique_objets.php?section=Compagnons"><img style = "border: 0px none ;" src="medias/images/boutique/compagnons.jpg" /></a></td>
