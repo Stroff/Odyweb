@@ -1,7 +1,7 @@
 <?php
 if($_GET['source']=='rpg'){
 	$monfichier = fopen('compteur_clique/rpg', 'r+');
-	$redirection = 'Location: http://www.rpg-paradize.com/?page=vote&vote=5683';
+	$redirection = 'Location: http://www.rpg-paradize.com/?page=vote&vote=6408';
 } else {
 	$monfichier = fopen('compteur_clique/gowanda', 'r+');
 	$redirection = 'Location: http://www.gowonda.com/vote.php?server_id=800';
