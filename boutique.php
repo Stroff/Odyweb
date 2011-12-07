@@ -34,8 +34,8 @@ require "include/template/header_cadres.php";
 						<tr>						
 							<td><a href="boutique_rename.php"><img style = "border: 0px none ;margin-top:15px;" src="medias/images/boutique/rename.jpg" /></a></td>	
 							<td><a href="boutique_objets.php?section=Fun"><img style = "border: 0px none ;" src="medias/images/boutique/fun.jpg" /></a></td>
-                            <td><a href="boutique_level_metiers.php"><img style = "border: 0px none ;" src="medias/images/boutique/metiers.jpg" /></a></td>
-						</tr>							                          
+                           <!-- <td><a href="boutique_level_metiers.php"><img style = "border: 0px none ;" src="medias/images/boutique/metiers.jpg" /></a></td>
+				-->		</tr>							                          
 						<tr>
 							<td><a href="boutique_skin.php"><img style = "border: 0px none ;" src="medias/images/boutique/skin.jpg" /></a></td>				
 							<td><a href="boutique_race.php"><img style = "border: 0px none ;" src="medias/images/boutique/race.jpg" /></a></td>
