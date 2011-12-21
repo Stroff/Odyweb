@@ -1,4 +1,5 @@
 <?php
+exit();
 $secure_lvl=1;
 ?>
 
